@@ -331,7 +331,7 @@ function Hero() {
             fontWeight: 800,
             fontSize: 'var(--font-hero)',
             letterSpacing: '0.02em',
-            lineHeight: 1.15,
+            lineHeight: 1.35,
             color: 'var(--black)',
             margin: 0,
           }}
