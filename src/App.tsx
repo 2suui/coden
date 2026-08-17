@@ -597,7 +597,7 @@ function About() {
           </p>
         </div>
 
-        <div style={{ marginBottom: 20 }}>
+        <div style={{ marginBottom: 28 }}>
           <p
             style={{
               fontWeight: 800,
@@ -627,11 +627,7 @@ function About() {
             lineHeight: 1.75,
           }}
         >
-          CODEN은 기록을 단순히 저장하는 것이 아니라,
-          <br />
-          수집하고 연결하며 자신의 생각으로 다시 정리하는
-          <br />
-          아날로그 메모 시스템입니다.
+          CODEN은 기록을 구조화하는 CODE와 생각을 남기는 NOTE를 결합한 아날로그 메모 시스템입니다.
         </p>
       </div>
 
@@ -721,18 +717,20 @@ function About() {
             fontSize: 'var(--font-body)',
             color: 'var(--black)',
             lineHeight: 1.85,
+            marginBottom: 16,
           }}
         >
-          기록은 생각이 됩니다.
-          <br />
-          흩어진 기록은 연결을 통해 새로운 의미를 만들고,
-          <br />
-          정리된 생각은 다시 새로운 아이디어로 이어집니다.
-          <br />
-          <br />
-          CODEN은 기록하는 행위에서 끝나지 않고,
-          <br />
-          기록을 생각과 아이디어로 확장하는 과정을 제안하는 노트입니다.
+          또한 Collect와 Connect의 공통된 시작인 CO에는 생각과 정보를 모으고, 서로 연결해 새로운 의미를 발견한다는 CODEN의 핵심 과정이 담겨 있습니다.
+        </p>
+        <p
+          style={{
+            fontWeight: 500,
+            fontSize: 'var(--font-body)',
+            color: 'var(--black)',
+            lineHeight: 1.85,
+          }}
+        >
+          기록을 단순히 저장하는 데 그치지 않고, 수집하고 연결하며 핵심을 추려 자신의 생각으로 다시 정리하고 확장하는 과정을 제안합니다.
         </p>
       </div>
     </section>
