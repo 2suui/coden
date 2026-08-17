@@ -357,7 +357,7 @@ function Hero() {
             style={{
               fontFamily: "'A2z', sans-serif",
               fontWeight: 500,
-              fontSize: '13px',
+              fontSize: '14px',
               lineHeight: 1.75,
               color: 'var(--black)',
             }}
@@ -511,7 +511,7 @@ function Products() {
                 style={{
                   fontFamily: "'A2z', sans-serif",
                   fontWeight: 700,
-                  fontSize: '13px',
+                  fontSize: '14px',
                   letterSpacing: '0.05em',
                   color: 'var(--black)',
                   marginBottom: 2,
@@ -522,7 +522,7 @@ function Products() {
               <p
                 style={{
                   fontFamily: "'A2z', sans-serif",
-                  fontSize: '11px',
+                  fontSize: '12px',
                   color: 'var(--gray-text)',
                   lineHeight: 1.4,
                 }}
@@ -569,7 +569,7 @@ function About() {
         style={{
           fontFamily: "'A2z', sans-serif",
           fontWeight: 800,
-          fontSize: '15px',
+          fontSize: '16px',
           letterSpacing: '0.06em',
           color: 'var(--blue)',
           marginBottom: 36,
@@ -584,7 +584,7 @@ function About() {
             style={{
               fontFamily: "'A2z', sans-serif",
               fontWeight: 800,
-              fontSize: '13px',
+              fontSize: '14px',
               letterSpacing: '0.05em',
               color: 'var(--black)',
               marginBottom: 4,
@@ -595,7 +595,7 @@ function About() {
           <p
             style={{
               fontFamily: "'A2z', sans-serif",
-              fontSize: '13px',
+              fontSize: '14px',
               color: 'var(--gray-text)',
               lineHeight: 1.7,
             }}
@@ -608,7 +608,7 @@ function About() {
             style={{
               fontFamily: "'A2z', sans-serif",
               fontWeight: 800,
-              fontSize: '13px',
+              fontSize: '14px',
               letterSpacing: '0.05em',
               color: 'var(--black)',
               marginBottom: 4,
@@ -619,7 +619,7 @@ function About() {
           <p
             style={{
               fontFamily: "'A2z', sans-serif",
-              fontSize: '13px',
+              fontSize: '14px',
               color: 'var(--gray-text)',
               lineHeight: 1.7,
             }}
@@ -630,7 +630,7 @@ function About() {
         <p
           style={{
             fontFamily: "'A2z', sans-serif",
-            fontSize: '13px',
+            fontSize: '14px',
             color: 'var(--gray-text)',
             lineHeight: 1.75,
           }}
@@ -675,7 +675,7 @@ function About() {
                 style={{
                   fontFamily: "'A2z', sans-serif",
                   fontWeight: 800,
-                  fontSize: '14px',
+                  fontSize: '15px',
                   letterSpacing: '0.05em',
                   color: 'var(--black)',
                 }}
@@ -685,7 +685,7 @@ function About() {
               <p
                 style={{
                   fontFamily: "'A2z', sans-serif",
-                  fontSize: '13px',
+                  fontSize: '14px',
                   color: 'var(--gray-text)',
                   lineHeight: 1.5,
                 }}
@@ -723,7 +723,7 @@ function About() {
           style={{
             fontFamily: "'A2z', sans-serif",
             fontWeight: 500,
-            fontSize: '13px',
+            fontSize: '14px',
             color: 'var(--black)',
             lineHeight: 1.85,
           }}
@@ -835,7 +835,7 @@ function Process() {
               <p
                 style={{
                   fontFamily: "'A2z', sans-serif",
-                  fontSize: '13px',
+                  fontSize: '14px',
                   lineHeight: 1.75,
                   color: '#444',
                   maxWidth: 320,
@@ -981,7 +981,7 @@ function ProductDetails() {
         <p
           style={{
             fontFamily: "'A2z', sans-serif",
-            fontSize: '13px',
+            fontSize: '14px',
             lineHeight: 1.75,
             color: '#555',
             marginBottom: 24,
@@ -1004,7 +1004,7 @@ function ProductDetails() {
               <span
                 style={{
                   fontFamily: "'A2z', sans-serif",
-                  fontSize: '12px',
+                  fontSize: '13px',
                   color: 'var(--black)',
                   letterSpacing: '0.02em',
                 }}
@@ -1014,7 +1014,7 @@ function ProductDetails() {
               <span
                 style={{
                   fontFamily: "'A2z', sans-serif",
-                  fontSize: '12px',
+                  fontSize: '13px',
                   color: 'var(--gray-text)',
                 }}
               >
@@ -1098,7 +1098,7 @@ function Design() {
                 style={{
                   fontFamily: "'A2z', sans-serif",
                   fontWeight: 700,
-                  fontSize: '15px',
+                  fontSize: '16px',
                   letterSpacing: '0.04em',
                   color: 'var(--black)',
                 }}
@@ -1109,7 +1109,7 @@ function Design() {
             <p
               style={{
                 fontFamily: "'A2z', sans-serif",
-                fontSize: '12.5px',
+                fontSize: '13.5px',
                 lineHeight: 1.65,
                 color: 'var(--gray-text)',
               }}
@@ -1199,7 +1199,7 @@ function Footer() {
           style={{
             fontFamily: "'A2z', sans-serif",
             fontWeight: 300,
-            fontSize: '13px',
+            fontSize: '14px',
             color: 'rgba(255,255,255,0.55)',
             letterSpacing: '0.02em',
           }}
@@ -1221,7 +1221,7 @@ function Footer() {
           <p
             style={{
               fontFamily: "'A2z', sans-serif",
-              fontSize: '11px',
+              fontSize: '12px',
               color: 'rgba(255,255,255,0.3)',
               lineHeight: 1.8,
             }}
