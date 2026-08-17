@@ -291,7 +291,7 @@ function Hero() {
       {/* Hero Image */}
       <div
         style={{
-          flex: '0 0 50.5svh',
+          flex: '0 0 54svh',
           width: '100%',
           background: 'var(--blue)',
           overflow: 'hidden',
@@ -319,11 +319,10 @@ function Hero() {
       <div
         style={{
           flex: 1,
-          padding: '0 var(--pad-x) 20px',
+          padding: '0 var(--pad-x) clamp(28px, 8vw, 42px)',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'flex-end',
-          gap: 16,
         }}
       >
         <div>
@@ -356,45 +355,6 @@ function Hero() {
             CODEN은 일상의 생각을 의미 있는 아이디어로 바꿉니다.
           </p>
         </div>
-
-        {/* Scroll down trigger */}
-        <button
-          onClick={() => scrollTo('about')}
-          style={{
-            alignSelf: 'center',
-            width: 52,
-            height: 52,
-            borderRadius: '50%',
-            border: '1.5px solid var(--black)',
-            background: 'none',
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            transition: 'background 0.2s, border-color 0.2s',
-          }}
-          onMouseEnter={(e) => {
-            const t = e.currentTarget
-            t.style.background = 'var(--blue)'
-            t.style.borderColor = 'var(--blue)'
-          }}
-          onMouseLeave={(e) => {
-            const t = e.currentTarget
-            t.style.background = 'none'
-            t.style.borderColor = 'var(--black)'
-          }}
-          aria-label="Scroll down to products"
-        >
-          <svg width="20" height="20" viewBox="0 0 16 16" fill="none">
-            <path
-              d="M8 3v10M4 9l4 4 4-4"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </button>
       </div>
     </section>
   )
