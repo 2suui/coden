@@ -110,6 +110,10 @@ body {
   overflow-wrap: break-word;
 }
 
+button, input, textarea, select {
+  font-family: inherit;
+}
+
 /* ─── 스크롤바 (width 4px 규격) ─── */
 ::-webkit-scrollbar {
   width: 4px;

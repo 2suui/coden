@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react'
 
-/* ─── Section IDs ─── */
+/* ─── Section IDs & Types ─── */
 const SECTIONS = ['hero', 'products', 'about', 'process', 'details', 'design', 'film'] as const
-type SectionId = typeof SECTIONS[number]
+type SectionId = (typeof SECTIONS)[number]
 
 function scrollTo(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 }
 
-/* ─── Active Section Hook ─── */
+/* ─── Active Section Spy Hook ─── */
 function useActiveSection() {
   const [activeSection, setActiveSection] = useState<SectionId>('hero')
 
@@ -35,13 +35,11 @@ function useActiveSection() {
   return activeSection
 }
 
-
 /* ─── Logo ─── */
 function Logo() {
   return (
     <span
       style={{
-        fontFamily: "'A2z', sans-serif",
         fontWeight: 800,
         fontSize: '22px',
         letterSpacing: '0.04em',
@@ -54,7 +52,7 @@ function Logo() {
   )
 }
 
-/* ─── Hamburger ─── */
+/* ─── Hamburger Icon ─── */
 function HamburgerIcon({ open }: { open: boolean }) {
   return (
     <div style={{ width: 22, height: 15, position: 'relative', cursor: 'pointer' }}>
@@ -77,7 +75,7 @@ function HamburgerIcon({ open }: { open: boolean }) {
   )
 }
 
-/* ─── Nav ─── */
+/* ─── Nav Header ─── */
 function Nav({ onMenuOpen }: { onMenuOpen: () => void }) {
   const [scrolled, setScrolled] = useState(false)
 
@@ -110,6 +108,7 @@ function Nav({ onMenuOpen }: { onMenuOpen: () => void }) {
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         style={{ background: 'none', border: 'none', padding: '8px 8px 8px 0', cursor: 'pointer' }}
+        aria-label="CODEN Home"
       >
         <Logo />
       </button>
@@ -124,8 +123,16 @@ function Nav({ onMenuOpen }: { onMenuOpen: () => void }) {
   )
 }
 
-/* ─── Slide-in Menu ─── */
-function Menu({ open, onClose, activeSection }: { open: boolean; onClose: () => void; activeSection: SectionId }) {
+/* ─── Slide-in Menu Panel ─── */
+function Menu({
+  open,
+  onClose,
+  activeSection,
+}: {
+  open: boolean
+  onClose: () => void
+  activeSection: SectionId
+}) {
   const items = ['HOME', 'PRODUCTS', 'ABOUT', 'HOW TO USE', 'DETAILS', 'DESIGN', 'FILM']
   const ids: SectionId[] = ['hero', 'products', 'about', 'process', 'details', 'design', 'film']
 
@@ -162,7 +169,7 @@ function Menu({ open, onClose, activeSection }: { open: boolean; onClose: () => 
           padding: '0 var(--pad-x) 24px',
         }}
       >
-        {/* Close — nav-height 행 및 20px 여백에 맞춰 햄버거와 동일 위치 */}
+        {/* Close Button */}
         <div
           style={{
             height: 'var(--nav-height)',
@@ -189,7 +196,7 @@ function Menu({ open, onClose, activeSection }: { open: boolean; onClose: () => 
           </button>
         </div>
 
-        {/* Nav items */}
+        {/* Navigation Items */}
         <nav style={{ marginTop: 2 }}>
           {items.map((item, i) => {
             const isActive = activeSection === ids[i]
@@ -219,7 +226,6 @@ function Menu({ open, onClose, activeSection }: { open: boolean; onClose: () => 
               >
                 <span
                   style={{
-                    fontFamily: "'A2z', sans-serif",
                     fontWeight: 700,
                     fontSize: '20px',
                     letterSpacing: '0.06em',
@@ -244,7 +250,6 @@ function Menu({ open, onClose, activeSection }: { open: boolean; onClose: () => 
             )
           })}
         </nav>
-
       </div>
     </>
   )
@@ -255,7 +260,6 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
     <p
       style={{
-        fontFamily: "'A2z', sans-serif",
         fontWeight: 700,
         fontSize: '10.5px',
         letterSpacing: '0.14em',
@@ -283,7 +287,7 @@ function Hero() {
         overflow: 'hidden',
       }}
     >
-      {/* Hero image */}
+      {/* Hero Image */}
       <div
         style={{
           flex: '0 0 50.5svh',
@@ -310,7 +314,7 @@ function Hero() {
         />
       </div>
 
-      {/* Hero copy */}
+      {/* Hero Copy */}
       <div
         style={{
           flex: 1,
@@ -324,7 +328,6 @@ function Hero() {
         <div>
           <h1
             style={{
-              fontFamily: "'A2z', sans-serif",
               fontWeight: 800,
               fontSize: 'var(--font-hero)',
               letterSpacing: '0.03em',
@@ -341,7 +344,6 @@ function Hero() {
           </h1>
           <p
             style={{
-              fontFamily: "'A2z', sans-serif",
               fontWeight: 500,
               fontSize: 'var(--font-body)',
               lineHeight: 1.75,
@@ -354,7 +356,7 @@ function Hero() {
           </p>
         </div>
 
-        {/* Scroll indicator */}
+        {/* Scroll down trigger */}
         <button
           onClick={() => scrollTo('products')}
           style={{
@@ -380,7 +382,7 @@ function Hero() {
             t.style.background = 'none'
             t.style.borderColor = 'var(--black)'
           }}
-          aria-label="Scroll down"
+          aria-label="Scroll down to products"
         >
           <svg width="20" height="20" viewBox="0 0 16 16" fill="none">
             <path
@@ -397,7 +399,7 @@ function Hero() {
   )
 }
 
-/* ─── Products Section ─── */
+/* ─── Products Grid Section ─── */
 function Products() {
   const items = [
     {
@@ -421,7 +423,14 @@ function Products() {
   ]
 
   return (
-    <section id="products" style={{ paddingTop: 'var(--section-py)', paddingBottom: 'var(--section-py)', background: 'var(--white)' }}>
+    <section
+      id="products"
+      style={{
+        paddingTop: 'var(--section-py)',
+        paddingBottom: 'var(--section-py)',
+        background: 'var(--white)',
+      }}
+    >
       <div style={{ padding: '0 var(--pad-x)', marginBottom: 32, textAlign: 'center' }}>
         <SectionLabel>Product</SectionLabel>
       </div>
@@ -454,7 +463,6 @@ function Products() {
                 display: 'inline-block',
                 background: 'var(--blue)',
                 color: 'var(--white)',
-                fontFamily: "'A2z', sans-serif",
                 fontWeight: 700,
                 fontSize: '13px',
                 letterSpacing: '0.08em',
@@ -495,7 +503,6 @@ function Products() {
             <div style={{ padding: '12px 14px' }}>
               <p
                 style={{
-                  fontFamily: "'A2z', sans-serif",
                   fontWeight: 700,
                   fontSize: '14px',
                   letterSpacing: '0.05em',
@@ -507,7 +514,6 @@ function Products() {
               </p>
               <p
                 style={{
-                  fontFamily: "'A2z', sans-serif",
                   fontSize: '12px',
                   color: 'var(--gray-text)',
                   lineHeight: 1.4,
@@ -535,11 +541,15 @@ function About() {
   return (
     <section
       id="about"
-      style={{ background: '#f0f0ee', color: 'var(--black)', padding: 'var(--section-py) var(--pad-x)', textAlign: 'center' }}
+      style={{
+        background: '#f0f0ee',
+        color: 'var(--black)',
+        padding: 'var(--section-py) var(--pad-x)',
+        textAlign: 'center',
+      }}
     >
       <p
         style={{
-          fontFamily: "'A2z', sans-serif",
           fontWeight: 700,
           fontSize: '10.5px',
           letterSpacing: '0.14em',
@@ -553,7 +563,6 @@ function About() {
 
       <p
         style={{
-          fontFamily: "'A2z', sans-serif",
           fontWeight: 800,
           fontSize: 'var(--font-subtitle)',
           letterSpacing: '0.06em',
@@ -568,7 +577,6 @@ function About() {
         <div style={{ marginBottom: 36 }}>
           <p
             style={{
-              fontFamily: "'A2z', sans-serif",
               fontWeight: 800,
               fontSize: '14px',
               letterSpacing: '0.05em',
@@ -580,7 +588,6 @@ function About() {
           </p>
           <p
             style={{
-              fontFamily: "'A2z', sans-serif",
               fontSize: '14px',
               color: 'var(--gray-text)',
               lineHeight: 1.7,
@@ -589,10 +596,10 @@ function About() {
             생각과 기록을 일정한 방식으로 구조화하는 방법
           </p>
         </div>
+
         <div style={{ marginBottom: 20 }}>
           <p
             style={{
-              fontFamily: "'A2z', sans-serif",
               fontWeight: 800,
               fontSize: '14px',
               letterSpacing: '0.05em',
@@ -604,7 +611,6 @@ function About() {
           </p>
           <p
             style={{
-              fontFamily: "'A2z', sans-serif",
               fontSize: '14px',
               color: 'var(--gray-text)',
               lineHeight: 1.7,
@@ -613,9 +619,9 @@ function About() {
             생각과 정보를 기록하는 행위
           </p>
         </div>
+
         <p
           style={{
-            fontFamily: "'A2z', sans-serif",
             fontSize: 'var(--font-body)',
             color: 'var(--gray-text)',
             lineHeight: 1.75,
@@ -629,12 +635,18 @@ function About() {
         </p>
       </div>
 
-      <div style={{ width: 32, height: 2, background: 'var(--blue)', marginBottom: 36, margin: '0 auto 36px' }} />
+      <div
+        style={{
+          width: 32,
+          height: 2,
+          background: 'var(--blue)',
+          margin: '0 auto 36px',
+        }}
+      />
 
       <div>
         <p
           style={{
-            fontFamily: "'A2z', sans-serif",
             fontWeight: 700,
             fontSize: '10.5px',
             letterSpacing: '0.14em',
@@ -659,7 +671,6 @@ function About() {
             >
               <p
                 style={{
-                  fontFamily: "'A2z', sans-serif",
                   fontWeight: 800,
                   fontSize: '15px',
                   letterSpacing: '0.05em',
@@ -670,7 +681,6 @@ function About() {
               </p>
               <p
                 style={{
-                  fontFamily: "'A2z', sans-serif",
                   fontSize: 'var(--font-body)',
                   color: 'var(--gray-text)',
                   lineHeight: 1.5,
@@ -707,7 +717,6 @@ function About() {
       >
         <p
           style={{
-            fontFamily: "'A2z', sans-serif",
             fontWeight: 500,
             fontSize: 'var(--font-body)',
             color: 'var(--black)',
@@ -730,7 +739,7 @@ function About() {
   )
 }
 
-/* ─── Process Section ─── */
+/* ─── How to Use Section ─── */
 function Process() {
   const steps: { num: string; title: string; en: string; desc: React.ReactNode }[] = [
     {
@@ -802,7 +811,14 @@ function Process() {
   ]
 
   return (
-    <section id="process" style={{ background: 'var(--white)', paddingTop: 'var(--section-py)', paddingBottom: 'var(--section-py)' }}>
+    <section
+      id="process"
+      style={{
+        background: 'var(--white)',
+        paddingTop: 'var(--section-py)',
+        paddingBottom: 'var(--section-py)',
+      }}
+    >
       <div style={{ textAlign: 'center', marginBottom: 48, padding: '0 var(--pad-x)' }}>
         <SectionLabel>How to Use</SectionLabel>
       </div>
@@ -820,7 +836,6 @@ function Process() {
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: 14 }}>
               <span
                 style={{
-                  fontFamily: "'A2z', sans-serif",
                   fontWeight: 700,
                   fontSize: 'var(--font-badge-num)',
                   letterSpacing: '0.06em',
@@ -838,7 +853,6 @@ function Process() {
                 <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginBottom: 8 }}>
                   <span
                     style={{
-                      fontFamily: "'A2z', sans-serif",
                       fontWeight: 700,
                       fontSize: 'var(--font-how-title)',
                       letterSpacing: '0.04em',
@@ -849,7 +863,6 @@ function Process() {
                   </span>
                   <span
                     style={{
-                      fontFamily: "'A2z', sans-serif",
                       fontWeight: 400,
                       fontSize: '11.5px',
                       letterSpacing: '0.06em',
@@ -862,7 +875,6 @@ function Process() {
                 </div>
                 <p
                   style={{
-                    fontFamily: "'A2z', sans-serif",
                     fontSize: 'var(--font-body)',
                     lineHeight: 1.75,
                     color: '#444',
@@ -934,7 +946,7 @@ function ProductDetails() {
         <SectionLabel>Product Detail</SectionLabel>
       </div>
 
-      {/* Tab bar */}
+      {/* Tab Bar */}
       <div
         style={{
           display: 'flex',
@@ -956,7 +968,6 @@ function ProductDetails() {
               border: 'none',
               borderBottom: active === key ? '2px solid var(--blue)' : '2px solid transparent',
               cursor: 'pointer',
-              fontFamily: "'A2z', sans-serif",
               fontWeight: 700,
               fontSize: '12px',
               letterSpacing: '0.06em',
@@ -970,7 +981,7 @@ function ProductDetails() {
         ))}
       </div>
 
-      {/* Product image */}
+      {/* Product Image */}
       <div
         style={{
           width: '100%',
@@ -987,11 +998,10 @@ function ProductDetails() {
         />
       </div>
 
-      {/* Product info */}
+      {/* Product Info */}
       <div style={{ padding: '28px var(--pad-x) var(--section-py)' }}>
         <h3
           style={{
-            fontFamily: "'A2z', sans-serif",
             fontWeight: 800,
             fontSize: 'var(--font-title)',
             letterSpacing: '0.04em',
@@ -1003,7 +1013,6 @@ function ProductDetails() {
         </h3>
         <p
           style={{
-            fontFamily: "'A2z', sans-serif",
             fontSize: 'var(--font-body)',
             lineHeight: 1.75,
             color: '#555',
@@ -1026,7 +1035,6 @@ function ProductDetails() {
             >
               <span
                 style={{
-                  fontFamily: "'A2z', sans-serif",
                   fontSize: '13px',
                   color: 'var(--black)',
                   letterSpacing: '0.02em',
@@ -1036,7 +1044,6 @@ function ProductDetails() {
               </span>
               <span
                 style={{
-                  fontFamily: "'A2z', sans-serif",
                   fontSize: '13px',
                   color: 'var(--gray-text)',
                 }}
@@ -1051,7 +1058,7 @@ function ProductDetails() {
   )
 }
 
-/* ─── Design Section ─── */
+/* ─── Design Philosophy Section ─── */
 function Design() {
   const pillars = [
     { label: 'Logo', desc: '단순하고 명확한 레터마크. CODE와 NOTE의 결합을 표현합니다.' },
@@ -1062,12 +1069,19 @@ function Design() {
   ]
 
   return (
-    <section id="design" style={{ background: 'var(--white)', paddingTop: 'var(--section-py)', paddingBottom: 'var(--section-py)' }}>
+    <section
+      id="design"
+      style={{
+        background: 'var(--white)',
+        paddingTop: 'var(--section-py)',
+        paddingBottom: 'var(--section-py)',
+      }}
+    >
       <div style={{ textAlign: 'center', marginBottom: 0, padding: '0 var(--pad-x) 32px' }}>
         <SectionLabel>Design Philosophy</SectionLabel>
       </div>
 
-      {/* Full-bleed image */}
+      {/* Full-bleed Header Image */}
       <div
         style={{
           width: '100%',
@@ -1092,7 +1106,7 @@ function Design() {
         />
       </div>
 
-      {/* Pillars list */}
+      {/* Pillars List */}
       <div style={{ padding: '0 var(--pad-x)' }}>
         {pillars.map((p, i) => (
           <div
@@ -1119,7 +1133,6 @@ function Design() {
               />
               <p
                 style={{
-                  fontFamily: "'A2z', sans-serif",
                   fontWeight: 700,
                   fontSize: '16px',
                   letterSpacing: '0.04em',
@@ -1131,7 +1144,6 @@ function Design() {
             </div>
             <p
               style={{
-                fontFamily: "'A2z', sans-serif",
                 fontSize: '13.5px',
                 lineHeight: 1.65,
                 color: 'var(--gray-text)',
@@ -1146,10 +1158,17 @@ function Design() {
   )
 }
 
-/* ─── Film Section ─── */
+/* ─── Brand Film Section ─── */
 function Film() {
   return (
-    <section id="film" style={{ background: 'var(--gray-light)', paddingTop: 'var(--section-py)', paddingBottom: 'calc(var(--section-py) + 40px)' }}>
+    <section
+      id="film"
+      style={{
+        background: 'var(--gray-light)',
+        paddingTop: 'var(--section-py)',
+        paddingBottom: 'calc(var(--section-py) + 40px)',
+      }}
+    >
       <div style={{ textAlign: 'center', marginBottom: 32, padding: '0 var(--pad-x)' }}>
         <SectionLabel>Brand Film</SectionLabel>
       </div>
@@ -1195,20 +1214,17 @@ function Film() {
           </div>
         </div>
       </div>
-
-
     </section>
   )
 }
 
-/* ─── Footer ─── */
+/* ─── Footer Section ─── */
 function Footer() {
   return (
     <footer style={{ background: 'var(--black)', color: 'var(--white)', padding: '28px var(--pad-x) 24px' }}>
       <div style={{ marginBottom: 20 }}>
         <p
           style={{
-            fontFamily: "'A2z', sans-serif",
             fontWeight: 800,
             fontSize: '15.5px',
             letterSpacing: '0.06em',
@@ -1220,7 +1236,6 @@ function Footer() {
         </p>
         <p
           style={{
-            fontFamily: "'A2z', sans-serif",
             fontWeight: 300,
             fontSize: '12px',
             color: 'rgba(255,255,255,0.55)',
@@ -1243,7 +1258,6 @@ function Footer() {
         <div>
           <p
             style={{
-              fontFamily: "'A2z', sans-serif",
               fontSize: '12px',
               color: 'rgba(255,255,255,0.3)',
               lineHeight: 1.8,
@@ -1256,7 +1270,6 @@ function Footer() {
         </div>
         <p
           style={{
-            fontFamily: "'A2z', sans-serif",
             fontSize: '12px',
             letterSpacing: '0.04em',
             color: 'rgba(255,255,255,0.25)',
@@ -1269,7 +1282,7 @@ function Footer() {
   )
 }
 
-/* ─── App Root ─── */
+/* ─── App Root Component ─── */
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const activeSection = useActiveSection()
