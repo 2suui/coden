@@ -565,7 +565,7 @@ function About() {
         style={{
           fontWeight: 800,
           fontSize: 'clamp(17px, 4.8vw, 20px)',
-          letterSpacing: '0.06em',
+          letterSpacing: '0.01em',
           color: 'var(--blue)',
           marginBottom: 36,
         }}
