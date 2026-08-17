@@ -538,15 +538,15 @@ function About() {
           style={{
             background: 'var(--yellow)',
             color: 'var(--blue)',
-            padding: '1px 4px',
+            padding: '1px 6px',
             borderRadius: 2,
             display: 'inline-block',
             lineHeight: 1.2,
           }}
         >
-          CO
-        </span>
-        DEN = CODE + NOTE
+          CODEN
+        </span>{' '}
+        = CODE + NOTE
       </p>
 
       <div style={{ marginBottom: 40 }}>
