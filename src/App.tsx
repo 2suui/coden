@@ -813,7 +813,7 @@ function Process() {
                 {step.num}
               </span>
               <div style={{ flex: 1 }}>
-                <div style={{ display: 'flex', alignItems: 'baseline', gap: 5, marginBottom: 8 }}>
+                <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginBottom: 8 }}>
                   <span
                     style={{
                       fontFamily: "'A2z', sans-serif",
@@ -828,8 +828,8 @@ function Process() {
                   <span
                     style={{
                       fontFamily: "'A2z', sans-serif",
-                      fontWeight: 600,
-                      fontSize: '12px',
+                      fontWeight: 800,
+                      fontSize: '12.5px',
                       letterSpacing: '0.06em',
                       color: 'var(--gray-text)',
                       textTransform: 'uppercase',
