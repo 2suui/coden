@@ -534,7 +534,19 @@ function About() {
           marginBottom: 36,
         }}
       >
-        CODEN = CODE + NOTE
+        <span
+          style={{
+            background: 'var(--yellow)',
+            color: 'var(--blue)',
+            padding: '1px 4px',
+            borderRadius: 2,
+            display: 'inline-block',
+            lineHeight: 1.2,
+          }}
+        >
+          CO
+        </span>
+        DEN = CODE + NOTE
       </p>
 
       <div style={{ marginBottom: 40 }}>
