@@ -323,7 +323,7 @@ function Hero() {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
-          gap: 22,
+          gap: 26,
         }}
       >
         <h1
