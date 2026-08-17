@@ -319,42 +319,41 @@ function Hero() {
       <div
         style={{
           flex: 1,
-          padding: 'clamp(20px, 5vw, 32px) var(--pad-x) clamp(24px, 6vw, 36px)',
+          padding: 'clamp(16px, 4vw, 24px) var(--pad-x) clamp(28px, 7vw, 42px)',
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'center',
+          justifyContent: 'space-between',
         }}
       >
-        <div>
-          <h1
-            style={{
-              fontWeight: 800,
-              fontSize: 'var(--font-hero)',
-              letterSpacing: '0.02em',
-              lineHeight: 1.15,
-              color: 'var(--black)',
-              marginBottom: 16,
-            }}
-          >
-            Capture.
-            <br />
-            Connect.
-            <br />
-            Create.
-          </h1>
-          <p
-            style={{
-              fontWeight: 500,
-              fontSize: 'var(--font-body)',
-              lineHeight: 1.75,
-              color: 'var(--black)',
-            }}
-          >
-            기록하고. 연결하고. 확장하다.
-            <br />
-            CODEN은 일상의 생각을 의미 있는 아이디어로 바꿉니다.
-          </p>
-        </div>
+        <h1
+          style={{
+            fontWeight: 800,
+            fontSize: 'var(--font-hero)',
+            letterSpacing: '0.02em',
+            lineHeight: 1.15,
+            color: 'var(--black)',
+            margin: 0,
+          }}
+        >
+          Capture.
+          <br />
+          Connect.
+          <br />
+          Create.
+        </h1>
+        <p
+          style={{
+            fontWeight: 500,
+            fontSize: 'var(--font-body)',
+            lineHeight: 1.75,
+            color: 'var(--black)',
+            margin: 0,
+          }}
+        >
+          기록하고. 연결하고. 확장하다.
+          <br />
+          CODEN은 일상의 생각을 의미 있는 아이디어로 바꿉니다.
+        </p>
       </div>
     </section>
   )
@@ -505,7 +504,7 @@ function About() {
       style={{
         background: '#f0f0ee',
         color: 'var(--black)',
-        paddingTop: 'calc(var(--section-py) + 16px)',
+        paddingTop: 'calc(var(--section-py) + 48px)',
         paddingBottom: 'var(--section-py)',
         paddingLeft: 'var(--pad-x)',
         paddingRight: 'var(--pad-x)',
