@@ -35,22 +35,6 @@ function useActiveSection() {
   return activeSection
 }
 
-/* ─── Scroll Indicator ─── */
-function ScrollIndicator({ activeSection }: { activeSection: SectionId }) {
-  return (
-    <div className="scroll-indicator">
-      {SECTIONS.map((id) => (
-        <div key={id} className="scroll-indicator__slot">
-          <span
-            className={`scroll-indicator__dot${
-              activeSection === id ? ' scroll-indicator__dot--active' : ''
-            }`}
-          />
-        </div>
-      ))}
-    </div>
-  )
-}
 
 /* ─── Logo ─── */
 function Logo() {
@@ -1263,7 +1247,6 @@ export default function App() {
     <div style={{ maxWidth: 480, margin: '0 auto', position: 'relative' }}>
       <Nav onMenuOpen={() => setMenuOpen(true)} />
       <Menu open={menuOpen} onClose={() => setMenuOpen(false)} activeSection={activeSection} />
-      <ScrollIndicator activeSection={activeSection} />
 
       <main>
         <Hero />
