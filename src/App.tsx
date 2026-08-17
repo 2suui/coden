@@ -713,7 +713,7 @@ function About() {
       >
         <p
           style={{
-            fontWeight: 500,
+            fontWeight: 700,
             fontSize: 'var(--font-body)',
             color: 'var(--black)',
             lineHeight: 1.85,
@@ -724,7 +724,7 @@ function About() {
         </p>
         <p
           style={{
-            fontWeight: 500,
+            fontWeight: 700,
             fontSize: 'var(--font-body)',
             color: 'var(--black)',
             lineHeight: 1.85,
