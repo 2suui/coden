@@ -730,36 +730,66 @@ function About() {
 
 /* ─── Process Section ─── */
 function Process() {
-  const steps = [
+  const steps: { num: string; title: string; en: string; desc: React.ReactNode }[] = [
     {
       num: '01',
       title: '기록',
       en: 'Capture',
-      desc: '일단, 적습니다. 떠오른 생각을 판단하지 않고 자유롭게 남깁니다.',
+      desc: (
+        <>
+          먼저, 적습니다.
+          <br />
+          떠오른 생각을 판단하지 않고 자유롭게 기록합니다.
+        </>
+      ),
     },
     {
       num: '02',
       title: '선별',
       en: 'Select',
-      desc: '남길 것을 골라냅니다. 쌓인 기록에서 지금 필요한 생각을 찾아냅니다.',
+      desc: (
+        <>
+          남길 생각을 골라냅니다.
+          <br />
+          쌓인 기록 속에서 지금 의미 있는 생각을 찾아냅니다.
+        </>
+      ),
     },
     {
       num: '03',
       title: '연결',
       en: 'Connect',
-      desc: '생각과 생각을 이어봅니다. 흩어진 기록 사이에서 새로운 관계를 발견합니다.',
+      desc: (
+        <>
+          생각과 생각을 이어봅니다.
+          <br />
+          서로 다른 기록 사이의 관계를 발견하고 새로운 맥락을 만듭니다.
+        </>
+      ),
     },
     {
       num: '04',
       title: '재발견',
       en: 'Rediscover',
-      desc: '다시 꺼내, 새롭게 봅니다. 지나간 기록은 현재의 생각과 만나 새로운 아이디어가 됩니다.',
+      desc: (
+        <>
+          기록을 다시 꺼내 바라봅니다.
+          <br />
+          지나간 생각을 현재의 시선으로 다시 읽으며 새로운 의미를 발견합니다.
+        </>
+      ),
     },
     {
       num: '05',
       title: '확장',
       en: 'Expand',
-      desc: '생각은 계속 이어집니다. 하나의 기록은 새로운 아이디어가 되고, 다시 다음 생각의 시작점이 됩니다.',
+      desc: (
+        <>
+          발견한 생각을 다음으로 확장합니다.
+          <br />
+          하나의 기록은 새로운 아이디어가 되고, 또 다른 생각의 시작점으로 이어집니다.
+        </>
+      ),
     },
   ]
 
@@ -797,7 +827,7 @@ function Process() {
                 {step.num}
               </span>
               <div style={{ flex: 1 }}>
-                <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginBottom: 8 }}>
+                <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginBottom: 8 }}>
                   <span
                     style={{
                       fontFamily: "'A2z', sans-serif",
@@ -808,6 +838,16 @@ function Process() {
                     }}
                   >
                     {step.title}
+                  </span>
+                  <span
+                    style={{
+                      fontFamily: "'A2z', sans-serif",
+                      fontSize: '12px',
+                      color: 'var(--gray-text)',
+                      userSelect: 'none',
+                    }}
+                  >
+                    ·
                   </span>
                   <span
                     style={{
