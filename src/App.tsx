@@ -829,7 +829,7 @@ function Process() {
                     style={{
                       fontFamily: "'A2z', sans-serif",
                       fontWeight: 400,
-                      fontSize: '10.5px',
+                      fontSize: '11.5px',
                       letterSpacing: '0.06em',
                       color: 'var(--gray-text)',
                       textTransform: 'uppercase',
