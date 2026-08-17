@@ -1,0 +1,175 @@
+/* ─── A2Z 에이투지체 웹폰트 ─── */
+@font-face {
+  font-family: 'A2z';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-1Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'A2z';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-2ExtraLight.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'A2z';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-3Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'A2z';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-4Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'A2z';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-5Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'A2z';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-6Semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'A2z';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-7Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'A2z';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-8ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'A2z';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2601-6@1.0/에이투지체-9Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@import 'tailwindcss';
+
+:root {
+  --blue: #1E6CB5;
+  --blue-dark: #155a9e;
+  --yellow: #F3D420;
+  --black: #111111;
+  --white: #FFFFFF;
+  --gray-light: #f5f5f3;
+  --gray-mid: #e8e8e6;
+  --gray-text: #666660;
+  --nav-height: 56px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'A2z', sans-serif;
+  color: var(--black);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* 스크롤바 전체 숨김 — 모든 브라우저 대응 */
+* {
+  -ms-overflow-style: none;  /* IE, Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, iOS */
+}
+
+::selection {
+  background: var(--yellow);
+  color: var(--black);
+}
+
+/* ─── Scroll Indicator ─── */
+.scroll-indicator {
+  position: fixed;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 90;
+  pointer-events: none;
+}
+
+/* 고정 높이 슬롯 — 전체 높이가 항상 일정하게 유지됨 */
+.scroll-indicator__slot {
+  width: 6px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.scroll-indicator__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.18);
+  transition: background 0.35s, height 0.35s, border-radius 0.35s;
+}
+
+.scroll-indicator__dot--active {
+  background: var(--blue);
+  height: 28px;
+  border-radius: 3px;
+}
+
+/* ─── 기본 모바일 ─── */
+@media (max-width: 767px) {
+  .scroll-indicator {
+    right: 8px;
+  }
+}
+
+/* ─── 작은 모바일 ─── */
+@media (max-width: 359px) {
+  .scroll-indicator {
+    display: none;
+  }
+}
+
+/* ─── 일반 모바일 ─── */
+@media (min-width: 360px) and (max-width: 430px) {
+  .scroll-indicator {
+    right: 10px;
+  }
+}
+
+/* ─── 큰 모바일 ─── */
+@media (min-width: 431px) and (max-width: 767px) {
+  .scroll-indicator {
+    right: 12px;
+  }
+}
