@@ -787,69 +787,69 @@ function Process() {
 
       <div>
         {steps.map((step, i) => (
-          <div key={step.num}>
-            <div
-              style={{
-                padding: '28px 20px',
-                borderTop: i === 0 ? '1px solid var(--gray-mid)' : 'none',
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: 12, marginBottom: 8 }}>
-                <span
-                  style={{
-                    fontFamily: "'A2z', sans-serif",
-                    fontWeight: 700,
-                    fontSize: '11px',
-                    letterSpacing: '0.06em',
-                    color: 'var(--yellow)',
-                    background: 'var(--black)',
-                    padding: '2px 7px',
-                    lineHeight: 1.5,
-                  }}
-                >
-                  {step.num}
-                </span>
-                <span
-                  style={{
-                    fontFamily: "'A2z', sans-serif",
-                    fontWeight: 700,
-                    fontSize: '20px',
-                    letterSpacing: '0.04em',
-                    color: 'var(--black)',
-                  }}
-                >
-                  {step.title}
-                </span>
-                <span
-                  style={{
-                    fontFamily: "'A2z', sans-serif",
-                    fontSize: '11px',
-                    letterSpacing: '0.06em',
-                    color: 'var(--gray-text)',
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  {step.en}
-                </span>
-              </div>
-              <p
+          <div
+            key={step.num}
+            style={{
+              padding: '24px 20px',
+              borderTop: i === 0 ? '1px solid var(--gray-mid)' : 'none',
+              borderBottom: '1px solid var(--gray-mid)',
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'flex-start', gap: 14 }}>
+              <span
                 style={{
                   fontFamily: "'A2z', sans-serif",
-                  fontSize: '14px',
-                  lineHeight: 1.75,
-                  color: '#444',
-                  maxWidth: 320,
+                  fontWeight: 700,
+                  fontSize: '11px',
+                  letterSpacing: '0.06em',
+                  color: 'var(--yellow)',
+                  background: 'var(--black)',
+                  padding: '2px 7px',
+                  lineHeight: 1.5,
+                  flexShrink: 0,
+                  marginTop: 4,
                 }}
               >
-                {step.desc}
-              </p>
-            </div>
-            {i < steps.length - 1 && (
-              <div style={{ marginLeft: 20, display: 'flex', alignItems: 'center', gap: 6 }}>
-                <div style={{ width: 1, height: 24, background: 'var(--gray-mid)', marginLeft: 16 }} />
+                {step.num}
+              </span>
+              <div style={{ flex: 1 }}>
+                <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginBottom: 8 }}>
+                  <span
+                    style={{
+                      fontFamily: "'A2z', sans-serif",
+                      fontWeight: 700,
+                      fontSize: '20px',
+                      letterSpacing: '0.04em',
+                      color: 'var(--black)',
+                    }}
+                  >
+                    {step.title}
+                  </span>
+                  <span
+                    style={{
+                      fontFamily: "'A2z', sans-serif",
+                      fontSize: '11.5px',
+                      letterSpacing: '0.06em',
+                      color: 'var(--gray-text)',
+                      textTransform: 'uppercase',
+                    }}
+                  >
+                    {step.en}
+                  </span>
+                </div>
+                <p
+                  style={{
+                    fontFamily: "'A2z', sans-serif",
+                    fontSize: '14px',
+                    lineHeight: 1.75,
+                    color: '#444',
+                    margin: 0,
+                  }}
+                >
+                  {step.desc}
+                </p>
               </div>
-            )}
-            <div style={{ borderBottom: '1px solid var(--gray-mid)' }} />
+            </div>
           </div>
         ))}
       </div>
