@@ -271,7 +271,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
       style={{
         fontFamily: "'A2z', sans-serif",
         fontWeight: 700,
-        fontSize: '12px',
+        fontSize: '10.5px',
         letterSpacing: '0.14em',
         color: 'var(--gray-text)',
         textTransform: 'uppercase',
@@ -555,7 +555,7 @@ function About() {
         style={{
           fontFamily: "'A2z', sans-serif",
           fontWeight: 700,
-          fontSize: '12px',
+          fontSize: '10.5px',
           letterSpacing: '0.14em',
           color: 'var(--gray-text)',
           textTransform: 'uppercase',
@@ -650,7 +650,7 @@ function About() {
           style={{
             fontFamily: "'A2z', sans-serif",
             fontWeight: 700,
-            fontSize: '12px',
+            fontSize: '10.5px',
             letterSpacing: '0.14em',
             color: 'var(--gray-text)',
             textTransform: 'uppercase',
