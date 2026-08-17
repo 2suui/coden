@@ -1210,10 +1210,10 @@ function Footer() {
           style={{
             fontFamily: "'A2z', sans-serif",
             fontWeight: 800,
-            fontSize: '18px',
+            fontSize: '15.5px',
             letterSpacing: '0.06em',
             color: 'rgba(255,255,255,0.55)',
-            marginBottom: 6,
+            marginBottom: 4,
           }}
         >
           CODEN
@@ -1222,7 +1222,7 @@ function Footer() {
           style={{
             fontFamily: "'A2z', sans-serif",
             fontWeight: 300,
-            fontSize: '14px',
+            fontSize: '12px',
             color: 'rgba(255,255,255,0.55)',
             letterSpacing: '0.02em',
           }}
