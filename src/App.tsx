@@ -534,7 +534,7 @@ function About() {
           marginBottom: 36,
         }}
       >
-        CODEN = CODE + NOTE
+        <span style={{ color: 'var(--yellow)' }}>CO</span>DEN = CODE + NOTE
       </p>
 
       <div style={{ marginBottom: 40 }}>
