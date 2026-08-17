@@ -93,6 +93,31 @@ body {
   overflow-x: hidden;
 }
 
+/* ─── 선명하게 보이는 스크롤바 ─── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  display: block;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.28);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--blue);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.28) rgba(0, 0, 0, 0.04);
+}
+
 ::selection {
   background: var(--yellow);
   color: var(--black);
