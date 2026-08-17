@@ -871,17 +871,10 @@ function ProductDetails() {
     },
     PACKAGE: {
       label: 'PACKAGE',
-      description: '노트북, 펜, 북마크가 함께 구성된 CODEN 전체 시스템 패키지.',
+      description: '노트북과 북마크가 함께 구성된 CODEN 패키지.',
       img: 'https://images.unsplash.com/photo-1587467512961-120760940315?w=700&h=900&fit=crop&auto=format',
       alt: 'CODEN complete product package',
-      specs: ['구성 — 노트북 + 펜 + 북마크', '패키지 — 박스 포장', '크기 — 160×225mm', '소재 — 재생지'],
-    },
-    PEN: {
-      label: 'PEN',
-      description: '정밀한 필기를 위한 CODEN 전용 펜. 세밀한 글씨부터 스케치까지.',
-      img: 'https://images.unsplash.com/photo-1509785307050-d4066910ec1e?w=700&h=900&fit=crop&auto=format',
-      alt: 'CODEN precision writing pen',
-      specs: ['잉크 — 유성 흑색', '굵기 — 0.5mm', '길이 — 143mm', '소재 — 알루미늄 바디'],
+      specs: ['구성 — 노트북 + 북마크', '패키지 — 박스 포장', '크기 — 160×225mm', '소재 — 재생지'],
     },
     BOOKMARK: {
       label: 'BOOKMARK',
@@ -906,6 +899,7 @@ function ProductDetails() {
           display: 'flex',
           borderTop: '1px solid var(--gray-mid)',
           borderBottom: '1px solid var(--gray-mid)',
+          padding: '0 16px',
           overflowX: 'auto',
         }}
       >
@@ -916,7 +910,7 @@ function ProductDetails() {
             style={{
               flex: 1,
               minWidth: 80,
-              padding: '14px 8px',
+              padding: '14px 12px',
               background: 'none',
               border: 'none',
               borderBottom: active === key ? '2px solid var(--blue)' : '2px solid transparent',
