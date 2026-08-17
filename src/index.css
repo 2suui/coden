@@ -75,10 +75,26 @@
   --gray-mid: #e8e8e6;
   --gray-text: #666660;
   --nav-height: 56px;
+
+  /* ─── CODEN 모바일 디자인 규격 (기준: 393px, 범위: 320~430px) ─── */
+  --pad-x: clamp(14px, 5.1vw, 24px);
+  --section-py: clamp(56px, 15vw, 84px);
+  --font-hero: clamp(30px, 8.2vw, 36px);
+  --font-title: clamp(24px, 6.5vw, 32px);
+  --font-subtitle: clamp(15px, 4.2vw, 18px);
+  --font-body: clamp(13px, 3.6vw, 15px);
+  --font-how-title: clamp(18px, 5vw, 22px);
+  --font-badge-num: clamp(10px, 2.8vw, 12px);
 }
 
 * {
   box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
 }
 
 html {
@@ -90,13 +106,14 @@ body {
   color: var(--black);
   background: var(--white);
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
-/* ─── 선명하게 보이는 스크롤바 ─── */
+/* ─── 스크롤바 (width 4px 규격) ─── */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 4px;
+  height: 4px;
   display: block;
 }
 
@@ -106,7 +123,7 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, 0.28);
-  border-radius: 3px;
+  border-radius: 2px;
 }
 
 ::-webkit-scrollbar-thumb:hover {

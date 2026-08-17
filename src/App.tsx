@@ -92,13 +92,15 @@ function Nav({ onMenuOpen }: { onMenuOpen: () => void }) {
       style={{
         position: 'fixed',
         top: 0,
-        left: 0,
-        right: 0,
+        left: '50%',
+        transform: 'translateX(-50%)',
+        width: '100%',
+        maxWidth: 430,
         height: 'var(--nav-height)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        padding: '0 20px',
+        padding: '0 var(--pad-x)',
         background: 'var(--white)',
         borderBottom: scrolled ? '1px solid var(--gray-mid)' : '1px solid transparent',
         transition: 'border-color 0.3s',
@@ -157,7 +159,7 @@ function Menu({ open, onClose, activeSection }: { open: boolean; onClose: () => 
           transition: 'transform 0.38s cubic-bezier(0.4, 0, 0.2, 1)',
           display: 'flex',
           flexDirection: 'column',
-          padding: '0 20px 24px',
+          padding: '0 var(--pad-x) 24px',
         }}
       >
         {/* Close — nav-height 행 및 20px 여백에 맞춰 햄버거와 동일 위치 */}
@@ -312,7 +314,7 @@ function Hero() {
       <div
         style={{
           flex: 1,
-          padding: '0 20px 16px',
+          padding: '0 var(--pad-x) 16px',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'flex-end',
@@ -324,9 +326,9 @@ function Hero() {
             style={{
               fontFamily: "'A2z', sans-serif",
               fontWeight: 800,
-              fontSize: '32px',
+              fontSize: 'var(--font-hero)',
               letterSpacing: '0.03em',
-              lineHeight: 1.35,
+              lineHeight: 1.25,
               color: 'var(--black)',
               marginBottom: 14,
             }}
@@ -341,7 +343,7 @@ function Hero() {
             style={{
               fontFamily: "'A2z', sans-serif",
               fontWeight: 500,
-              fontSize: '14px',
+              fontSize: 'var(--font-body)',
               lineHeight: 1.75,
               color: 'var(--black)',
             }}
@@ -419,8 +421,8 @@ function Products() {
   ]
 
   return (
-    <section id="products" style={{ paddingTop: 64, paddingBottom: 64, background: 'var(--white)' }}>
-      <div style={{ padding: '0 20px', marginBottom: 32, textAlign: 'center' }}>
+    <section id="products" style={{ paddingTop: 'var(--section-py)', paddingBottom: 'var(--section-py)', background: 'var(--white)' }}>
+      <div style={{ padding: '0 var(--pad-x)', marginBottom: 32, textAlign: 'center' }}>
         <SectionLabel>Product</SectionLabel>
       </div>
 
@@ -444,7 +446,7 @@ function Products() {
             style={{
               position: 'absolute',
               bottom: 20,
-              left: 20,
+              left: 'var(--pad-x)',
             }}
           >
             <span
@@ -533,7 +535,7 @@ function About() {
   return (
     <section
       id="about"
-      style={{ background: '#f0f0ee', color: 'var(--black)', padding: '64px 20px', textAlign: 'center' }}
+      style={{ background: '#f0f0ee', color: 'var(--black)', padding: 'var(--section-py) var(--pad-x)', textAlign: 'center' }}
     >
       <p
         style={{
@@ -553,7 +555,7 @@ function About() {
         style={{
           fontFamily: "'A2z', sans-serif",
           fontWeight: 800,
-          fontSize: '16px',
+          fontSize: 'var(--font-subtitle)',
           letterSpacing: '0.06em',
           color: 'var(--blue)',
           marginBottom: 36,
@@ -614,7 +616,7 @@ function About() {
         <p
           style={{
             fontFamily: "'A2z', sans-serif",
-            fontSize: '14px',
+            fontSize: 'var(--font-body)',
             color: 'var(--gray-text)',
             lineHeight: 1.75,
           }}
@@ -669,7 +671,7 @@ function About() {
               <p
                 style={{
                   fontFamily: "'A2z', sans-serif",
-                  fontSize: '14px',
+                  fontSize: 'var(--font-body)',
                   color: 'var(--gray-text)',
                   lineHeight: 1.5,
                 }}
@@ -707,7 +709,7 @@ function About() {
           style={{
             fontFamily: "'A2z', sans-serif",
             fontWeight: 500,
-            fontSize: '14px',
+            fontSize: 'var(--font-body)',
             color: 'var(--black)',
             lineHeight: 1.85,
           }}
@@ -800,8 +802,8 @@ function Process() {
   ]
 
   return (
-    <section id="process" style={{ background: 'var(--white)', padding: '64px 0' }}>
-      <div style={{ textAlign: 'center', marginBottom: 48, padding: '0 20px' }}>
+    <section id="process" style={{ background: 'var(--white)', paddingTop: 'var(--section-py)', paddingBottom: 'var(--section-py)' }}>
+      <div style={{ textAlign: 'center', marginBottom: 48, padding: '0 var(--pad-x)' }}>
         <SectionLabel>How to Use</SectionLabel>
       </div>
 
@@ -810,7 +812,7 @@ function Process() {
           <div
             key={step.num}
             style={{
-              padding: '24px 20px',
+              padding: '24px var(--pad-x)',
               borderTop: i === 0 ? '1px solid var(--gray-mid)' : 'none',
               borderBottom: '1px solid var(--gray-mid)',
             }}
@@ -820,7 +822,7 @@ function Process() {
                 style={{
                   fontFamily: "'A2z', sans-serif",
                   fontWeight: 700,
-                  fontSize: '11px',
+                  fontSize: 'var(--font-badge-num)',
                   letterSpacing: '0.06em',
                   color: 'var(--yellow)',
                   background: 'var(--black)',
@@ -838,7 +840,7 @@ function Process() {
                     style={{
                       fontFamily: "'A2z', sans-serif",
                       fontWeight: 700,
-                      fontSize: '20px',
+                      fontSize: 'var(--font-how-title)',
                       letterSpacing: '0.04em',
                       color: 'var(--black)',
                     }}
@@ -861,7 +863,7 @@ function Process() {
                 <p
                   style={{
                     fontFamily: "'A2z', sans-serif",
-                    fontSize: '14px',
+                    fontSize: 'var(--font-body)',
                     lineHeight: 1.75,
                     color: '#444',
                     margin: 0,
@@ -927,8 +929,8 @@ function ProductDetails() {
   const current = products[active as keyof typeof products]
 
   return (
-    <section id="details" style={{ background: 'var(--white)', paddingTop: 64 }}>
-      <div style={{ textAlign: 'center', marginBottom: 32, padding: '0 20px' }}>
+    <section id="details" style={{ background: 'var(--white)', paddingTop: 'var(--section-py)' }}>
+      <div style={{ textAlign: 'center', marginBottom: 32, padding: '0 var(--pad-x)' }}>
         <SectionLabel>Product Detail</SectionLabel>
       </div>
 
@@ -938,7 +940,7 @@ function ProductDetails() {
           display: 'flex',
           borderTop: '1px solid var(--gray-mid)',
           borderBottom: '1px solid var(--gray-mid)',
-          padding: '0 16px',
+          padding: '0 var(--pad-x)',
           overflowX: 'auto',
         }}
       >
@@ -986,12 +988,12 @@ function ProductDetails() {
       </div>
 
       {/* Product info */}
-      <div style={{ padding: '28px 20px 64px' }}>
+      <div style={{ padding: '28px var(--pad-x) var(--section-py)' }}>
         <h3
           style={{
             fontFamily: "'A2z', sans-serif",
             fontWeight: 800,
-            fontSize: '28px',
+            fontSize: 'var(--font-title)',
             letterSpacing: '0.04em',
             color: 'var(--black)',
             marginBottom: 10,
@@ -1002,7 +1004,7 @@ function ProductDetails() {
         <p
           style={{
             fontFamily: "'A2z', sans-serif",
-            fontSize: '14px',
+            fontSize: 'var(--font-body)',
             lineHeight: 1.75,
             color: '#555',
             marginBottom: 24,
@@ -1060,8 +1062,8 @@ function Design() {
   ]
 
   return (
-    <section id="design" style={{ background: 'var(--white)', paddingTop: 64, paddingBottom: 64 }}>
-      <div style={{ textAlign: 'center', marginBottom: 0, padding: '0 20px 32px' }}>
+    <section id="design" style={{ background: 'var(--white)', paddingTop: 'var(--section-py)', paddingBottom: 'var(--section-py)' }}>
+      <div style={{ textAlign: 'center', marginBottom: 0, padding: '0 var(--pad-x) 32px' }}>
         <SectionLabel>Design Philosophy</SectionLabel>
       </div>
 
@@ -1091,7 +1093,7 @@ function Design() {
       </div>
 
       {/* Pillars list */}
-      <div style={{ padding: '0 20px' }}>
+      <div style={{ padding: '0 var(--pad-x)' }}>
         {pillars.map((p, i) => (
           <div
             key={p.label}
@@ -1147,14 +1149,14 @@ function Design() {
 /* ─── Film Section ─── */
 function Film() {
   return (
-    <section id="film" style={{ background: 'var(--gray-light)', paddingTop: 64, paddingBottom: 120 }}>
-      <div style={{ textAlign: 'center', marginBottom: 32, padding: '0 20px' }}>
+    <section id="film" style={{ background: 'var(--gray-light)', paddingTop: 'var(--section-py)', paddingBottom: 'calc(var(--section-py) + 40px)' }}>
+      <div style={{ textAlign: 'center', marginBottom: 32, padding: '0 var(--pad-x)' }}>
         <SectionLabel>Brand Film</SectionLabel>
       </div>
 
       <div
         style={{
-          margin: '0 20px',
+          margin: '0 var(--pad-x)',
           background: 'var(--black)',
           aspectRatio: '16/9',
           position: 'relative',
@@ -1202,7 +1204,7 @@ function Film() {
 /* ─── Footer ─── */
 function Footer() {
   return (
-    <footer style={{ background: 'var(--black)', color: 'var(--white)', padding: '28px 20px 24px' }}>
+    <footer style={{ background: 'var(--black)', color: 'var(--white)', padding: '28px var(--pad-x) 24px' }}>
       <div style={{ marginBottom: 20 }}>
         <p
           style={{
@@ -1280,7 +1282,7 @@ export default function App() {
   }, [menuOpen])
 
   return (
-    <div style={{ maxWidth: 480, margin: '0 auto', position: 'relative' }}>
+    <div style={{ maxWidth: 430, minWidth: 320, margin: '0 auto', position: 'relative' }}>
       <Nav onMenuOpen={() => setMenuOpen(true)} />
       <Menu open={menuOpen} onClose={() => setMenuOpen(false)} activeSection={activeSection} />
 
