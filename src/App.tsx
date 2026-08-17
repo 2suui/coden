@@ -140,7 +140,7 @@ function Nav({ onMenuOpen }: { onMenuOpen: () => void }) {
 
 /* ─── Slide-in Menu ─── */
 function Menu({ open, onClose, activeSection }: { open: boolean; onClose: () => void; activeSection: SectionId }) {
-  const items = ['HOME', 'PRODUCTS', 'ABOUT', 'PROCESS', 'DETAILS', 'DESIGN', 'FILM']
+  const items = ['HOME', 'PRODUCTS', 'ABOUT', 'HOW TO USE', 'DETAILS', 'DESIGN', 'FILM']
   const ids: SectionId[] = ['hero', 'products', 'about', 'process', 'details', 'design', 'film']
 
   return (
@@ -782,7 +782,7 @@ function Process() {
   return (
     <section id="process" style={{ background: 'var(--white)', padding: '64px 0' }}>
       <div style={{ textAlign: 'center', marginBottom: 48, padding: '0 20px' }}>
-        <SectionLabel>Process</SectionLabel>
+        <SectionLabel>How to Use</SectionLabel>
       </div>
 
       <div>
