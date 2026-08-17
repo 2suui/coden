@@ -60,7 +60,7 @@ function Logo() {
         fontFamily: "'A2z', sans-serif",
         fontWeight: 800,
         fontSize: '22px',
-        letterSpacing: '0.04em',
+        letterSpacing: '0',
         color: 'var(--black)',
         userSelect: 'none',
       }}
@@ -236,7 +236,7 @@ function Menu({ open, onClose, activeSection }: { open: boolean; onClose: () => 
                     fontFamily: "'A2z', sans-serif",
                     fontWeight: 700,
                     fontSize: '20px',
-                    letterSpacing: '0.08em',
+                    letterSpacing: '0',
                     color: isActive ? 'var(--white)' : 'rgba(255,255,255,0.55)',
                     transition: 'color 0.25s',
                   }}
@@ -272,7 +272,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
         fontFamily: "'A2z', sans-serif",
         fontWeight: 600,
         fontSize: '11px',
-        letterSpacing: '0.2em',
+        letterSpacing: '0',
         color: 'var(--gray-text)',
         textTransform: 'uppercase',
         marginBottom: 0,
@@ -341,7 +341,7 @@ function Hero() {
               fontFamily: "'A2z', sans-serif",
               fontWeight: 800,
               fontSize: '32px',
-              letterSpacing: '0.02em',
+              letterSpacing: '0',
               lineHeight: 1.35,
               color: 'var(--black)',
               marginBottom: 14,
@@ -471,7 +471,7 @@ function Products() {
                 fontFamily: "'A2z', sans-serif",
                 fontWeight: 700,
                 fontSize: '13px',
-                letterSpacing: '0.14em',
+                letterSpacing: '0',
                 padding: '5px 12px',
               }}
             >
@@ -512,7 +512,7 @@ function Products() {
                   fontFamily: "'A2z', sans-serif",
                   fontWeight: 700,
                   fontSize: '13px',
-                  letterSpacing: '0.12em',
+                  letterSpacing: '0',
                   color: 'var(--black)',
                   marginBottom: 2,
                 }}
@@ -556,7 +556,7 @@ function About() {
           fontFamily: "'A2z', sans-serif",
           fontWeight: 600,
           fontSize: '11px',
-          letterSpacing: '0.2em',
+          letterSpacing: '0',
           color: 'var(--gray-text)',
           textTransform: 'uppercase',
           marginBottom: 40,
@@ -570,7 +570,7 @@ function About() {
           fontFamily: "'A2z', sans-serif",
           fontWeight: 800,
           fontSize: '15px',
-          letterSpacing: '0.06em',
+          letterSpacing: '0',
           color: 'var(--blue)',
           marginBottom: 36,
         }}
@@ -585,7 +585,7 @@ function About() {
               fontFamily: "'A2z', sans-serif",
               fontWeight: 800,
               fontSize: '13px',
-              letterSpacing: '0.04em',
+              letterSpacing: '0',
               color: 'var(--black)',
               marginBottom: 4,
             }}
@@ -609,7 +609,7 @@ function About() {
               fontFamily: "'A2z', sans-serif",
               fontWeight: 800,
               fontSize: '13px',
-              letterSpacing: '0.04em',
+              letterSpacing: '0',
               color: 'var(--black)',
               marginBottom: 4,
             }}
@@ -651,7 +651,7 @@ function About() {
             fontFamily: "'A2z', sans-serif",
             fontWeight: 600,
             fontSize: '11px',
-            letterSpacing: '0.2em',
+            letterSpacing: '0',
             color: 'var(--gray-text)',
             textTransform: 'uppercase',
             marginBottom: 32,
@@ -676,7 +676,7 @@ function About() {
                   fontFamily: "'A2z', sans-serif",
                   fontWeight: 800,
                   fontSize: '14px',
-                  letterSpacing: '0.04em',
+                  letterSpacing: '0',
                   color: 'var(--black)',
                 }}
               >
@@ -800,7 +800,7 @@ function Process() {
                     fontFamily: "'A2z', sans-serif",
                     fontWeight: 700,
                     fontSize: '11px',
-                    letterSpacing: '0.12em',
+                    letterSpacing: '0',
                     color: 'var(--yellow)',
                     background: 'var(--black)',
                     padding: '2px 7px',
@@ -814,7 +814,7 @@ function Process() {
                     fontFamily: "'A2z', sans-serif",
                     fontWeight: 700,
                     fontSize: '20px',
-                    letterSpacing: '0.04em',
+                    letterSpacing: '0',
                     color: 'var(--black)',
                   }}
                 >
@@ -824,7 +824,7 @@ function Process() {
                   style={{
                     fontFamily: "'A2z', sans-serif",
                     fontSize: '11px',
-                    letterSpacing: '0.1em',
+                    letterSpacing: '0',
                     color: 'var(--gray-text)',
                     textTransform: 'uppercase',
                   }}
@@ -877,10 +877,16 @@ function ProductDetails() {
     },
     PACKAGE: {
       label: 'PACKAGE',
-      description: '노트북과 북마크가 함께 구성된 CODEN 패키지.',
+      description: (
+        <>
+          기록부터 연결까지, 노트북·펜·북마크로 구성된
+          <br />
+          CODEN의 완전한 기록 시스템.
+        </>
+      ),
       img: 'https://images.unsplash.com/photo-1587467512961-120760940315?w=700&h=900&fit=crop&auto=format',
       alt: 'CODEN complete product package',
-      specs: ['구성 — 노트북 + 북마크', '패키지 — 박스 포장', '크기 — 160×225mm', '소재 — 재생지'],
+      specs: ['구성 — 노트북 + 펜 + 북마크', '패키지 — 박스 포장', '크기 — 160×225mm', '소재 — 재생지'],
     },
     BOOKMARK: {
       label: 'BOOKMARK',
@@ -924,7 +930,7 @@ function ProductDetails() {
               fontFamily: "'A2z', sans-serif",
               fontWeight: 700,
               fontSize: '12px',
-              letterSpacing: '0.1em',
+              letterSpacing: '0',
               color: active === key ? 'var(--blue)' : 'var(--gray-text)',
               transition: 'color 0.2s, border-color 0.2s',
               whiteSpace: 'nowrap',
@@ -959,7 +965,7 @@ function ProductDetails() {
             fontFamily: "'A2z', sans-serif",
             fontWeight: 800,
             fontSize: '28px',
-            letterSpacing: '0.04em',
+            letterSpacing: '0',
             color: 'var(--black)',
             marginBottom: 10,
           }}
@@ -994,7 +1000,7 @@ function ProductDetails() {
                   fontFamily: "'A2z', sans-serif",
                   fontSize: '12px',
                   color: 'var(--black)',
-                  letterSpacing: '0.02em',
+                  letterSpacing: '0',
                 }}
               >
                 {spec.split('—')[0].trim()}
@@ -1087,7 +1093,7 @@ function Design() {
                   fontFamily: "'A2z', sans-serif",
                   fontWeight: 700,
                   fontSize: '15px',
-                  letterSpacing: '0.06em',
+                  letterSpacing: '0',
                   color: 'var(--black)',
                 }}
               >
@@ -1176,7 +1182,7 @@ function Footer() {
             fontFamily: "'A2z', sans-serif",
             fontWeight: 800,
             fontSize: '18px',
-            letterSpacing: '0.08em',
+            letterSpacing: '0',
             color: 'var(--white)',
             marginBottom: 6,
           }}
@@ -1189,7 +1195,7 @@ function Footer() {
             fontWeight: 300,
             fontSize: '13px',
             color: 'rgba(255,255,255,0.55)',
-            letterSpacing: '0.02em',
+            letterSpacing: '0',
           }}
         >
           Capture. Connect. Create.
@@ -1223,7 +1229,7 @@ function Footer() {
           style={{
             fontFamily: "'A2z', sans-serif",
             fontSize: '12px',
-            letterSpacing: '0.06em',
+            letterSpacing: '0',
             color: 'rgba(255,255,255,0.25)',
           }}
         >
