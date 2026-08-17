@@ -280,7 +280,8 @@ function Hero() {
       id="hero"
       style={{
         paddingTop: 'var(--nav-height)',
-        height: '100svh',
+        height: '100dvh',
+        minHeight: '100dvh',
         display: 'flex',
         flexDirection: 'column',
         background: 'var(--white)',
@@ -318,11 +319,11 @@ function Hero() {
       <div
         style={{
           flex: 1,
-          padding: '0 var(--pad-x) 16px',
+          padding: '0 var(--pad-x) 20px',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'flex-end',
-          gap: 18,
+          gap: 16,
         }}
       >
         <div>
@@ -542,9 +543,12 @@ function About() {
     <section
       id="about"
       style={{
-        background: 'linear-gradient(to bottom, #ffffff 0%, #f0f0ee 90px, #f0f0ee 100%)',
+        background: 'linear-gradient(to bottom, #ffffff 0%, #f0f0ee 32px, #f0f0ee 100%)',
         color: 'var(--black)',
-        padding: 'var(--section-py) var(--pad-x)',
+        paddingTop: 'calc(var(--section-py) + 16px)',
+        paddingBottom: 'var(--section-py)',
+        paddingLeft: 'var(--pad-x)',
+        paddingRight: 'var(--pad-x)',
         textAlign: 'center',
       }}
     >
