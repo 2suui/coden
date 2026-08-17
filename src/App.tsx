@@ -291,7 +291,7 @@ function Hero() {
       {/* Hero Image */}
       <div
         style={{
-          flex: '0 0 54svh',
+          flex: '0 0 46svh',
           width: '100%',
           background: 'var(--blue)',
           overflow: 'hidden',
@@ -319,10 +319,10 @@ function Hero() {
       <div
         style={{
           flex: 1,
-          padding: '0 var(--pad-x) clamp(28px, 8vw, 42px)',
+          padding: 'clamp(20px, 5vw, 32px) var(--pad-x) clamp(24px, 6vw, 36px)',
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'flex-end',
+          justifyContent: 'center',
         }}
       >
         <div>
@@ -330,10 +330,10 @@ function Hero() {
             style={{
               fontWeight: 800,
               fontSize: 'var(--font-hero)',
-              letterSpacing: '0.03em',
-              lineHeight: 1.25,
+              letterSpacing: '0.02em',
+              lineHeight: 1.15,
               color: 'var(--black)',
-              marginBottom: 18,
+              marginBottom: 16,
             }}
           >
             Capture.
