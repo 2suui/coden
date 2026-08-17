@@ -286,7 +286,7 @@ function Hero() {
       {/* Hero image */}
       <div
         style={{
-          flex: '0 0 48svh',
+          flex: '0 0 53svh',
           width: '100%',
           background: 'var(--blue)',
           overflow: 'hidden',
@@ -318,7 +318,7 @@ function Hero() {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'flex-end',
-          gap: 24,
+          gap: 16,
         }}
       >
         <div>
@@ -330,7 +330,7 @@ function Hero() {
               letterSpacing: '0.03em',
               lineHeight: 1.25,
               color: 'var(--black)',
-              marginBottom: 14,
+              marginBottom: 10,
             }}
           >
             Capture.
