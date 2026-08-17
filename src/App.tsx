@@ -60,7 +60,7 @@ function Logo() {
         fontFamily: "'A2z', sans-serif",
         fontWeight: 800,
         fontSize: '22px',
-        letterSpacing: '0',
+        letterSpacing: '0.04em',
         color: 'var(--black)',
         userSelect: 'none',
       }}
@@ -236,7 +236,7 @@ function Menu({ open, onClose, activeSection }: { open: boolean; onClose: () => 
                     fontFamily: "'A2z', sans-serif",
                     fontWeight: 700,
                     fontSize: '20px',
-                    letterSpacing: '0',
+                    letterSpacing: '0.06em',
                     color: isActive ? 'var(--white)' : 'rgba(255,255,255,0.55)',
                     transition: 'color 0.25s',
                   }}
@@ -272,7 +272,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
         fontFamily: "'A2z', sans-serif",
         fontWeight: 600,
         fontSize: '11px',
-        letterSpacing: '0',
+        letterSpacing: '0.14em',
         color: 'var(--gray-text)',
         textTransform: 'uppercase',
         marginBottom: 0,
@@ -341,7 +341,7 @@ function Hero() {
               fontFamily: "'A2z', sans-serif",
               fontWeight: 800,
               fontSize: '32px',
-              letterSpacing: '0',
+              letterSpacing: '0.03em',
               lineHeight: 1.35,
               color: 'var(--black)',
               marginBottom: 14,
@@ -471,7 +471,7 @@ function Products() {
                 fontFamily: "'A2z', sans-serif",
                 fontWeight: 700,
                 fontSize: '13px',
-                letterSpacing: '0',
+                letterSpacing: '0.08em',
                 padding: '5px 12px',
               }}
             >
@@ -512,7 +512,7 @@ function Products() {
                   fontFamily: "'A2z', sans-serif",
                   fontWeight: 700,
                   fontSize: '13px',
-                  letterSpacing: '0',
+                  letterSpacing: '0.05em',
                   color: 'var(--black)',
                   marginBottom: 2,
                 }}
@@ -556,7 +556,7 @@ function About() {
           fontFamily: "'A2z', sans-serif",
           fontWeight: 600,
           fontSize: '11px',
-          letterSpacing: '0',
+          letterSpacing: '0.14em',
           color: 'var(--gray-text)',
           textTransform: 'uppercase',
           marginBottom: 40,
@@ -570,7 +570,7 @@ function About() {
           fontFamily: "'A2z', sans-serif",
           fontWeight: 800,
           fontSize: '15px',
-          letterSpacing: '0',
+          letterSpacing: '0.06em',
           color: 'var(--blue)',
           marginBottom: 36,
         }}
@@ -585,7 +585,7 @@ function About() {
               fontFamily: "'A2z', sans-serif",
               fontWeight: 800,
               fontSize: '13px',
-              letterSpacing: '0',
+              letterSpacing: '0.05em',
               color: 'var(--black)',
               marginBottom: 4,
             }}
@@ -609,7 +609,7 @@ function About() {
               fontFamily: "'A2z', sans-serif",
               fontWeight: 800,
               fontSize: '13px',
-              letterSpacing: '0',
+              letterSpacing: '0.05em',
               color: 'var(--black)',
               marginBottom: 4,
             }}
@@ -651,7 +651,7 @@ function About() {
             fontFamily: "'A2z', sans-serif",
             fontWeight: 600,
             fontSize: '11px',
-            letterSpacing: '0',
+            letterSpacing: '0.14em',
             color: 'var(--gray-text)',
             textTransform: 'uppercase',
             marginBottom: 32,
@@ -676,7 +676,7 @@ function About() {
                   fontFamily: "'A2z', sans-serif",
                   fontWeight: 800,
                   fontSize: '14px',
-                  letterSpacing: '0',
+                  letterSpacing: '0.05em',
                   color: 'var(--black)',
                 }}
               >
@@ -800,7 +800,7 @@ function Process() {
                     fontFamily: "'A2z', sans-serif",
                     fontWeight: 700,
                     fontSize: '11px',
-                    letterSpacing: '0',
+                    letterSpacing: '0.06em',
                     color: 'var(--yellow)',
                     background: 'var(--black)',
                     padding: '2px 7px',
@@ -814,7 +814,7 @@ function Process() {
                     fontFamily: "'A2z', sans-serif",
                     fontWeight: 700,
                     fontSize: '20px',
-                    letterSpacing: '0',
+                    letterSpacing: '0.04em',
                     color: 'var(--black)',
                   }}
                 >
@@ -824,7 +824,7 @@ function Process() {
                   style={{
                     fontFamily: "'A2z', sans-serif",
                     fontSize: '11px',
-                    letterSpacing: '0',
+                    letterSpacing: '0.06em',
                     color: 'var(--gray-text)',
                     textTransform: 'uppercase',
                   }}
@@ -890,7 +890,13 @@ function ProductDetails() {
     },
     BOOKMARK: {
       label: 'BOOKMARK',
-      description: '자석 방식의 북마크. 페이지를 정확하게 표시합니다.',
+      description: (
+        <>
+          페이지를 정확하게 표시하고,
+          <br />
+          기록의 위치를 직관적으로 이어줍니다.
+        </>
+      ),
       img: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=700&h=900&fit=crop&auto=format',
       alt: 'CODEN magnetic bookmark in use',
       specs: ['방식 — 자석 클립', '소재 — 황동', '크기 — 20×80mm', '색상 — 블루 / 옐로우'],
@@ -930,7 +936,7 @@ function ProductDetails() {
               fontFamily: "'A2z', sans-serif",
               fontWeight: 700,
               fontSize: '12px',
-              letterSpacing: '0',
+              letterSpacing: '0.06em',
               color: active === key ? 'var(--blue)' : 'var(--gray-text)',
               transition: 'color 0.2s, border-color 0.2s',
               whiteSpace: 'nowrap',
@@ -965,7 +971,7 @@ function ProductDetails() {
             fontFamily: "'A2z', sans-serif",
             fontWeight: 800,
             fontSize: '28px',
-            letterSpacing: '0',
+            letterSpacing: '0.04em',
             color: 'var(--black)',
             marginBottom: 10,
           }}
@@ -1000,7 +1006,7 @@ function ProductDetails() {
                   fontFamily: "'A2z', sans-serif",
                   fontSize: '12px',
                   color: 'var(--black)',
-                  letterSpacing: '0',
+                  letterSpacing: '0.02em',
                 }}
               >
                 {spec.split('—')[0].trim()}
@@ -1093,7 +1099,7 @@ function Design() {
                   fontFamily: "'A2z', sans-serif",
                   fontWeight: 700,
                   fontSize: '15px',
-                  letterSpacing: '0',
+                  letterSpacing: '0.04em',
                   color: 'var(--black)',
                 }}
               >
@@ -1182,7 +1188,7 @@ function Footer() {
             fontFamily: "'A2z', sans-serif",
             fontWeight: 800,
             fontSize: '18px',
-            letterSpacing: '0',
+            letterSpacing: '0.06em',
             color: 'var(--white)',
             marginBottom: 6,
           }}
@@ -1195,7 +1201,7 @@ function Footer() {
             fontWeight: 300,
             fontSize: '13px',
             color: 'rgba(255,255,255,0.55)',
-            letterSpacing: '0',
+            letterSpacing: '0.02em',
           }}
         >
           Capture. Connect. Create.
@@ -1229,7 +1235,7 @@ function Footer() {
           style={{
             fontFamily: "'A2z', sans-serif",
             fontSize: '12px',
-            letterSpacing: '0',
+            letterSpacing: '0.04em',
             color: 'rgba(255,255,255,0.25)',
           }}
         >
