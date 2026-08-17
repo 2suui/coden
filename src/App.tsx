@@ -864,7 +864,13 @@ function ProductDetails() {
   const products = {
     NOTEBOOK: {
       label: 'NOTEBOOK',
-      description: 'CODEN 시스템의 핵심 제품입니다. 체계적인 기록을 위한 구조화된 노트.',
+      description: (
+        <>
+          흩어진 생각을 구조로 바꾸는 노트.
+          <br />
+          기록에서 연결과 확장으로 이어지는 CODEN의 핵심 도구입니다.
+        </>
+      ),
       img: 'https://images.unsplash.com/photo-1531346878377-a5be20888e57?w=700&h=900&fit=crop&auto=format',
       alt: 'CODEN notebook spread showing inner pages',
       specs: ['커버 — 하드커버', '내지 — 도트 그리드', '크기 — A5 (148×210mm)', '매수 — 192p'],
