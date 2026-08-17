@@ -173,10 +173,10 @@ function Menu({ open, onClose, activeSection }: { open: boolean; onClose: () => 
           transition: 'transform 0.38s cubic-bezier(0.4, 0, 0.2, 1)',
           display: 'flex',
           flexDirection: 'column',
-          padding: '0 28px 24px',
+          padding: '0 20px 24px',
         }}
       >
-        {/* Close — nav-height 행에 맞춰 햄버거와 동일 위치 */}
+        {/* Close — nav-height 행 및 20px 여백에 맞춰 햄버거와 동일 위치 */}
         <div
           style={{
             height: 'var(--nav-height)',
@@ -192,7 +192,7 @@ function Menu({ open, onClose, activeSection }: { open: boolean; onClose: () => 
               background: 'none',
               border: 'none',
               color: 'var(--white)',
-              fontSize: '20px',
+              fontSize: '22px',
               cursor: 'pointer',
               padding: '4px',
               lineHeight: 1,
@@ -270,8 +270,8 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
     <p
       style={{
         fontFamily: "'A2z', sans-serif",
-        fontWeight: 600,
-        fontSize: '11px',
+        fontWeight: 700,
+        fontSize: '12px',
         letterSpacing: '0.14em',
         color: 'var(--gray-text)',
         textTransform: 'uppercase',
@@ -554,8 +554,8 @@ function About() {
       <p
         style={{
           fontFamily: "'A2z', sans-serif",
-          fontWeight: 600,
-          fontSize: '11px',
+          fontWeight: 700,
+          fontSize: '12px',
           letterSpacing: '0.14em',
           color: 'var(--gray-text)',
           textTransform: 'uppercase',
@@ -649,8 +649,8 @@ function About() {
         <p
           style={{
             fontFamily: "'A2z', sans-serif",
-            fontWeight: 600,
-            fontSize: '11px',
+            fontWeight: 700,
+            fontSize: '12px',
             letterSpacing: '0.14em',
             color: 'var(--gray-text)',
             textTransform: 'uppercase',
