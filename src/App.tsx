@@ -763,7 +763,9 @@ function Process() {
         <>
           생각과 생각을 이어봅니다.
           <br />
-          서로 다른 기록 사이의 관계를 발견하고 새로운 맥락을 만듭니다.
+          서로 다른 기록 사이의 관계를 발견하고
+          <br />
+          새로운 맥락을 만듭니다.
         </>
       ),
     },
@@ -775,7 +777,9 @@ function Process() {
         <>
           기록을 다시 꺼내 바라봅니다.
           <br />
-          지나간 생각을 현재의 시선으로 다시 읽으며 새로운 의미를 발견합니다.
+          지나간 생각을 현재의 시선으로 다시 읽으며
+          <br />
+          새로운 의미를 발견합니다.
         </>
       ),
     },
@@ -787,7 +791,9 @@ function Process() {
         <>
           발견한 생각을 다음으로 확장합니다.
           <br />
-          하나의 기록은 새로운 아이디어가 되고, 또 다른 생각의 시작점으로 이어집니다.
+          하나의 기록은 새로운 아이디어가 되고,
+          <br />
+          또 다른 생각의 시작점으로 이어집니다.
         </>
       ),
     },
@@ -827,7 +833,7 @@ function Process() {
                 {step.num}
               </span>
               <div style={{ flex: 1 }}>
-                <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginBottom: 8 }}>
+                <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginBottom: 8 }}>
                   <span
                     style={{
                       fontFamily: "'A2z', sans-serif",
@@ -838,16 +844,6 @@ function Process() {
                     }}
                   >
                     {step.title}
-                  </span>
-                  <span
-                    style={{
-                      fontFamily: "'A2z', sans-serif",
-                      fontSize: '12px',
-                      color: 'var(--gray-text)',
-                      userSelect: 'none',
-                    }}
-                  >
-                    ·
                   </span>
                   <span
                     style={{
