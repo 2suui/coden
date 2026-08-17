@@ -291,7 +291,7 @@ function Hero() {
       {/* Hero Image */}
       <div
         style={{
-          flex: '0 0 46svh',
+          flex: '0 0 53svh',
           width: '100%',
           background: 'var(--blue)',
           overflow: 'hidden',
@@ -319,10 +319,11 @@ function Hero() {
       <div
         style={{
           flex: 1,
-          padding: 'clamp(16px, 4vw, 24px) var(--pad-x) clamp(28px, 7vw, 42px)',
+          padding: '0 var(--pad-x) clamp(16px, 4vw, 24px)',
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'space-between',
+          justifyContent: 'center',
+          gap: 14,
         }}
       >
         <h1
