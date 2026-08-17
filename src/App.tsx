@@ -542,7 +542,7 @@ function About() {
     <section
       id="about"
       style={{
-        background: '#f0f0ee',
+        background: 'linear-gradient(to bottom, #ffffff 0%, #f0f0ee 90px, #f0f0ee 100%)',
         color: 'var(--black)',
         padding: 'var(--section-py) var(--pad-x)',
         textAlign: 'center',
