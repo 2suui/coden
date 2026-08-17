@@ -47,7 +47,7 @@ function Logo() {
         userSelect: 'none',
       }}
     >
-      C<span style={{ fontWeight: 400 }}>oo</span>DEN
+      CODEN
     </span>
   )
 }
