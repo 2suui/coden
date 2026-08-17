@@ -1190,7 +1190,7 @@ function Footer() {
             fontWeight: 800,
             fontSize: '18px',
             letterSpacing: '0.06em',
-            color: 'var(--white)',
+            color: 'rgba(255,255,255,0.55)',
             marginBottom: 6,
           }}
         >
