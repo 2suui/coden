@@ -828,8 +828,8 @@ function Process() {
                   <span
                     style={{
                       fontFamily: "'A2z', sans-serif",
-                      fontWeight: 800,
-                      fontSize: '12.5px',
+                      fontWeight: 400,
+                      fontSize: '10.5px',
                       letterSpacing: '0.06em',
                       color: 'var(--gray-text)',
                       textTransform: 'uppercase',
