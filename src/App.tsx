@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 /* ─── Section IDs & Types ─── */
 const SECTIONS = ['hero', 'products', 'about', 'process', 'details', 'design', 'film'] as const
@@ -895,6 +895,7 @@ function Process() {
 /* ─── Product Details Section ─── */
 function ProductDetails() {
   const [active, setActive] = useState<string>('NOTEBOOK')
+  const touchStartRef = useRef<{ x: number; y: number } | null>(null)
 
   const products = {
     NOTEBOOK: {
@@ -938,7 +939,63 @@ function ProductDetails() {
     },
   }
 
+  const productKeys = Object.keys(products)
+  const currentIndex = productKeys.indexOf(active)
   const current = products[active as keyof typeof products]
+
+  const handleNext = () => {
+    if (currentIndex < productKeys.length - 1) {
+      setActive(productKeys[currentIndex + 1])
+    }
+  }
+
+  const handlePrev = () => {
+    if (currentIndex > 0) {
+      setActive(productKeys[currentIndex - 1])
+    }
+  }
+
+  /* ─── Touch & Mouse Swipe Handlers ─── */
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchStartRef.current = {
+      x: e.touches[0].clientX,
+      y: e.touches[0].clientY,
+    }
+  }
+
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (!touchStartRef.current) return
+    const dx = e.changedTouches[0].clientX - touchStartRef.current.x
+    const dy = e.changedTouches[0].clientY - touchStartRef.current.y
+    touchStartRef.current = null
+
+    if (Math.abs(dx) > 36 && Math.abs(dx) > Math.abs(dy) * 1.2) {
+      if (dx < 0) {
+        handleNext()
+      } else {
+        handlePrev()
+      }
+    }
+  }
+
+  const onMouseDown = (e: React.MouseEvent) => {
+    touchStartRef.current = { x: e.clientX, y: e.clientY }
+  }
+
+  const onMouseUp = (e: React.MouseEvent) => {
+    if (!touchStartRef.current) return
+    const dx = e.clientX - touchStartRef.current.x
+    const dy = e.clientY - touchStartRef.current.y
+    touchStartRef.current = null
+
+    if (Math.abs(dx) > 36 && Math.abs(dx) > Math.abs(dy) * 1.2) {
+      if (dx < 0) {
+        handleNext()
+      } else {
+        handlePrev()
+      }
+    }
+  }
 
   return (
     <section id="details" style={{ background: 'var(--white)', paddingTop: 'var(--section-py)' }}>
@@ -956,7 +1013,7 @@ function ProductDetails() {
           overflowX: 'auto',
         }}
       >
-        {Object.keys(products).map((key) => (
+        {productKeys.map((key) => (
           <button
             key={key}
             onClick={() => setActive(key)}
@@ -981,77 +1038,91 @@ function ProductDetails() {
         ))}
       </div>
 
-      {/* Product Image */}
+      {/* Swipeable Product Content Area */}
       <div
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+        onMouseDown={onMouseDown}
+        onMouseUp={onMouseUp}
         style={{
-          width: '100%',
-          aspectRatio: '4/3',
-          background: 'var(--gray-light)',
-          overflow: 'hidden',
+          touchAction: 'pan-y',
+          cursor: 'grab',
+          userSelect: 'none',
         }}
       >
-        <img
-          src={current.img}
-          alt={current.alt}
-          key={current.img}
-          style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-        />
-      </div>
+        {/* Product Image */}
+        <div
+          style={{
+            width: '100%',
+            aspectRatio: '4/3',
+            background: 'var(--gray-light)',
+            overflow: 'hidden',
+          }}
+        >
+          <img
+            src={current.img}
+            alt={current.alt}
+            key={current.img}
+            draggable={false}
+            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+          />
+        </div>
 
-      {/* Product Info */}
-      <div style={{ padding: '28px var(--pad-x) var(--section-py)' }}>
-        <h3
-          style={{
-            fontWeight: 800,
-            fontSize: 'var(--font-title)',
-            letterSpacing: '0.04em',
-            color: 'var(--black)',
-            marginBottom: 10,
-          }}
-        >
-          {current.label}
-        </h3>
-        <p
-          style={{
-            fontSize: 'var(--font-body)',
-            lineHeight: 1.75,
-            color: '#555',
-            marginBottom: 24,
-          }}
-        >
-          {current.description}
-        </p>
-        <div style={{ borderTop: '1px solid var(--gray-mid)', paddingTop: 20 }}>
-          {current.specs.map((spec, i) => (
-            <div
-              key={i}
-              style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                padding: '10px 0',
-                borderBottom: i < current.specs.length - 1 ? '1px solid var(--gray-mid)' : 'none',
-              }}
-            >
-              <span
+        {/* Product Info */}
+        <div style={{ padding: '28px var(--pad-x) var(--section-py)' }}>
+          <h3
+            style={{
+              fontWeight: 800,
+              fontSize: 'var(--font-title)',
+              letterSpacing: '0.04em',
+              color: 'var(--black)',
+              marginBottom: 10,
+            }}
+          >
+            {current.label}
+          </h3>
+          <p
+            style={{
+              fontSize: 'var(--font-body)',
+              lineHeight: 1.75,
+              color: '#555',
+              marginBottom: 24,
+            }}
+          >
+            {current.description}
+          </p>
+          <div style={{ borderTop: '1px solid var(--gray-mid)', paddingTop: 20 }}>
+            {current.specs.map((spec, i) => (
+              <div
+                key={i}
                 style={{
-                  fontSize: '13px',
-                  color: 'var(--black)',
-                  letterSpacing: '0.02em',
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  padding: '10px 0',
+                  borderBottom: i < current.specs.length - 1 ? '1px solid var(--gray-mid)' : 'none',
                 }}
               >
-                {spec.split('—')[0].trim()}
-              </span>
-              <span
-                style={{
-                  fontSize: '13px',
-                  color: 'var(--gray-text)',
-                }}
-              >
-                {spec.split('—')[1]?.trim()}
-              </span>
-            </div>
-          ))}
+                <span
+                  style={{
+                    fontSize: '13px',
+                    color: 'var(--black)',
+                    letterSpacing: '0.02em',
+                  }}
+                >
+                  {spec.split('—')[0].trim()}
+                </span>
+                <span
+                  style={{
+                    fontSize: '13px',
+                    color: 'var(--gray-text)',
+                  }}
+                >
+                  {spec.split('—')[1]?.trim()}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
