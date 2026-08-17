@@ -534,7 +534,7 @@ function About() {
           marginBottom: 36,
         }}
       >
-        <span style={{ color: 'var(--yellow)' }}>CO</span>DEN = CODE + NOTE
+        CODEN = CODE + NOTE
       </p>
 
       <div style={{ marginBottom: 40 }}>
