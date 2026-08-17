@@ -190,7 +190,7 @@ function Menu({ open, onClose, activeSection }: { open: boolean; onClose: () => 
         </div>
 
         {/* Nav items */}
-        <nav style={{ marginTop: 16 }}>
+        <nav style={{ marginTop: 2 }}>
           {items.map((item, i) => {
             const isActive = activeSection === ids[i]
             return (
@@ -211,7 +211,7 @@ function Menu({ open, onClose, activeSection }: { open: boolean; onClose: () => 
                   width: '100%',
                   background: 'none',
                   border: 'none',
-                  padding: '14px 0',
+                  padding: '12px 0',
                   borderBottom: i < items.length - 1 ? '1px solid rgba(255,255,255,0.08)' : 'none',
                   cursor: 'pointer',
                   textAlign: 'left',
