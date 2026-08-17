@@ -543,7 +543,7 @@ function About() {
     <section
       id="about"
       style={{
-        background: 'linear-gradient(to bottom, #ffffff 0%, #f0f0ee 32px, #f0f0ee 100%)',
+        background: '#f0f0ee',
         color: 'var(--black)',
         paddingTop: 'calc(var(--section-py) + 16px)',
         paddingBottom: 'var(--section-py)',
