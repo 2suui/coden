@@ -564,7 +564,7 @@ function About() {
       <p
         style={{
           fontWeight: 800,
-          fontSize: 'var(--font-subtitle)',
+          fontSize: 'clamp(17px, 4.8vw, 20px)',
           letterSpacing: '0.06em',
           color: 'var(--blue)',
           marginBottom: 36,
@@ -578,7 +578,7 @@ function About() {
           <p
             style={{
               fontWeight: 800,
-              fontSize: '14px',
+              fontSize: '16px',
               letterSpacing: '0.05em',
               color: 'var(--black)',
               marginBottom: 4,
@@ -588,7 +588,7 @@ function About() {
           </p>
           <p
             style={{
-              fontSize: '14px',
+              fontSize: '14.5px',
               color: 'var(--gray-text)',
               lineHeight: 1.7,
             }}
@@ -601,7 +601,7 @@ function About() {
           <p
             style={{
               fontWeight: 800,
-              fontSize: '14px',
+              fontSize: '16px',
               letterSpacing: '0.05em',
               color: 'var(--black)',
               marginBottom: 4,
@@ -611,7 +611,7 @@ function About() {
           </p>
           <p
             style={{
-              fontSize: '14px',
+              fontSize: '14.5px',
               color: 'var(--gray-text)',
               lineHeight: 1.7,
             }}
@@ -622,8 +622,9 @@ function About() {
 
         <p
           style={{
+            fontWeight: 700,
             fontSize: 'var(--font-body)',
-            color: 'var(--gray-text)',
+            color: 'var(--black)',
             lineHeight: 1.75,
           }}
         >
