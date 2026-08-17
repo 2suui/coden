@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 
 /* ─── Section IDs & Types ─── */
-const SECTIONS = ['hero', 'products', 'about', 'process', 'details', 'design', 'film'] as const
+const SECTIONS = ['hero', 'about', 'products', 'process', 'details', 'design', 'film'] as const
 type SectionId = (typeof SECTIONS)[number]
 
 function scrollTo(id: string) {
@@ -133,8 +133,8 @@ function Menu({
   onClose: () => void
   activeSection: SectionId
 }) {
-  const items = ['HOME', 'PRODUCTS', 'ABOUT', 'HOW TO USE', 'DETAILS', 'DESIGN', 'FILM']
-  const ids: SectionId[] = ['hero', 'products', 'about', 'process', 'details', 'design', 'film']
+  const items = ['HOME', 'ABOUT', 'PRODUCTS', 'HOW TO USE', 'DETAILS', 'DESIGN', 'FILM']
+  const ids: SectionId[] = ['hero', 'about', 'products', 'process', 'details', 'design', 'film']
 
   return (
     <>
@@ -358,7 +358,7 @@ function Hero() {
 
         {/* Scroll down trigger */}
         <button
-          onClick={() => scrollTo('products')}
+          onClick={() => scrollTo('about')}
           style={{
             alignSelf: 'center',
             width: 52,
@@ -1370,8 +1370,8 @@ export default function App() {
 
       <main>
         <Hero />
-        <Products />
         <About />
+        <Products />
         <Process />
         <ProductDetails />
         <Design />
