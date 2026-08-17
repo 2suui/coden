@@ -904,7 +904,7 @@ function ProductDetails() {
         <>
           기록부터 연결까지, 노트북·펜·북마크로 구성된
           <br />
-          CODEN의 완전한 기록 시스템.
+          CODEN의 완전한 기록 시스템입니다.
         </>
       ),
       img: 'https://images.unsplash.com/photo-1587467512961-120760940315?w=700&h=900&fit=crop&auto=format',
