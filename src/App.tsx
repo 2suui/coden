@@ -918,18 +918,6 @@ function ProductDetails() {
   const currentIndex = productKeys.indexOf(active)
   const current = products[active as keyof typeof products]
 
-  /* ─── Auto Slider (4 seconds) ─── */
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActive((prev) => {
-        const idx = productKeys.indexOf(prev)
-        return productKeys[(idx + 1) % productKeys.length]
-      })
-    }, 4000)
-
-    return () => clearInterval(timer)
-  }, [])
-
   const handleNext = () => {
     const nextIdx = (currentIndex + 1) % productKeys.length
     setActive(productKeys[nextIdx])
