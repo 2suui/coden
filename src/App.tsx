@@ -383,57 +383,6 @@ function Products() {
     },
   ]
 
-  const [activeIdx, setActiveIdx] = useState(0)
-  const touchStartRef = useRef<{ x: number; y: number } | null>(null)
-
-  /* ─── Auto Slider (4 seconds) ─── */
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveIdx((prev) => (prev + 1) % items.length)
-    }, 4000)
-    return () => clearInterval(timer)
-  }, [items.length])
-
-  const handleNext = () => {
-    setActiveIdx((prev) => (prev + 1) % items.length)
-  }
-
-  const handlePrev = () => {
-    setActiveIdx((prev) => (prev - 1 + items.length) % items.length)
-  }
-
-  const onTouchStart = (e: React.TouchEvent) => {
-    touchStartRef.current = { x: e.touches[0].clientX, y: e.touches[0].clientY }
-  }
-
-  const onTouchEnd = (e: React.TouchEvent) => {
-    if (!touchStartRef.current) return
-    const dx = e.changedTouches[0].clientX - touchStartRef.current.x
-    const dy = e.changedTouches[0].clientY - touchStartRef.current.y
-    touchStartRef.current = null
-    if (Math.abs(dx) > 36 && Math.abs(dx) > Math.abs(dy) * 1.2) {
-      if (dx < 0) handleNext()
-      else handlePrev()
-    }
-  }
-
-  const onMouseDown = (e: React.MouseEvent) => {
-    touchStartRef.current = { x: e.clientX, y: e.clientY }
-  }
-
-  const onMouseUp = (e: React.MouseEvent) => {
-    if (!touchStartRef.current) return
-    const dx = e.clientX - touchStartRef.current.x
-    const dy = e.clientY - touchStartRef.current.y
-    touchStartRef.current = null
-    if (Math.abs(dx) > 36 && Math.abs(dx) > Math.abs(dy) * 1.2) {
-      if (dx < 0) handleNext()
-      else handlePrev()
-    }
-  }
-
-  const currentItem = items[activeIdx]
-
   return (
     <section
       id="products"
@@ -443,55 +392,12 @@ function Products() {
         background: 'var(--white)',
       }}
     >
-      <div style={{ padding: '0 var(--pad-x)', marginBottom: 20, textAlign: 'center' }}>
+      <div style={{ padding: '0 var(--pad-x)', marginBottom: 32, textAlign: 'center' }}>
         <SectionLabel>Product</SectionLabel>
       </div>
 
-      {/* Product Selector Pills */}
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          gap: 8,
-          padding: '0 var(--pad-x)',
-          marginBottom: 20,
-        }}
-      >
-        {items.map((item, i) => (
-          <button
-            key={item.name}
-            onClick={() => setActiveIdx(i)}
-            style={{
-              padding: '6px 14px',
-              borderRadius: 20,
-              border: activeIdx === i ? '1.5px solid var(--blue)' : '1.5px solid var(--gray-mid)',
-              background: activeIdx === i ? 'var(--blue)' : 'var(--white)',
-              color: activeIdx === i ? 'var(--white)' : 'var(--gray-text)',
-              fontSize: '11.5px',
-              fontWeight: 700,
-              letterSpacing: '0.04em',
-              cursor: 'pointer',
-              transition: 'all 0.25s ease',
-            }}
-          >
-            {item.name}
-          </button>
-        ))}
-      </div>
-
-      {/* Main Slide Area */}
-      <div
-        onTouchStart={onTouchStart}
-        onTouchEnd={onTouchEnd}
-        onMouseDown={onMouseDown}
-        onMouseUp={onMouseUp}
-        style={{
-          width: '100%',
-          cursor: 'grab',
-          userSelect: 'none',
-          touchAction: 'pan-y',
-        }}
-      >
+      {/* Full-bleed hero product */}
+      <div style={{ marginBottom: 2 }}>
         <div
           style={{
             width: '100%',
@@ -502,16 +408,9 @@ function Products() {
           }}
         >
           <img
-            src={currentItem.img}
-            alt={currentItem.alt}
-            key={currentItem.img}
-            draggable={false}
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              display: 'block',
-            }}
+            src={items[0].img}
+            alt={items[0].alt}
+            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
           />
           <div
             style={{
@@ -531,24 +430,61 @@ function Products() {
                 padding: '5px 12px',
               }}
             >
-              {currentItem.name}
+              NOTEBOOK
             </span>
           </div>
         </div>
+      </div>
 
-        {/* Product Caption */}
-        <div style={{ padding: '16px var(--pad-x) 0', textAlign: 'center' }}>
-          <p
+      {/* 2-col product grid */}
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: 2,
+          margin: '2px 0 0',
+        }}
+      >
+        {items.slice(1).map((item) => (
+          <div
+            key={item.name}
             style={{
-              fontSize: '13.5px',
-              color: 'var(--gray-text)',
-              fontWeight: 500,
-              letterSpacing: '0.02em',
+              background: 'var(--gray-light)',
+              overflow: 'hidden',
+              position: 'relative',
             }}
           >
-            {currentItem.sub}
-          </p>
-        </div>
+            <div style={{ aspectRatio: '1/1', overflow: 'hidden' }}>
+              <img
+                src={item.img}
+                alt={item.alt}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+              />
+            </div>
+            <div style={{ padding: '12px 14px' }}>
+              <p
+                style={{
+                  fontWeight: 700,
+                  fontSize: '14px',
+                  letterSpacing: '0.05em',
+                  color: 'var(--black)',
+                  marginBottom: 2,
+                }}
+              >
+                {item.name}
+              </p>
+              <p
+                style={{
+                  fontSize: '12px',
+                  color: 'var(--gray-text)',
+                  lineHeight: 1.4,
+                }}
+              >
+                {item.sub}
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   )
