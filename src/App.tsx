@@ -288,7 +288,7 @@ function Hero() {
         style={{
           width: '100%',
           aspectRatio: '3/4',
-          maxHeight: '75vh',
+          maxHeight: '82vh',
           background: 'var(--gray-light)',
           overflow: 'hidden',
         }}
@@ -303,10 +303,10 @@ function Hero() {
       {/* Hero Copy */}
       <div
         style={{
-          padding: 'clamp(36px, 9vw, 52px) var(--pad-x) clamp(44px, 11vw, 68px)',
+          padding: 'clamp(48px, 12vw, 76px) var(--pad-x) clamp(64px, 15vw, 96px)',
           display: 'flex',
           flexDirection: 'column',
-          gap: 26,
+          gap: 36,
         }}
       >
         <h1
@@ -314,7 +314,7 @@ function Hero() {
             fontWeight: 800,
             fontSize: 'var(--font-hero)',
             letterSpacing: '0.02em',
-            lineHeight: 1.3,
+            lineHeight: 1.4,
             color: 'var(--black)',
             margin: 0,
           }}
@@ -329,7 +329,7 @@ function Hero() {
           style={{
             fontWeight: 500,
             fontSize: 'var(--font-body)',
-            lineHeight: 1.75,
+            lineHeight: 1.85,
             color: 'var(--black)',
             margin: 0,
           }}
@@ -354,7 +354,7 @@ function Products() {
         background: '#f0f0ee',
       }}
     >
-      <div style={{ padding: '0 var(--pad-x)', marginBottom: 24, textAlign: 'center' }}>
+      <div style={{ padding: '0 var(--pad-x)', marginBottom: 32, textAlign: 'center' }}>
         <SectionLabel>Product</SectionLabel>
       </div>
 
@@ -363,7 +363,8 @@ function Products() {
         <div
           style={{
             width: '100%',
-            aspectRatio: '4/3',
+            aspectRatio: '3/4',
+            maxHeight: '82vh',
             background: 'var(--gray-mid)',
             overflow: 'hidden',
             position: 'relative',
@@ -389,7 +390,7 @@ function Products() {
                 fontWeight: 700,
                 fontSize: '12.5px',
                 letterSpacing: '0.08em',
-                padding: '5px 12px',
+                padding: '6px 14px',
               }}
             >
               CODEN SYSTEM
@@ -397,13 +398,14 @@ function Products() {
           </div>
         </div>
 
-        <div style={{ padding: '16px var(--pad-x) 0', textAlign: 'center' }}>
+        <div style={{ padding: '20px var(--pad-x) 0', textAlign: 'center' }}>
           <p
             style={{
-              fontSize: '13.5px',
+              fontSize: 'var(--font-body)',
               color: 'var(--gray-text)',
               fontWeight: 500,
               letterSpacing: '0.02em',
+              lineHeight: 1.6,
             }}
           >
             노트북과 북마크로 완성되는 CODEN 기록 시스템
@@ -443,7 +445,7 @@ function About() {
           letterSpacing: '0.14em',
           color: 'var(--gray-text)',
           textTransform: 'uppercase',
-          marginBottom: 40,
+          marginBottom: 48,
         }}
       >
         About CODEN
@@ -452,10 +454,10 @@ function About() {
       <p
         style={{
           fontWeight: 800,
-          fontSize: 'clamp(17px, 4.8vw, 20px)',
+          fontSize: 'clamp(18px, 5vw, 22px)',
           letterSpacing: '0.01em',
           color: 'var(--blue)',
-          marginBottom: 36,
+          marginBottom: 52,
         }}
       >
         <span
@@ -473,47 +475,47 @@ function About() {
         = CODE + NOTE
       </p>
 
-      <div style={{ marginBottom: 40 }}>
-        <div style={{ marginBottom: 36 }}>
+      <div style={{ marginBottom: 48 }}>
+        <div style={{ marginBottom: 44 }}>
           <p
             style={{
               fontWeight: 800,
-              fontSize: '16px',
+              fontSize: '16.5px',
               letterSpacing: '0.05em',
               color: 'var(--black)',
-              marginBottom: 4,
+              marginBottom: 8,
             }}
           >
             CODE
           </p>
           <p
             style={{
-              fontSize: '14.5px',
+              fontSize: 'var(--font-body)',
               color: 'var(--gray-text)',
-              lineHeight: 1.7,
+              lineHeight: 1.8,
             }}
           >
             생각과 기록을 일정한 방식으로 구조화하는 방법
           </p>
         </div>
 
-        <div style={{ marginBottom: 28 }}>
+        <div style={{ marginBottom: 36 }}>
           <p
             style={{
               fontWeight: 800,
-              fontSize: '16px',
+              fontSize: '16.5px',
               letterSpacing: '0.05em',
               color: 'var(--black)',
-              marginBottom: 4,
+              marginBottom: 8,
             }}
           >
             NOTE
           </p>
           <p
             style={{
-              fontSize: '14.5px',
+              fontSize: 'var(--font-body)',
               color: 'var(--gray-text)',
-              lineHeight: 1.7,
+              lineHeight: 1.8,
             }}
           >
             생각과 정보를 기록하는 행위
@@ -525,7 +527,7 @@ function About() {
             fontWeight: 700,
             fontSize: 'var(--font-body)',
             color: 'var(--black)',
-            lineHeight: 1.75,
+            lineHeight: 1.85,
           }}
         >
           CODEN은 기록을 구조화하는 CODE와 생각을 남기는 NOTE를 결합한 아날로그 메모 시스템입니다.
@@ -537,7 +539,7 @@ function About() {
           width: 32,
           height: 2,
           background: 'var(--blue)',
-          margin: '0 auto 36px',
+          margin: '0 auto 48px',
         }}
       />
 
@@ -549,7 +551,7 @@ function About() {
             letterSpacing: '0.14em',
             color: 'var(--gray-text)',
             textTransform: 'uppercase',
-            marginBottom: 32,
+            marginBottom: 44,
           }}
         >
           Process
@@ -562,14 +564,14 @@ function About() {
                 flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'center',
-                gap: 6,
-                paddingBottom: 18,
+                gap: 8,
+                paddingBottom: 24,
               }}
             >
               <p
                 style={{
                   fontWeight: 800,
-                  fontSize: '15px',
+                  fontSize: '15.5px',
                   letterSpacing: '0.05em',
                   color: 'var(--black)',
                 }}
@@ -580,21 +582,21 @@ function About() {
                 style={{
                   fontSize: 'var(--font-body)',
                   color: 'var(--gray-text)',
-                  lineHeight: 1.5,
+                  lineHeight: 1.6,
                 }}
               >
                 {step.ko}
               </p>
             </div>
             {i < processSteps.length - 1 && (
-              <div style={{ marginBottom: 6 }}>
+              <div style={{ marginBottom: 8 }}>
                 <span
                   style={{
                     color: 'var(--blue)',
                     fontSize: '18px',
                     lineHeight: 1,
                     display: 'block',
-                    marginBottom: 18,
+                    marginBottom: 24,
                   }}
                 >
                   ↓
@@ -607,8 +609,8 @@ function About() {
 
       <div
         style={{
-          marginTop: 36,
-          paddingTop: 36,
+          marginTop: 48,
+          paddingTop: 48,
           borderTop: '1px solid rgba(0,0,0,0.08)',
         }}
       >
@@ -617,8 +619,8 @@ function About() {
             fontWeight: 700,
             fontSize: 'var(--font-body)',
             color: 'var(--black)',
-            lineHeight: 1.85,
-            marginBottom: 16,
+            lineHeight: 1.95,
+            marginBottom: 20,
           }}
         >
           또한 Collect와 Connect의 공통된 시작인 CO에는 생각과 정보를 모으고, 서로 연결해 새로운 의미를 발견한다는 CODEN의 핵심 과정이 담겨 있습니다.
@@ -628,7 +630,7 @@ function About() {
             fontWeight: 700,
             fontSize: 'var(--font-body)',
             color: 'var(--black)',
-            lineHeight: 1.85,
+            lineHeight: 1.95,
           }}
         >
           기록을 단순히 저장하는 데 그치지 않고, 수집하고 연결하며 핵심을 추려 자신의 생각으로 다시 정리하고 확장하는 과정을 제안합니다.
