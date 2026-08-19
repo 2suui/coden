@@ -280,22 +280,17 @@ function Hero() {
       id="hero"
       style={{
         paddingTop: 'var(--nav-height)',
-        height: '100dvh',
-        minHeight: '100dvh',
-        display: 'flex',
-        flexDirection: 'column',
         background: 'var(--white)',
-        overflow: 'hidden',
       }}
     >
       {/* Hero Image */}
       <div
         style={{
-          flex: '0 0 53svh',
           width: '100%',
-          background: 'var(--blue)',
+          aspectRatio: '3/4',
+          maxHeight: '75vh',
+          background: 'var(--gray-light)',
           overflow: 'hidden',
-          position: 'relative',
         }}
       >
         <img
@@ -303,26 +298,14 @@ function Hero() {
           alt="CODEN notebook system flat lay"
           style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
         />
-        <div
-          style={{
-            position: 'absolute',
-            bottom: 0,
-            left: 0,
-            right: 0,
-            height: 4,
-            background: 'var(--blue)',
-          }}
-        />
       </div>
 
       {/* Hero Copy */}
       <div
         style={{
-          flex: 1,
-          padding: '0 var(--pad-x) clamp(16px, 4vw, 24px)',
+          padding: 'clamp(36px, 9vw, 52px) var(--pad-x) clamp(44px, 11vw, 68px)',
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'center',
           gap: 26,
         }}
       >
@@ -331,7 +314,7 @@ function Hero() {
             fontWeight: 800,
             fontSize: 'var(--font-hero)',
             letterSpacing: '0.02em',
-            lineHeight: 1.35,
+            lineHeight: 1.3,
             color: 'var(--black)',
             margin: 0,
           }}
@@ -505,7 +488,7 @@ function About() {
       style={{
         background: '#f0f0ee',
         color: 'var(--black)',
-        paddingTop: 'calc(var(--section-py) + 48px)',
+        paddingTop: 'var(--section-py)',
         paddingBottom: 'var(--section-py)',
         paddingLeft: 'var(--pad-x)',
         paddingRight: 'var(--pad-x)',
