@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 
 /* ─── Section IDs & Types ─── */
-const SECTIONS = ['hero', 'about', 'products', 'process', 'details', 'design', 'film'] as const
+const SECTIONS = ['hero', 'about', 'products', 'process', 'details', 'design'] as const
 type SectionId = (typeof SECTIONS)[number]
 
 function scrollTo(id: string) {
@@ -133,8 +133,8 @@ function Menu({
   onClose: () => void
   activeSection: SectionId
 }) {
-  const items = ['HOME', 'ABOUT', 'PRODUCTS', 'HOW TO USE', 'DETAILS', 'DESIGN', 'FILM']
-  const ids: SectionId[] = ['hero', 'about', 'products', 'process', 'details', 'design', 'film']
+  const items = ['HOME', 'ABOUT', 'PRODUCTS', 'HOW TO USE', 'DETAILS', 'DESIGN']
+  const ids: SectionId[] = ['hero', 'about', 'products', 'process', 'details', 'design']
 
   return (
     <>
@@ -343,56 +343,35 @@ function Hero() {
   )
 }
 
-/* ─── Products Grid Section ─── */
+/* ─── Products Section ─── */
 function Products() {
-  const items = [
-    {
-      name: 'NOTEBOOK',
-      sub: 'CODEN 시스템의 핵심 노트',
-      img: 'https://images.unsplash.com/photo-1531346878377-a5be20888e57?w=700&h=500&fit=crop&auto=format',
-      alt: 'CODEN notebook open spread',
-    },
-    {
-      name: 'PACKAGE',
-      sub: '전체 시스템 패키지',
-      img: 'https://images.unsplash.com/photo-1587467512961-120760940315?w=700&h=500&fit=crop&auto=format',
-      alt: 'CODEN product package',
-    },
-    {
-      name: 'BOOKMARK',
-      sub: '페이지를 표시하는 북마크',
-      img: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=700&h=500&fit=crop&auto=format',
-      alt: 'CODEN bookmark detail',
-    },
-  ]
-
   return (
     <section
       id="products"
       style={{
         paddingTop: 'var(--section-py)',
         paddingBottom: 'var(--section-py)',
-        background: 'var(--white)',
+        background: '#f0f0ee',
       }}
     >
-      <div style={{ padding: '0 var(--pad-x)', marginBottom: 32, textAlign: 'center' }}>
+      <div style={{ padding: '0 var(--pad-x)', marginBottom: 24, textAlign: 'center' }}>
         <SectionLabel>Product</SectionLabel>
       </div>
 
-      {/* Full-bleed hero product */}
-      <div style={{ marginBottom: 2 }}>
+      {/* Single Integrated Product Photo */}
+      <div style={{ width: '100%' }}>
         <div
           style={{
             width: '100%',
             aspectRatio: '4/3',
-            background: 'var(--gray-light)',
+            background: 'var(--gray-mid)',
             overflow: 'hidden',
             position: 'relative',
           }}
         >
           <img
-            src={items[0].img}
-            alt={items[0].alt}
+            src="https://images.unsplash.com/photo-1587467512961-120760940315?w=900&h=675&fit=crop&auto=format"
+            alt="CODEN Notebook & Bookmark System"
             style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
           />
           <div
@@ -408,66 +387,28 @@ function Products() {
                 background: 'var(--blue)',
                 color: 'var(--white)',
                 fontWeight: 700,
-                fontSize: '13px',
+                fontSize: '12.5px',
                 letterSpacing: '0.08em',
                 padding: '5px 12px',
               }}
             >
-              NOTEBOOK
+              CODEN SYSTEM
             </span>
           </div>
         </div>
-      </div>
 
-      {/* 2-col product grid */}
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: 2,
-          margin: '2px 0 0',
-        }}
-      >
-        {items.slice(1).map((item) => (
-          <div
-            key={item.name}
+        <div style={{ padding: '16px var(--pad-x) 0', textAlign: 'center' }}>
+          <p
             style={{
-              background: 'var(--gray-light)',
-              overflow: 'hidden',
-              position: 'relative',
+              fontSize: '13.5px',
+              color: 'var(--gray-text)',
+              fontWeight: 500,
+              letterSpacing: '0.02em',
             }}
           >
-            <div style={{ aspectRatio: '1/1', overflow: 'hidden' }}>
-              <img
-                src={item.img}
-                alt={item.alt}
-                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-              />
-            </div>
-            <div style={{ padding: '12px 14px' }}>
-              <p
-                style={{
-                  fontWeight: 700,
-                  fontSize: '14px',
-                  letterSpacing: '0.05em',
-                  color: 'var(--black)',
-                  marginBottom: 2,
-                }}
-              >
-                {item.name}
-              </p>
-              <p
-                style={{
-                  fontSize: '12px',
-                  color: 'var(--gray-text)',
-                  lineHeight: 1.4,
-                }}
-              >
-                {item.sub}
-              </p>
-            </div>
-          </div>
-        ))}
+            노트북과 북마크로 완성되는 CODEN 기록 시스템
+          </p>
+        </div>
       </div>
     </section>
   )
@@ -486,7 +427,7 @@ function About() {
     <section
       id="about"
       style={{
-        background: '#f0f0ee',
+        background: 'var(--white)',
         color: 'var(--black)',
         paddingTop: 'var(--section-py)',
         paddingBottom: 'var(--section-py)',
@@ -1185,66 +1126,6 @@ function Design() {
   )
 }
 
-/* ─── Brand Film Section ─── */
-function Film() {
-  return (
-    <section
-      id="film"
-      style={{
-        background: 'var(--gray-light)',
-        paddingTop: 'var(--section-py)',
-        paddingBottom: 'calc(var(--section-py) + 40px)',
-      }}
-    >
-      <div style={{ textAlign: 'center', marginBottom: 32, padding: '0 var(--pad-x)' }}>
-        <SectionLabel>Brand Film</SectionLabel>
-      </div>
-
-      <div
-        style={{
-          margin: '0 var(--pad-x)',
-          background: 'var(--black)',
-          aspectRatio: '16/9',
-          position: 'relative',
-          cursor: 'pointer',
-          overflow: 'hidden',
-        }}
-      >
-        <img
-          src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?w=700&h=400&fit=crop&auto=format"
-          alt="Brand film thumbnail"
-          style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', opacity: 0.5 }}
-        />
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
-          <div
-            style={{
-              width: 60,
-              height: 60,
-              border: '2px solid var(--white)',
-              borderRadius: '50%',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M6 4l12 6-12 6V4z" fill="white" />
-            </svg>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
 /* ─── Footer Section ─── */
 function Footer() {
   return (
@@ -1333,7 +1214,6 @@ export default function App() {
         <Process />
         <ProductDetails />
         <Design />
-        <Film />
         <Footer />
       </main>
     </div>
