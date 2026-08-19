@@ -354,7 +354,7 @@ function Products() {
         background: '#f0f0ee',
       }}
     >
-      <div style={{ padding: '0 var(--pad-x)', marginBottom: 32, textAlign: 'center' }}>
+      <div style={{ padding: '0 var(--pad-x)', marginBottom: 48, textAlign: 'center' }}>
         <SectionLabel>Product</SectionLabel>
       </div>
 
@@ -445,7 +445,7 @@ function About() {
           letterSpacing: '0.14em',
           color: 'var(--gray-text)',
           textTransform: 'uppercase',
-          marginBottom: 48,
+          marginBottom: 64,
         }}
       >
         About CODEN
@@ -457,7 +457,7 @@ function About() {
           fontSize: 'clamp(18px, 5vw, 22px)',
           letterSpacing: '0.01em',
           color: 'var(--blue)',
-          marginBottom: 52,
+          marginBottom: 64,
         }}
       >
         <span
@@ -898,7 +898,7 @@ function ProductDetails() {
 
   return (
     <section id="details" style={{ background: 'var(--white)', paddingTop: 'var(--section-py)' }}>
-      <div style={{ textAlign: 'center', marginBottom: 32, padding: '0 var(--pad-x)' }}>
+      <div style={{ textAlign: 'center', marginBottom: 48, padding: '0 var(--pad-x)' }}>
         <SectionLabel>Product Detail</SectionLabel>
       </div>
 
@@ -1047,7 +1047,7 @@ function Design() {
         paddingBottom: 'var(--section-py)',
       }}
     >
-      <div style={{ textAlign: 'center', marginBottom: 0, padding: '0 var(--pad-x) 32px' }}>
+      <div style={{ textAlign: 'center', marginBottom: 0, padding: '0 var(--pad-x) 48px' }}>
         <SectionLabel>Design Philosophy</SectionLabel>
       </div>
 
