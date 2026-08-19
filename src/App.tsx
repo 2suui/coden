@@ -42,7 +42,7 @@ function Logo() {
       style={{
         fontWeight: 800,
         fontSize: '22px',
-        letterSpacing: '0.04em',
+        letterSpacing: '0.12em',
         color: 'var(--black)',
         userSelect: 'none',
       }}
@@ -218,7 +218,7 @@ function Menu({
                   width: '100%',
                   background: 'none',
                   border: 'none',
-                  padding: '12px 0',
+                  padding: '14px 0',
                   borderBottom: i < items.length - 1 ? '1px solid rgba(255,255,255,0.08)' : 'none',
                   cursor: 'pointer',
                   textAlign: 'left',
@@ -228,7 +228,7 @@ function Menu({
                   style={{
                     fontWeight: 700,
                     fontSize: '20px',
-                    letterSpacing: '0.06em',
+                    letterSpacing: '0.14em',
                     color: isActive ? 'var(--white)' : 'rgba(255,255,255,0.55)',
                     transition: 'color 0.25s',
                   }}
@@ -262,7 +262,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
       style={{
         fontWeight: 700,
         fontSize: '10.5px',
-        letterSpacing: '0.14em',
+        letterSpacing: '0.24em',
         color: 'var(--gray-text)',
         textTransform: 'uppercase',
         marginBottom: 0,
@@ -303,18 +303,18 @@ function Hero() {
       {/* Hero Copy */}
       <div
         style={{
-          padding: 'clamp(56px, 14vw, 84px) var(--pad-x) clamp(80px, 18vw, 120px)',
+          padding: 'clamp(56px, 14vw, 84px) var(--pad-x) clamp(96px, 20vw, 140px)',
           display: 'flex',
           flexDirection: 'column',
-          gap: 56,
+          gap: 84,
         }}
       >
         <h1
           style={{
             fontWeight: 800,
             fontSize: 'var(--font-hero)',
-            letterSpacing: '0.06em',
-            lineHeight: 1.4,
+            letterSpacing: '0.14em',
+            lineHeight: 1.45,
             color: 'var(--black)',
             margin: 0,
           }}
@@ -329,8 +329,8 @@ function Hero() {
           style={{
             fontWeight: 500,
             fontSize: 'var(--font-body)',
-            letterSpacing: '0.035em',
-            lineHeight: 1.95,
+            letterSpacing: '0.08em',
+            lineHeight: 2.1,
             color: 'var(--black)',
             margin: 0,
           }}
@@ -390,7 +390,7 @@ function Products() {
                 color: 'var(--white)',
                 fontWeight: 700,
                 fontSize: '12.5px',
-                letterSpacing: '0.08em',
+                letterSpacing: '0.16em',
                 padding: '6px 14px',
               }}
             >
@@ -405,8 +405,8 @@ function Products() {
               fontSize: 'var(--font-body)',
               color: 'var(--gray-text)',
               fontWeight: 500,
-              letterSpacing: '0.035em',
-              lineHeight: 1.7,
+              letterSpacing: '0.07em',
+              lineHeight: 1.8,
             }}
           >
             노트북과 북마크로 완성되는 CODEN 기록 시스템
@@ -443,7 +443,7 @@ function About() {
         style={{
           fontWeight: 700,
           fontSize: '10.5px',
-          letterSpacing: '0.18em',
+          letterSpacing: '0.24em',
           color: 'var(--gray-text)',
           textTransform: 'uppercase',
           marginBottom: 110,
@@ -456,7 +456,7 @@ function About() {
         style={{
           fontWeight: 800,
           fontSize: 'clamp(18px, 5vw, 22px)',
-          letterSpacing: '0.03em',
+          letterSpacing: '0.12em',
           color: 'var(--blue)',
           marginBottom: 96,
         }}
@@ -468,6 +468,7 @@ function About() {
             padding: '1px 6px',
             borderRadius: 2,
             display: 'inline-block',
+            letterSpacing: '0.14em',
             lineHeight: 1.2,
           }}
         >
@@ -482,9 +483,9 @@ function About() {
             style={{
               fontWeight: 800,
               fontSize: '16.5px',
-              letterSpacing: '0.08em',
+              letterSpacing: '0.18em',
               color: 'var(--black)',
-              marginBottom: 12,
+              marginBottom: 14,
             }}
           >
             CODE
@@ -493,8 +494,8 @@ function About() {
             style={{
               fontSize: 'var(--font-body)',
               color: 'var(--gray-text)',
-              letterSpacing: '0.03em',
-              lineHeight: 1.9,
+              letterSpacing: '0.07em',
+              lineHeight: 1.95,
             }}
           >
             생각과 기록을 일정한 방식으로 구조화하는 방법
@@ -506,9 +507,9 @@ function About() {
             style={{
               fontWeight: 800,
               fontSize: '16.5px',
-              letterSpacing: '0.08em',
+              letterSpacing: '0.18em',
               color: 'var(--black)',
-              marginBottom: 12,
+              marginBottom: 14,
             }}
           >
             NOTE
@@ -517,8 +518,8 @@ function About() {
             style={{
               fontSize: 'var(--font-body)',
               color: 'var(--gray-text)',
-              letterSpacing: '0.03em',
-              lineHeight: 1.9,
+              letterSpacing: '0.07em',
+              lineHeight: 1.95,
             }}
           >
             생각과 정보를 기록하는 행위
@@ -530,8 +531,8 @@ function About() {
             fontWeight: 700,
             fontSize: 'var(--font-body)',
             color: 'var(--black)',
-            letterSpacing: '0.03em',
-            lineHeight: 1.95,
+            letterSpacing: '0.08em',
+            lineHeight: 2.05,
           }}
         >
           CODEN은 기록을 구조화하는 CODE와 생각을 남기는 NOTE를 결합한 아날로그 메모 시스템입니다.
@@ -552,7 +553,7 @@ function About() {
           style={{
             fontWeight: 700,
             fontSize: '10.5px',
-            letterSpacing: '0.18em',
+            letterSpacing: '0.24em',
             color: 'var(--gray-text)',
             textTransform: 'uppercase',
             marginBottom: 72,
@@ -576,7 +577,7 @@ function About() {
                 style={{
                   fontWeight: 800,
                   fontSize: '15.5px',
-                  letterSpacing: '0.08em',
+                  letterSpacing: '0.18em',
                   color: 'var(--black)',
                 }}
               >
@@ -586,8 +587,8 @@ function About() {
                 style={{
                   fontSize: 'var(--font-body)',
                   color: 'var(--gray-text)',
-                  letterSpacing: '0.03em',
-                  lineHeight: 1.7,
+                  letterSpacing: '0.08em',
+                  lineHeight: 1.8,
                 }}
               >
                 {step.ko}
@@ -624,8 +625,8 @@ function About() {
             fontWeight: 700,
             fontSize: 'var(--font-body)',
             color: 'var(--black)',
-            letterSpacing: '0.03em',
-            lineHeight: 2.05,
+            letterSpacing: '0.08em',
+            lineHeight: 2.15,
             marginBottom: 32,
           }}
         >
@@ -636,8 +637,8 @@ function About() {
             fontWeight: 700,
             fontSize: 'var(--font-body)',
             color: 'var(--black)',
-            letterSpacing: '0.03em',
-            lineHeight: 2.05,
+            letterSpacing: '0.08em',
+            lineHeight: 2.15,
           }}
         >
           기록을 단순히 저장하는 데 그치지 않고, 수집하고 연결하며 핵심을 추려 자신의 생각으로 다시 정리하고 확장하는 과정을 제안합니다.
@@ -736,7 +737,7 @@ function Process() {
           <div
             key={step.num}
             style={{
-              padding: '24px var(--pad-x)',
+              padding: '28px var(--pad-x)',
               borderTop: i === 0 ? '1px solid var(--gray-mid)' : 'none',
               borderBottom: '1px solid var(--gray-mid)',
             }}
@@ -746,7 +747,7 @@ function Process() {
                 style={{
                   fontWeight: 700,
                   fontSize: 'var(--font-badge-num)',
-                  letterSpacing: '0.06em',
+                  letterSpacing: '0.14em',
                   color: 'var(--yellow)',
                   background: 'var(--black)',
                   padding: '2px 7px',
@@ -758,12 +759,12 @@ function Process() {
                 {step.num}
               </span>
               <div style={{ flex: 1 }}>
-                <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginBottom: 8 }}>
+                <div style={{ display: 'flex', alignItems: 'baseline', gap: 12, marginBottom: 10 }}>
                   <span
                     style={{
                       fontWeight: 700,
                       fontSize: 'var(--font-how-title)',
-                      letterSpacing: '0.04em',
+                      letterSpacing: '0.14em',
                       color: 'var(--black)',
                     }}
                   >
@@ -773,7 +774,7 @@ function Process() {
                     style={{
                       fontWeight: 400,
                       fontSize: '11.5px',
-                      letterSpacing: '0.06em',
+                      letterSpacing: '0.16em',
                       color: 'var(--gray-text)',
                       textTransform: 'uppercase',
                     }}
@@ -784,7 +785,8 @@ function Process() {
                 <p
                   style={{
                     fontSize: 'var(--font-body)',
-                    lineHeight: 1.75,
+                    letterSpacing: '0.07em',
+                    lineHeight: 1.9,
                     color: '#444',
                     margin: 0,
                   }}
@@ -933,7 +935,7 @@ function ProductDetails() {
               cursor: 'pointer',
               fontWeight: 700,
               fontSize: '12px',
-              letterSpacing: '0.06em',
+              letterSpacing: '0.14em',
               color: active === key ? 'var(--blue)' : 'var(--gray-text)',
               transition: 'color 0.2s, border-color 0.2s',
               whiteSpace: 'nowrap',
@@ -975,14 +977,14 @@ function ProductDetails() {
         </div>
 
         {/* Product Info */}
-        <div style={{ padding: '28px var(--pad-x) var(--section-py)' }}>
+        <div style={{ padding: '32px var(--pad-x) var(--section-py)' }}>
           <h3
             style={{
               fontWeight: 800,
               fontSize: 'var(--font-title)',
-              letterSpacing: '0.04em',
+              letterSpacing: '0.14em',
               color: 'var(--black)',
-              marginBottom: 10,
+              marginBottom: 12,
             }}
           >
             {current.label}
@@ -990,9 +992,10 @@ function ProductDetails() {
           <p
             style={{
               fontSize: 'var(--font-body)',
-              lineHeight: 1.75,
+              letterSpacing: '0.07em',
+              lineHeight: 1.9,
               color: '#555',
-              marginBottom: 24,
+              marginBottom: 28,
             }}
           >
             {current.description}
@@ -1005,15 +1008,16 @@ function ProductDetails() {
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'center',
-                  padding: '10px 0',
+                  padding: '12px 0',
                   borderBottom: i < current.specs.length - 1 ? '1px solid var(--gray-mid)' : 'none',
                 }}
               >
                 <span
                   style={{
                     fontSize: '13px',
+                    fontWeight: 700,
                     color: 'var(--black)',
-                    letterSpacing: '0.02em',
+                    letterSpacing: '0.08em',
                   }}
                 >
                   {spec.split('—')[0].trim()}
@@ -1022,6 +1026,7 @@ function ProductDetails() {
                   style={{
                     fontSize: '13px',
                     color: 'var(--gray-text)',
+                    letterSpacing: '0.06em',
                   }}
                 >
                   {spec.split('—')[1]?.trim()}
@@ -1089,7 +1094,7 @@ function Design() {
           <div
             key={p.label}
             style={{
-              padding: '22px 0',
+              padding: '24px 0',
               borderBottom: i < pillars.length - 1 ? '1px solid var(--gray-mid)' : 'none',
               borderTop: i === 0 ? '1px solid var(--gray-mid)' : 'none',
               display: 'grid',
@@ -1112,7 +1117,7 @@ function Design() {
                 style={{
                   fontWeight: 700,
                   fontSize: '16px',
-                  letterSpacing: '0.04em',
+                  letterSpacing: '0.14em',
                   color: 'var(--black)',
                 }}
               >
@@ -1122,7 +1127,8 @@ function Design() {
             <p
               style={{
                 fontSize: '13.5px',
-                lineHeight: 1.65,
+                lineHeight: 1.75,
+                letterSpacing: '0.07em',
                 color: 'var(--gray-text)',
               }}
             >
@@ -1138,15 +1144,15 @@ function Design() {
 /* ─── Footer Section ─── */
 function Footer() {
   return (
-    <footer style={{ background: 'var(--black)', color: 'var(--white)', padding: '28px var(--pad-x) 24px' }}>
-      <div style={{ marginBottom: 20 }}>
+    <footer style={{ background: 'var(--black)', color: 'var(--white)', padding: '36px var(--pad-x) 32px' }}>
+      <div style={{ marginBottom: 24 }}>
         <p
           style={{
             fontWeight: 800,
             fontSize: '15.5px',
-            letterSpacing: '0.06em',
-            color: 'rgba(255,255,255,0.55)',
-            marginBottom: 4,
+            letterSpacing: '0.14em',
+            color: 'rgba(255,255,255,0.7)',
+            marginBottom: 6,
           }}
         >
           CODEN
@@ -1156,7 +1162,7 @@ function Footer() {
             fontWeight: 300,
             fontSize: '12px',
             color: 'rgba(255,255,255,0.55)',
-            letterSpacing: '0.02em',
+            letterSpacing: '0.08em',
           }}
         >
           Capture. Connect. Create.
@@ -1176,8 +1182,9 @@ function Footer() {
           <p
             style={{
               fontSize: '12px',
-              color: 'rgba(255,255,255,0.3)',
-              lineHeight: 1.8,
+              color: 'rgba(255,255,255,0.4)',
+              letterSpacing: '0.05em',
+              lineHeight: 1.9,
             }}
           >
             Designed by Suyeon
@@ -1188,8 +1195,8 @@ function Footer() {
         <p
           style={{
             fontSize: '12px',
-            letterSpacing: '0.04em',
-            color: 'rgba(255,255,255,0.25)',
+            letterSpacing: '0.08em',
+            color: 'rgba(255,255,255,0.3)',
           }}
         >
           © 2026 CODEN.
