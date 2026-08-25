@@ -344,73 +344,184 @@ function Hero() {
   )
 }
 
-/* ─── Products Section ─── */
+/* ─── Products Sticky Scroll Section ─── */
 function Products() {
+  const sectionRef = useRef<HTMLElement>(null)
+  const [activeIndex, setActiveIndex] = useState(0)
+
+  const items = [
+    {
+      name: 'NOTEBOOK',
+      sub: '생각을 구조화하는 CODEN의 핵심 도구',
+      img: 'https://images.unsplash.com/photo-1531346878377-a5be20888e57?w=900&h=1200&fit=crop&auto=format',
+      alt: 'CODEN Notebook',
+    },
+    {
+      name: 'BOOKMARK',
+      sub: '기록의 위치를 직관적으로 이어주는 북마크',
+      img: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=900&h=1200&fit=crop&auto=format',
+      alt: 'CODEN Bookmark',
+    },
+    {
+      name: 'PACKAGE',
+      sub: '노트와 북마크로 완성되는 전체 기록 시스템',
+      img: 'https://images.unsplash.com/photo-1587467512961-120760940315?w=900&h=1200&fit=crop&auto=format',
+      alt: 'CODEN Package System',
+    },
+  ]
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sectionRef.current) return
+      const rect = sectionRef.current.getBoundingClientRect()
+      const totalScrollable = rect.height - window.innerHeight
+      if (totalScrollable <= 0) return
+
+      // Progress through the sticky section (0 to 1)
+      const currentProgress = -rect.top / totalScrollable
+      const clamped = Math.max(0, Math.min(1, currentProgress))
+
+      let idx = 0
+      if (clamped < 0.33) {
+        idx = 0
+      } else if (clamped < 0.67) {
+        idx = 1
+      } else {
+        idx = 2
+      }
+      setActiveIndex(idx)
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
     <section
       id="products"
+      ref={sectionRef}
       style={{
-        paddingTop: 'var(--section-py)',
-        paddingBottom: 'var(--section-py)',
+        position: 'relative',
+        height: '300vh',
         background: '#f0f0ee',
       }}
     >
-      <div style={{ padding: '0 var(--pad-x)', marginBottom: 48, textAlign: 'center' }}>
-        <SectionLabel>Product</SectionLabel>
-      </div>
-
-      {/* Single Integrated Product Photo */}
-      <div style={{ width: '100%' }}>
-        <div
-          style={{
-            width: '100%',
-            aspectRatio: '3/4',
-            maxHeight: '82vh',
-            background: 'var(--gray-mid)',
-            overflow: 'hidden',
-            position: 'relative',
-          }}
-        >
-          <img
-            src="https://images.unsplash.com/photo-1587467512961-120760940315?w=900&h=675&fit=crop&auto=format"
-            alt="CODEN Notebook & Bookmark System"
-            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-          />
+      {/* Sticky Viewport Container */}
+      <div
+        style={{
+          position: 'sticky',
+          top: 0,
+          height: '100dvh',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          padding: 'calc(var(--nav-height) + 12px) var(--pad-x) 24px',
+          boxSizing: 'border-box',
+        }}
+      >
+        {/* Section Header & Step Indicators */}
+        <div style={{ textAlign: 'center', marginBottom: 20 }}>
+          <SectionLabel>Product</SectionLabel>
           <div
             style={{
-              position: 'absolute',
-              bottom: 20,
-              left: 'var(--pad-x)',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              gap: 6,
+              marginTop: 12,
             }}
           >
-            <span
-              style={{
-                display: 'inline-block',
-                background: 'var(--blue)',
-                color: 'var(--white)',
-                fontWeight: 700,
-                fontSize: '12.5px',
-                letterSpacing: '0.08em',
-                padding: '6px 14px',
-              }}
-            >
-              CODEN SYSTEM
-            </span>
+            {items.map((_, i) => (
+              <div
+                key={i}
+                style={{
+                  width: activeIndex === i ? 24 : 6,
+                  height: 4,
+                  borderRadius: 2,
+                  background: activeIndex === i ? 'var(--blue)' : 'rgba(0,0,0,0.18)',
+                  transition: 'all 0.35s ease',
+                }}
+              />
+            ))}
           </div>
         </div>
 
-        <div style={{ padding: '24px var(--pad-x) 0', textAlign: 'center' }}>
-          <p
+        {/* Single Fixed Image Frame (In-place crossfade) */}
+        <div style={{ width: '100%' }}>
+          <div
             style={{
-              fontSize: 'var(--font-body)',
-              color: 'var(--gray-text)',
-              fontWeight: 500,
-              letterSpacing: '0.01em',
-              lineHeight: 1.8,
+              width: '100%',
+              aspectRatio: '3/4',
+              maxHeight: '56vh',
+              background: 'var(--gray-mid)',
+              overflow: 'hidden',
+              position: 'relative',
             }}
           >
-            노트북과 북마크로 완성되는 CODEN 기록 시스템
-          </p>
+            {items.map((item, i) => (
+              <img
+                key={item.name}
+                src={item.img}
+                alt={item.alt}
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  display: 'block',
+                  opacity: activeIndex === i ? 1 : 0,
+                  transition: 'opacity 0.45s ease-in-out',
+                  pointerEvents: activeIndex === i ? 'auto' : 'none',
+                }}
+              />
+            ))}
+
+            {/* In-place Badge */}
+            <div
+              style={{
+                position: 'absolute',
+                bottom: 18,
+                left: 16,
+                zIndex: 2,
+              }}
+            >
+              <span
+                key={items[activeIndex].name}
+                style={{
+                  display: 'inline-block',
+                  background: 'var(--blue)',
+                  color: 'var(--white)',
+                  fontWeight: 700,
+                  fontSize: '12px',
+                  letterSpacing: '0.08em',
+                  padding: '5px 12px',
+                  transition: 'all 0.3s ease',
+                }}
+              >
+                {items[activeIndex].name}
+              </span>
+            </div>
+          </div>
+
+          {/* Product Description switching in place */}
+          <div style={{ padding: '20px 0 0', textAlign: 'center' }}>
+            <p
+              key={items[activeIndex].sub}
+              style={{
+                fontSize: 'var(--font-body)',
+                color: 'var(--gray-text)',
+                fontWeight: 500,
+                letterSpacing: '0.01em',
+                lineHeight: 1.8,
+                minHeight: '2.4em',
+                transition: 'opacity 0.3s ease',
+              }}
+            >
+              {items[activeIndex].sub}
+            </p>
+          </div>
         </div>
       </div>
     </section>
