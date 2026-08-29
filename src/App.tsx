@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 
 /* ─── Section IDs & Types ─── */
-const SECTIONS = ['hero', 'about', 'products', 'process', 'details', 'design'] as const
+const SECTIONS = ['hero', 'about', 'products', 'process', 'details'] as const
 type SectionId = (typeof SECTIONS)[number]
 
 function scrollTo(id: string) {
@@ -133,8 +133,8 @@ function Menu({
   onClose: () => void
   activeSection: SectionId
 }) {
-  const items = ['HOME', 'ABOUT', 'PRODUCTS', 'HOW TO USE', 'DETAILS', 'DESIGN']
-  const ids: SectionId[] = ['hero', 'about', 'products', 'process', 'details', 'design']
+  const items = ['HOME', 'ABOUT', 'PRODUCTS', 'HOW TO USE', 'DETAILS']
+  const ids: SectionId[] = ['hero', 'about', 'products', 'process', 'details']
 
   return (
     <>
@@ -1040,107 +1040,6 @@ function ProductDetails() {
   )
 }
 
-/* ─── Design Philosophy Section ─── */
-function Design() {
-  const pillars = [
-    { label: 'Logo', desc: '단순하고 명확한 레터마크. CODE와 NOTE의 결합을 표현합니다.' },
-    { label: 'Color', desc: '블루 — 구조와 신뢰. 옐로우 — 아이디어와 연결의 순간.' },
-    { label: 'Typography', desc: '명확한 위계를 위한 서체 시스템. 읽기 위한 디자인.' },
-    { label: 'Graphic System', desc: '도트, 선, 여백을 활용한 일관된 시각 문법.' },
-    { label: 'Packaging', desc: '제품을 보호하고, 브랜드 경험을 시작하는 공간.' },
-  ]
-
-  return (
-    <section
-      id="design"
-      style={{
-        background: 'var(--white)',
-        paddingTop: 'var(--section-py)',
-        paddingBottom: 'var(--section-py)',
-      }}
-    >
-      <div style={{ textAlign: 'center', marginBottom: 0, padding: '0 var(--pad-x) 48px' }}>
-        <SectionLabel>Design Philosophy</SectionLabel>
-      </div>
-
-      {/* Full-bleed Header Image */}
-      <div
-        style={{
-          width: '100%',
-          aspectRatio: '16/9',
-          background: 'var(--blue)',
-          overflow: 'hidden',
-          marginBottom: 40,
-          position: 'relative',
-        }}
-      >
-        <img
-          src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&h=450&fit=crop&auto=format"
-          alt="CODEN design system overview"
-          style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', opacity: 0.85 }}
-        />
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            background: 'linear-gradient(to bottom, transparent 60%, rgba(30,108,181,0.6) 100%)',
-          }}
-        />
-      </div>
-
-      {/* Pillars List */}
-      <div style={{ padding: '0 var(--pad-x)' }}>
-        {pillars.map((p, i) => (
-          <div
-            key={p.label}
-            style={{
-              padding: '24px 0',
-              borderBottom: i < pillars.length - 1 ? '1px solid var(--gray-mid)' : 'none',
-              borderTop: i === 0 ? '1px solid var(--gray-mid)' : 'none',
-              display: 'grid',
-              gridTemplateColumns: '1fr 2fr',
-              gap: 16,
-              alignItems: 'start',
-            }}
-          >
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-              <span
-                style={{
-                  width: 6,
-                  height: 6,
-                  borderRadius: '50%',
-                  background: i === 0 ? 'var(--yellow)' : 'var(--blue)',
-                  flexShrink: 0,
-                }}
-              />
-              <p
-                style={{
-                  fontWeight: 700,
-                  fontSize: '16px',
-                  letterSpacing: '0.04em',
-                  color: 'var(--black)',
-                }}
-              >
-                {p.label}
-              </p>
-            </div>
-            <p
-              style={{
-                fontSize: '13.5px',
-                lineHeight: 1.9,
-                letterSpacing: '0.01em',
-                color: 'var(--gray-text)',
-              }}
-            >
-              {p.desc}
-            </p>
-          </div>
-        ))}
-      </div>
-    </section>
-  )
-}
-
 /* ─── Footer Section ─── */
 function Footer() {
   return (
@@ -1229,7 +1128,6 @@ export default function App() {
         <Products />
         <Process />
         <ProductDetails />
-        <Design />
         <Footer />
       </main>
     </div>
