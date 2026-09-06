@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import logoImg from './assets/logo.png'
 
 /* ─── Section IDs & Types ─── */
 const SECTIONS = ['hero', 'about', 'products', 'process', 'details'] as const
@@ -38,17 +39,17 @@ function useActiveSection() {
 /* ─── Logo ─── */
 function Logo() {
   return (
-    <span
+    <img
+      src={logoImg}
+      alt="CODEN"
       style={{
-        fontWeight: 800,
-        fontSize: '22px',
-        letterSpacing: '0.04em',
-        color: 'var(--black)',
+        height: 20,
+        width: 'auto',
+        display: 'block',
+        objectFit: 'contain',
         userSelect: 'none',
       }}
-    >
-      CODEN
-    </span>
+    />
   )
 }
 
