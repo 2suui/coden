@@ -304,10 +304,10 @@ function Hero() {
       {/* Hero Copy */}
       <div
         style={{
-          padding: 'clamp(72px, 16vw, 100px) var(--pad-x) clamp(130px, 28vw, 190px)',
+          padding: 'clamp(64px, 14vw, 84px) var(--pad-x) clamp(48px, 10vw, 64px)',
           display: 'flex',
           flexDirection: 'column',
-          gap: 110,
+          gap: 80,
         }}
       >
         <h1
@@ -355,8 +355,8 @@ function Problem() {
       style={{
         background: 'var(--white)',
         color: 'var(--black)',
-        paddingTop: 'var(--section-py)',
-        paddingBottom: 'var(--section-py)',
+        paddingTop: 'clamp(48px, 10vw, 64px)',
+        paddingBottom: 'clamp(48px, 10vw, 64px)',
         paddingLeft: 'var(--pad-x)',
         paddingRight: 'var(--pad-x)',
         textAlign: 'center',
@@ -369,7 +369,7 @@ function Problem() {
           letterSpacing: '0.14em',
           color: 'var(--gray-text)',
           textTransform: 'uppercase',
-          marginBottom: 120,
+          marginBottom: 48,
         }}
       >
         Problem
@@ -383,7 +383,7 @@ function Problem() {
           color: 'var(--black)',
           letterSpacing: '0.01em',
           lineHeight: 2.25,
-          marginBottom: 120,
+          marginBottom: 56,
         }}
       >
         기록은 많아졌지만,
@@ -391,13 +391,13 @@ function Problem() {
         다시 보지는 않습니다.
       </p>
 
-      {/* Vertical Steps with Arrows and Generous Spacing */}
+      {/* Vertical Steps with Arrows */}
       <div
         style={{
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          marginBottom: 130,
+          marginBottom: 56,
         }}
       >
         {cycle.map((step, i) => (
@@ -409,7 +409,7 @@ function Problem() {
               alignItems: 'center',
             }}
           >
-            {/* Step Word (No outer circle / container, pure typography) */}
+            {/* Step Word */}
             <p
               style={{
                 fontWeight: 800,
@@ -417,20 +417,20 @@ function Problem() {
                 letterSpacing: '0.08em',
                 color: i === cycle.length - 1 ? 'var(--blue)' : 'var(--black)',
                 margin: 0,
-                padding: '12px 0',
+                padding: '10px 0',
               }}
             >
               {step}
             </p>
 
-            {/* Downward Arrow with Generous Spacing */}
+            {/* Downward Arrow */}
             {i < cycle.length - 1 && (
               <div
                 style={{
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  padding: '56px 0',
+                  padding: '36px 0',
                 }}
               >
                 <span
@@ -449,10 +449,10 @@ function Problem() {
         ))}
       </div>
 
-      {/* Concluding Insight (Matching About section typography) */}
+      {/* Concluding Insight */}
       <div
         style={{
-          marginTop: 110,
+          marginTop: 48,
         }}
       >
         <p
@@ -561,7 +561,7 @@ function About() {
       style={{
         background: 'var(--white)',
         color: 'var(--black)',
-        paddingTop: 'var(--section-py)',
+        paddingTop: 'clamp(48px, 10vw, 64px)',
         paddingBottom: 'var(--section-py)',
         paddingLeft: 'var(--pad-x)',
         paddingRight: 'var(--pad-x)',
@@ -575,7 +575,7 @@ function About() {
           letterSpacing: '0.14em',
           color: 'var(--gray-text)',
           textTransform: 'uppercase',
-          marginBottom: 130,
+          marginBottom: 48,
         }}
       >
         About CODEN
@@ -587,7 +587,7 @@ function About() {
           fontSize: 'clamp(18px, 4.8vw, 22px)',
           letterSpacing: '0.01em',
           color: 'var(--blue)',
-          marginBottom: 120,
+          marginBottom: 48,
           whiteSpace: 'nowrap',
         }}
       >
@@ -607,15 +607,15 @@ function About() {
         = CODE + NOTE
       </p>
 
-      <div style={{ marginBottom: 96 }}>
-        <div style={{ marginBottom: 96 }}>
+      <div>
+        <div style={{ marginBottom: 48 }}>
           <p
             style={{
               fontWeight: 800,
               fontSize: '16px',
               letterSpacing: '0.05em',
               color: 'var(--black)',
-              marginBottom: 20,
+              marginBottom: 16,
             }}
           >
             CODE
@@ -632,14 +632,14 @@ function About() {
           </p>
         </div>
 
-        <div style={{ marginBottom: 88 }}>
+        <div style={{ marginBottom: 48 }}>
           <p
             style={{
               fontWeight: 800,
               fontSize: '16px',
               letterSpacing: '0.05em',
               color: 'var(--black)',
-              marginBottom: 20,
+              marginBottom: 16,
             }}
           >
             NOTE
@@ -663,13 +663,15 @@ function About() {
             color: 'var(--black)',
             letterSpacing: '0.01em',
             lineHeight: 2.3,
+            margin: 0,
           }}
         >
           CODEN은 기록을 구조화하는 CODE와 생각을 남기는 NOTE를 결합한 아날로그 메모 시스템입니다.
         </p>
       </div>
 
-      <div id="process" style={{ scrollMarginTop: 'var(--nav-height)' }}>
+      {/* ─── Process Section (Generous Spacing from here onwards) ─── */}
+      <div id="process" style={{ scrollMarginTop: 'var(--nav-height)', marginTop: 'clamp(160px, 40vw, 240px)' }}>
         <p
           style={{
             fontWeight: 700,
@@ -677,7 +679,7 @@ function About() {
             letterSpacing: '0.14em',
             color: 'var(--gray-text)',
             textTransform: 'uppercase',
-            marginBottom: 96,
+            marginBottom: 120,
           }}
         >
           Process
@@ -690,8 +692,8 @@ function About() {
                 flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'center',
-                gap: 12,
-                paddingBottom: 48,
+                gap: 16,
+                paddingBottom: 64,
               }}
             >
               <p
@@ -716,7 +718,7 @@ function About() {
               </p>
             </div>
             {i < processSteps.length - 1 && (
-              <div style={{ margin: '48px 0' }}>
+              <div style={{ margin: '64px 0' }}>
                 <span
                   style={{
                     color: 'var(--blue)',
@@ -735,7 +737,7 @@ function About() {
 
       <div
         style={{
-          marginTop: 120,
+          marginTop: 140,
         }}
       >
         <p
