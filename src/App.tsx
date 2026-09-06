@@ -398,7 +398,7 @@ function Problem() {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          marginBottom: 96,
+          marginBottom: 110,
         }}
       >
         {cycle.map((step, i) => (
@@ -418,7 +418,7 @@ function Problem() {
                 letterSpacing: '0.08em',
                 color: i === cycle.length - 1 ? 'var(--blue)' : 'var(--black)',
                 margin: 0,
-                padding: '4px 0',
+                padding: '10px 0',
               }}
             >
               {step}
@@ -431,7 +431,7 @@ function Problem() {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  padding: '28px 0',
+                  padding: '48px 0',
                 }}
               >
                 <span
