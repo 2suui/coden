@@ -386,7 +386,7 @@ function Problem() {
       <p
         style={{
           fontWeight: 700,
-          fontSize: 'var(--font-subheading)',
+          fontSize: '17px',
           color: 'var(--black)',
           letterSpacing: '0.01em',
           lineHeight: 1.6,
@@ -571,7 +571,7 @@ function About() {
       <p
         style={{
           fontWeight: 800,
-          fontSize: 'var(--font-subheading)',
+          fontSize: '18px',
           letterSpacing: '0.01em',
           lineHeight: 'var(--lh-heading)',
           color: 'var(--blue)',
