@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import logoImg from './assets/logo.png'
 
 /* ─── Section IDs & Types ─── */
-const SECTIONS = ['hero', 'problem', 'about', 'process', 'products'] as const
+const SECTIONS = ['hero', 'problem', 'about', 'principles', 'process', 'products'] as const
 type SectionId = (typeof SECTIONS)[number]
 
 function scrollTo(id: string) {
@@ -134,8 +134,8 @@ function Menu({
   onClose: () => void
   activeSection: SectionId
 }) {
-  const items = ['HOME', 'PROBLEM', 'ABOUT', 'PROCESS', 'PRODUCTS']
-  const ids: SectionId[] = ['hero', 'problem', 'about', 'process', 'products']
+  const items = ['HOME', 'PROBLEM', 'ABOUT', 'PRINCIPLES', 'PROCESS', 'PRODUCTS']
+  const ids: SectionId[] = ['hero', 'problem', 'about', 'principles', 'process', 'products']
 
   return (
     <>
@@ -549,12 +549,6 @@ function Products() {
 
 /* ─── About Section ─── */
 function About() {
-  const processSteps = [
-    { en: 'CAPTURE', ko: '생각과 정보를 기록하고' },
-    { en: 'CONNECT', ko: '서로 연결하고' },
-    { en: 'CREATE', ko: '새로운 생각으로 확장합니다.' },
-  ]
-
   return (
     <section
       id="about"
@@ -562,7 +556,7 @@ function About() {
         background: 'var(--white)',
         color: 'var(--black)',
         paddingTop: 'clamp(72px, 16vw, 96px)',
-        paddingBottom: 'var(--section-py)',
+        paddingBottom: 'clamp(72px, 16vw, 96px)',
         paddingLeft: 'var(--pad-x)',
         paddingRight: 'var(--pad-x)',
         textAlign: 'center',
@@ -669,71 +663,186 @@ function About() {
           CODEN은 기록을 구조화하는 CODE와 생각을 남기는 NOTE를 결합한 아날로그 메모 시스템입니다.
         </p>
       </div>
+    </section>
+  )
+}
 
-      {/* ─── Process Section (Generous Spacing from here onwards) ─── */}
-      <div id="process" style={{ scrollMarginTop: 'var(--nav-height)', marginTop: 'clamp(240px, 60vw, 360px)' }}>
-        <p
-          style={{
-            fontWeight: 700,
-            fontSize: '12px',
-            letterSpacing: '0.14em',
-            color: 'var(--gray-text)',
-            textTransform: 'uppercase',
-            marginBottom: 160,
-          }}
-        >
-          Process
-        </p>
-        {processSteps.map((step, i) => (
-          <div key={step.en}>
-            <div
+/* ─── Principles Section ─── */
+function Principles() {
+  const principles = [
+    {
+      num: '01',
+      title: '하나의 생각, 하나의 메모',
+      desc: '한 메모에는 하나의 생각만 남깁니다.',
+    },
+    {
+      num: '02',
+      title: '처음부터 정리하지 않습니다',
+      desc: '떠오른 생각은 먼저 붙잡고, 정리는 나중에 합니다.',
+    },
+    {
+      num: '03',
+      title: '다시 보는 것을 전제로 기록합니다',
+      desc: '기록은 쌓는 것이 아니라 다시 발견하기 위한 것입니다.',
+    },
+    {
+      num: '04',
+      title: '기록은 다음 행동으로 이어집니다',
+      desc: '남겨진 생각을 연결해 새로운 생각과 행동으로 발전시킵니다.',
+    },
+  ]
+
+  return (
+    <section
+      id="principles"
+      style={{
+        background: 'var(--white)',
+        color: 'var(--black)',
+        paddingTop: 'clamp(72px, 16vw, 96px)',
+        paddingBottom: 'clamp(72px, 16vw, 96px)',
+        paddingLeft: 'var(--pad-x)',
+        paddingRight: 'var(--pad-x)',
+        textAlign: 'center',
+      }}
+    >
+      <p
+        style={{
+          fontWeight: 700,
+          fontSize: '12px',
+          letterSpacing: '0.14em',
+          color: 'var(--gray-text)',
+          textTransform: 'uppercase',
+          marginBottom: 100,
+        }}
+      >
+        Principles
+      </p>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 84 }}>
+        {principles.map((item) => (
+          <div key={item.num}>
+            <p
               style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: 16,
-                paddingBottom: 80,
+                fontWeight: 800,
+                fontSize: '13px',
+                letterSpacing: '0.08em',
+                color: 'var(--blue)',
+                marginBottom: 10,
               }}
             >
-              <p
-                style={{
-                  fontWeight: 800,
-                  fontSize: '16px',
-                  letterSpacing: '0.05em',
-                  color: 'var(--black)',
-                }}
-              >
-                {step.en}
-              </p>
-              <p
-                style={{
-                  fontSize: 'var(--font-body)',
-                  color: 'var(--gray-text)',
-                  letterSpacing: '0.01em',
-                  lineHeight: 2.0,
-                }}
-              >
-                {step.ko}
-              </p>
-            </div>
-            {i < processSteps.length - 1 && (
-              <div style={{ margin: '80px 0' }}>
-                <span
-                  style={{
-                    color: 'var(--blue)',
-                    fontSize: '18px',
-                    lineHeight: 1,
-                    display: 'block',
-                  }}
-                >
-                  ↓
-                </span>
-              </div>
-            )}
+              {item.num}
+            </p>
+            <h3
+              style={{
+                fontWeight: 800,
+                fontSize: '17px',
+                letterSpacing: '0.01em',
+                color: 'var(--black)',
+                marginBottom: 14,
+              }}
+            >
+              {item.title}
+            </h3>
+            <p
+              style={{
+                fontSize: 'var(--font-body)',
+                color: 'var(--gray-text)',
+                letterSpacing: '0.01em',
+                lineHeight: 2.2,
+                margin: 0,
+              }}
+            >
+              {item.desc}
+            </p>
           </div>
         ))}
       </div>
+    </section>
+  )
+}
+
+/* ─── Process Section ─── */
+function Process() {
+  const processSteps = [
+    { en: 'CAPTURE', ko: '생각과 정보를 기록하고' },
+    { en: 'CONNECT', ko: '서로 연결하고' },
+    { en: 'CREATE', ko: '새로운 생각으로 확장합니다.' },
+  ]
+
+  return (
+    <section
+      id="process"
+      style={{
+        background: 'var(--white)',
+        color: 'var(--black)',
+        paddingTop: 'clamp(140px, 32vw, 200px)',
+        paddingBottom: 'var(--section-py)',
+        paddingLeft: 'var(--pad-x)',
+        paddingRight: 'var(--pad-x)',
+        textAlign: 'center',
+      }}
+    >
+      <p
+        style={{
+          fontWeight: 700,
+          fontSize: '12px',
+          letterSpacing: '0.14em',
+          color: 'var(--gray-text)',
+          textTransform: 'uppercase',
+          marginBottom: 160,
+        }}
+      >
+        Process
+      </p>
+      {processSteps.map((step, i) => (
+        <div key={step.en}>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: 16,
+              paddingBottom: 80,
+            }}
+          >
+            <p
+              style={{
+                fontWeight: 800,
+                fontSize: '16px',
+                letterSpacing: '0.05em',
+                color: 'var(--black)',
+              }}
+            >
+              {step.en}
+            </p>
+            <p
+              style={{
+                fontSize: 'var(--font-body)',
+                color: 'var(--gray-text)',
+                letterSpacing: '0.01em',
+                lineHeight: 2.0,
+              }}
+            >
+              {step.ko}
+            </p>
+          </div>
+          {i < processSteps.length - 1 && (
+            <div style={{ margin: '80px 0' }}>
+              <span
+                style={{
+                  color: 'var(--blue)',
+                  fontSize: '18px',
+                  lineHeight: 1,
+                  display: 'block',
+                }}
+              >
+                ↓
+              </span>
+            </div>
+          )}
+        </div>
+      ))}
 
       <div
         style={{
@@ -842,6 +951,8 @@ export default function App() {
         <Hero />
         <Problem />
         <About />
+        <Principles />
+        <Process />
         <Products />
         <Footer />
       </main>
