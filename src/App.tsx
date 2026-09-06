@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import logoImg from './assets/logo.png'
 
 /* ─── Section IDs & Types ─── */
-const SECTIONS = ['hero', 'problem', 'about', 'products', 'details'] as const
+const SECTIONS = ['hero', 'problem', 'about', 'process', 'products', 'details'] as const
 type SectionId = (typeof SECTIONS)[number]
 
 function scrollTo(id: string) {
@@ -134,8 +134,8 @@ function Menu({
   onClose: () => void
   activeSection: SectionId
 }) {
-  const items = ['HOME', 'PROBLEM', 'ABOUT', 'PRODUCTS', 'DETAILS']
-  const ids: SectionId[] = ['hero', 'problem', 'about', 'products', 'details']
+  const items = ['HOME', 'PROBLEM', 'ABOUT', 'PROCESS', 'PRODUCTS', 'DETAILS']
+  const ids: SectionId[] = ['hero', 'problem', 'about', 'process', 'products', 'details']
 
   return (
     <>
@@ -684,7 +684,7 @@ function About() {
         }}
       />
 
-      <div>
+      <div id="process" style={{ scrollMarginTop: 'var(--nav-height)' }}>
         <p
           style={{
             fontWeight: 700,
