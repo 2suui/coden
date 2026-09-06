@@ -397,18 +397,32 @@ function Background() {
       </p>
 
       {/* Detailed Description */}
-      <p
-        style={{
-          fontSize: 'var(--font-body)',
-          color: 'var(--gray-text)',
-          letterSpacing: '0.01em',
-          lineHeight: 1.8,
-          textAlign: 'left',
-          margin: 0,
-        }}
-      >
-        메모, 캡처, 사진, 링크처럼 기록 방식은 다양해졌지만 기록은 여러 곳에 흩어지고 빠르게 잊힙니다. 다시 읽히지 않은 기록은 생각으로 이어지지 못하고, 결국 같은 내용을 다시 찾거나 반복해 기록하게 됩니다.
-      </p>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 24, textAlign: 'left' }}>
+        <p
+          style={{
+            fontSize: 'var(--font-body)',
+            color: 'var(--gray-text)',
+            letterSpacing: '0.01em',
+            lineHeight: 1.8,
+            margin: 0,
+          }}
+        >
+          메모, 캡처, 사진, 링크처럼 기록 방식은 다양해졌지만 기록은 여러 곳에 흩어지고 빠르게 잊힙니다. 다시 읽히지 않은 기록은 생각으로 이어지지 못하고, 결국 같은 내용을 다시 찾거나 반복해 기록하게 됩니다.
+        </p>
+        <p
+          style={{
+            fontSize: 'var(--font-body)',
+            color: 'var(--gray-text)',
+            letterSpacing: '0.01em',
+            lineHeight: 1.8,
+            margin: 0,
+          }}
+        >
+          CODEN은 이러한 반복에서 벗어나,
+          <br />
+          기록을 다시 발견하고 활용할 수 있는 방법에 대한 고민에서 시작되었습니다.
+        </p>
+      </div>
     </section>
   )
 }
