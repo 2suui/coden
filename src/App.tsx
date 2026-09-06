@@ -304,10 +304,10 @@ function Hero() {
       {/* Hero Copy */}
       <div
         style={{
-          padding: 'clamp(64px, 14vw, 84px) var(--pad-x) clamp(48px, 10vw, 64px)',
+          padding: 'clamp(80px, 18vw, 110px) var(--pad-x) clamp(72px, 16vw, 96px)',
           display: 'flex',
           flexDirection: 'column',
-          gap: 80,
+          gap: 100,
         }}
       >
         <h1
@@ -355,8 +355,8 @@ function Problem() {
       style={{
         background: 'var(--white)',
         color: 'var(--black)',
-        paddingTop: 'clamp(48px, 10vw, 64px)',
-        paddingBottom: 'clamp(48px, 10vw, 64px)',
+        paddingTop: 'clamp(72px, 16vw, 96px)',
+        paddingBottom: 'clamp(72px, 16vw, 96px)',
         paddingLeft: 'var(--pad-x)',
         paddingRight: 'var(--pad-x)',
         textAlign: 'center',
@@ -369,7 +369,7 @@ function Problem() {
           letterSpacing: '0.14em',
           color: 'var(--gray-text)',
           textTransform: 'uppercase',
-          marginBottom: 48,
+          marginBottom: 72,
         }}
       >
         Problem
@@ -383,7 +383,7 @@ function Problem() {
           color: 'var(--black)',
           letterSpacing: '0.01em',
           lineHeight: 2.25,
-          marginBottom: 56,
+          marginBottom: 84,
         }}
       >
         기록은 많아졌지만,
@@ -397,7 +397,7 @@ function Problem() {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          marginBottom: 56,
+          marginBottom: 84,
         }}
       >
         {cycle.map((step, i) => (
@@ -417,7 +417,7 @@ function Problem() {
                 letterSpacing: '0.08em',
                 color: i === cycle.length - 1 ? 'var(--blue)' : 'var(--black)',
                 margin: 0,
-                padding: '10px 0',
+                padding: '12px 0',
               }}
             >
               {step}
@@ -430,7 +430,7 @@ function Problem() {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  padding: '36px 0',
+                  padding: '48px 0',
                 }}
               >
                 <span
@@ -452,7 +452,7 @@ function Problem() {
       {/* Concluding Insight */}
       <div
         style={{
-          marginTop: 48,
+          marginTop: 72,
         }}
       >
         <p
@@ -485,7 +485,7 @@ function Products() {
         background: '#f0f0ee',
       }}
     >
-      <div style={{ padding: '0 var(--pad-x)', marginBottom: 64, textAlign: 'center' }}>
+      <div style={{ padding: '0 var(--pad-x)', marginBottom: 96, textAlign: 'center' }}>
         <SectionLabel>Product</SectionLabel>
       </div>
 
@@ -529,7 +529,7 @@ function Products() {
           </div>
         </div>
 
-        <div style={{ padding: '36px var(--pad-x) 0', textAlign: 'center' }}>
+        <div style={{ padding: '48px var(--pad-x) 0', textAlign: 'center' }}>
           <p
             style={{
               fontSize: 'var(--font-body)',
@@ -561,7 +561,7 @@ function About() {
       style={{
         background: 'var(--white)',
         color: 'var(--black)',
-        paddingTop: 'clamp(48px, 10vw, 64px)',
+        paddingTop: 'clamp(72px, 16vw, 96px)',
         paddingBottom: 'var(--section-py)',
         paddingLeft: 'var(--pad-x)',
         paddingRight: 'var(--pad-x)',
@@ -575,7 +575,7 @@ function About() {
           letterSpacing: '0.14em',
           color: 'var(--gray-text)',
           textTransform: 'uppercase',
-          marginBottom: 48,
+          marginBottom: 72,
         }}
       >
         About CODEN
@@ -587,7 +587,7 @@ function About() {
           fontSize: 'clamp(18px, 4.8vw, 22px)',
           letterSpacing: '0.01em',
           color: 'var(--blue)',
-          marginBottom: 48,
+          marginBottom: 72,
           whiteSpace: 'nowrap',
         }}
       >
@@ -608,7 +608,7 @@ function About() {
       </p>
 
       <div>
-        <div style={{ marginBottom: 48 }}>
+        <div style={{ marginBottom: 72 }}>
           <p
             style={{
               fontWeight: 800,
@@ -632,7 +632,7 @@ function About() {
           </p>
         </div>
 
-        <div style={{ marginBottom: 48 }}>
+        <div style={{ marginBottom: 72 }}>
           <p
             style={{
               fontWeight: 800,
@@ -671,7 +671,7 @@ function About() {
       </div>
 
       {/* ─── Process Section (Generous Spacing from here onwards) ─── */}
-      <div id="process" style={{ scrollMarginTop: 'var(--nav-height)', marginTop: 'clamp(160px, 40vw, 240px)' }}>
+      <div id="process" style={{ scrollMarginTop: 'var(--nav-height)', marginTop: 'clamp(240px, 60vw, 360px)' }}>
         <p
           style={{
             fontWeight: 700,
@@ -679,7 +679,7 @@ function About() {
             letterSpacing: '0.14em',
             color: 'var(--gray-text)',
             textTransform: 'uppercase',
-            marginBottom: 120,
+            marginBottom: 160,
           }}
         >
           Process
@@ -693,7 +693,7 @@ function About() {
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: 16,
-                paddingBottom: 64,
+                paddingBottom: 80,
               }}
             >
               <p
@@ -718,7 +718,7 @@ function About() {
               </p>
             </div>
             {i < processSteps.length - 1 && (
-              <div style={{ margin: '64px 0' }}>
+              <div style={{ margin: '80px 0' }}>
                 <span
                   style={{
                     color: 'var(--blue)',
@@ -737,7 +737,7 @@ function About() {
 
       <div
         style={{
-          marginTop: 140,
+          marginTop: 210,
         }}
       >
         <p
@@ -760,7 +760,7 @@ function About() {
 /* ─── Footer Section ─── */
 function Footer() {
   return (
-    <footer style={{ background: 'var(--blue)', color: 'var(--white)', padding: '56px var(--pad-x) 44px' }}>
+    <footer style={{ background: 'var(--blue)', color: 'var(--white)', padding: 'clamp(72px, 18vw, 96px) var(--pad-x) 56px' }}>
       <div style={{ marginBottom: 32 }}>
         <p
           style={{
