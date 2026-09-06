@@ -78,7 +78,7 @@
 
   /* ─── CODEN 모바일 디자인 규격 (기준: 393px, 범위: 320~430px) ─── */
   --pad-x: 24px;
-  --section-py: clamp(210px, 54vw, 330px);
+  --section-py: clamp(140px, 32vw, 180px);
   --font-hero: clamp(40px, 11vw, 56px);
   --font-section-title: clamp(28px, 7.5vw, 36px);
   --font-subheading: clamp(20px, 5.5vw, 24px);

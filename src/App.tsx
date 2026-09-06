@@ -259,18 +259,20 @@ function Menu({
 /* ─── Section Title Component ─── */
 function SectionTitle({ children }: { children: React.ReactNode }) {
   return (
-    <h2
-      style={{
-        fontWeight: 800,
-        fontSize: 'var(--font-section-title)',
-        letterSpacing: '0.02em',
-        lineHeight: 'var(--lh-heading)',
-        color: 'var(--black)',
-        margin: 0,
-      }}
-    >
-      {children}
-    </h2>
+    <div style={{ marginBottom: 64 }}>
+      <h2
+        style={{
+          fontWeight: 800,
+          fontSize: 'var(--font-section-title)',
+          letterSpacing: '0.02em',
+          lineHeight: 'var(--lh-heading)',
+          color: 'var(--black)',
+          margin: 0,
+        }}
+      >
+        {children}
+      </h2>
+    </div>
   )
 }
 
@@ -304,10 +306,10 @@ function Hero() {
       {/* Hero Copy */}
       <div
         style={{
-          padding: 'clamp(80px, 18vw, 110px) var(--pad-x) clamp(72px, 16vw, 96px)',
+          padding: '64px var(--pad-x) var(--section-py)',
           display: 'flex',
           flexDirection: 'column',
-          gap: 100,
+          gap: 40,
         }}
       >
         <h1
@@ -355,16 +357,14 @@ function Problem() {
       style={{
         background: 'var(--white)',
         color: 'var(--black)',
-        paddingTop: 'clamp(72px, 16vw, 96px)',
-        paddingBottom: 'clamp(72px, 16vw, 96px)',
+        paddingTop: 'var(--section-py)',
+        paddingBottom: 'var(--section-py)',
         paddingLeft: 'var(--pad-x)',
         paddingRight: 'var(--pad-x)',
         textAlign: 'center',
       }}
     >
-      <div style={{ marginBottom: 72 }}>
-        <SectionTitle>Problem</SectionTitle>
-      </div>
+      <SectionTitle>Problem</SectionTitle>
 
       {/* Intro Question / Statement */}
       <p
@@ -374,7 +374,7 @@ function Problem() {
           color: 'var(--black)',
           letterSpacing: '0.01em',
           lineHeight: 'var(--lh-heading)',
-          marginBottom: 84,
+          marginBottom: 56,
         }}
       >
         기록은 많아졌지만,
@@ -388,7 +388,7 @@ function Problem() {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          marginBottom: 84,
+          marginBottom: 64,
         }}
       >
         {cycle.map((step, i) => (
@@ -409,7 +409,7 @@ function Problem() {
                 lineHeight: 'var(--lh-heading)',
                 color: i === cycle.length - 1 ? 'var(--blue)' : 'var(--black)',
                 margin: 0,
-                padding: '12px 0',
+                padding: '4px 0',
               }}
             >
               {step}
@@ -422,7 +422,7 @@ function Problem() {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  padding: '48px 0',
+                  padding: '24px 0',
                 }}
               >
                 <span
@@ -442,26 +442,20 @@ function Problem() {
       </div>
 
       {/* Concluding Insight */}
-      <div
+      <p
         style={{
-          marginTop: 72,
+          fontWeight: 700,
+          fontSize: 'var(--font-body)',
+          color: 'var(--black)',
+          letterSpacing: '0.01em',
+          lineHeight: 'var(--lh-body)',
+          margin: 0,
         }}
       >
-        <p
-          style={{
-            fontWeight: 700,
-            fontSize: 'var(--font-body)',
-            color: 'var(--black)',
-            letterSpacing: '0.01em',
-            lineHeight: 'var(--lh-body)',
-            margin: 0,
-          }}
-        >
-          기록은 남기는 것보다
-          <br />
-          다시 발견하는 것이 중요합니다.
-        </p>
-      </div>
+        기록은 남기는 것보다
+        <br />
+        다시 발견하는 것이 중요합니다.
+      </p>
     </section>
   )
 }
@@ -477,7 +471,7 @@ function Products() {
         background: '#f0f0ee',
       }}
     >
-      <div style={{ padding: '0 var(--pad-x)', marginBottom: 96, textAlign: 'center' }}>
+      <div style={{ padding: '0 var(--pad-x)', textAlign: 'center' }}>
         <SectionTitle>Product</SectionTitle>
       </div>
 
@@ -522,7 +516,7 @@ function Products() {
           </div>
         </div>
 
-        <div style={{ padding: '48px var(--pad-x) 0', textAlign: 'center' }}>
+        <div style={{ padding: '40px var(--pad-x) 0', textAlign: 'center' }}>
           <p
             style={{
               fontSize: 'var(--font-body)',
@@ -530,6 +524,7 @@ function Products() {
               fontWeight: 500,
               letterSpacing: '0.01em',
               lineHeight: 'var(--lh-body)',
+              margin: 0,
             }}
           >
             노트북과 북마크로 완성되는 CODEN 기록 시스템
@@ -548,16 +543,14 @@ function About() {
       style={{
         background: 'var(--white)',
         color: 'var(--black)',
-        paddingTop: 'clamp(72px, 16vw, 96px)',
-        paddingBottom: 'clamp(72px, 16vw, 96px)',
+        paddingTop: 'var(--section-py)',
+        paddingBottom: 'var(--section-py)',
         paddingLeft: 'var(--pad-x)',
         paddingRight: 'var(--pad-x)',
         textAlign: 'center',
       }}
     >
-      <div style={{ marginBottom: 72 }}>
-        <SectionTitle>About CODEN</SectionTitle>
-      </div>
+      <SectionTitle>About CODEN</SectionTitle>
 
       <p
         style={{
@@ -566,7 +559,7 @@ function About() {
           letterSpacing: '0.01em',
           lineHeight: 'var(--lh-heading)',
           color: 'var(--blue)',
-          marginBottom: 72,
+          marginBottom: 56,
           whiteSpace: 'nowrap',
         }}
       >
@@ -586,8 +579,8 @@ function About() {
         = CODE + NOTE
       </p>
 
-      <div>
-        <div style={{ marginBottom: 72 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 56, marginBottom: 64 }}>
+        <div>
           <p
             style={{
               fontWeight: 800,
@@ -595,7 +588,7 @@ function About() {
               letterSpacing: '0.04em',
               lineHeight: 'var(--lh-heading)',
               color: 'var(--black)',
-              marginBottom: 16,
+              marginBottom: 12,
             }}
           >
             CODE
@@ -606,13 +599,14 @@ function About() {
               color: 'var(--gray-text)',
               letterSpacing: '0.01em',
               lineHeight: 'var(--lh-body)',
+              margin: 0,
             }}
           >
             생각과 기록을 일정한 방식으로 구조화하는 방법
           </p>
         </div>
 
-        <div style={{ marginBottom: 72 }}>
+        <div>
           <p
             style={{
               fontWeight: 800,
@@ -620,7 +614,7 @@ function About() {
               letterSpacing: '0.04em',
               lineHeight: 'var(--lh-heading)',
               color: 'var(--black)',
-              marginBottom: 16,
+              marginBottom: 12,
             }}
           >
             NOTE
@@ -631,25 +625,26 @@ function About() {
               color: 'var(--gray-text)',
               letterSpacing: '0.01em',
               lineHeight: 'var(--lh-body)',
+              margin: 0,
             }}
           >
             생각과 정보를 기록하는 행위
           </p>
         </div>
-
-        <p
-          style={{
-            fontWeight: 700,
-            fontSize: 'var(--font-body)',
-            color: 'var(--black)',
-            letterSpacing: '0.01em',
-            lineHeight: 'var(--lh-body)',
-            margin: 0,
-          }}
-        >
-          CODEN은 기록을 구조화하는 CODE와 생각을 남기는 NOTE를 결합한 아날로그 메모 시스템입니다.
-        </p>
       </div>
+
+      <p
+        style={{
+          fontWeight: 700,
+          fontSize: 'var(--font-body)',
+          color: 'var(--black)',
+          letterSpacing: '0.01em',
+          lineHeight: 'var(--lh-body)',
+          margin: 0,
+        }}
+      >
+        CODEN은 기록을 구조화하는 CODE와 생각을 남기는 NOTE를 결합한 아날로그 메모 시스템입니다.
+      </p>
     </section>
   )
 }
@@ -685,18 +680,16 @@ function Principles() {
       style={{
         background: 'var(--white)',
         color: 'var(--black)',
-        paddingTop: 'clamp(72px, 16vw, 96px)',
-        paddingBottom: 'clamp(72px, 16vw, 96px)',
+        paddingTop: 'var(--section-py)',
+        paddingBottom: 'var(--section-py)',
         paddingLeft: 'var(--pad-x)',
         paddingRight: 'var(--pad-x)',
         textAlign: 'center',
       }}
     >
-      <div style={{ marginBottom: 100 }}>
-        <SectionTitle>Principles</SectionTitle>
-      </div>
+      <SectionTitle>Principles</SectionTitle>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 84 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 56 }}>
         {principles.map((item) => (
           <div key={item.num}>
             <p
@@ -706,7 +699,7 @@ function Principles() {
                 letterSpacing: '0.08em',
                 lineHeight: 1.2,
                 color: 'var(--blue)',
-                marginBottom: 10,
+                marginBottom: 8,
               }}
             >
               {item.num}
@@ -718,7 +711,7 @@ function Principles() {
                 letterSpacing: '0.01em',
                 lineHeight: 'var(--lh-heading)',
                 color: 'var(--black)',
-                marginBottom: 14,
+                marginBottom: 12,
               }}
             >
               {item.title}
@@ -755,28 +748,18 @@ function Process() {
       style={{
         background: 'var(--white)',
         color: 'var(--black)',
-        paddingTop: 'clamp(140px, 32vw, 200px)',
+        paddingTop: 'var(--section-py)',
         paddingBottom: 'var(--section-py)',
         paddingLeft: 'var(--pad-x)',
         paddingRight: 'var(--pad-x)',
         textAlign: 'center',
       }}
     >
-      <div style={{ marginBottom: 160 }}>
-        <SectionTitle>Process</SectionTitle>
-      </div>
-      {processSteps.map((step, i) => (
-        <div key={step.en}>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: 16,
-              paddingBottom: 80,
-            }}
-          >
+      <SectionTitle>Process</SectionTitle>
+
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: 64 }}>
+        {processSteps.map((step, i) => (
+          <div key={step.en} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <p
               style={{
                 fontWeight: 800,
@@ -784,6 +767,7 @@ function Process() {
                 letterSpacing: '0.05em',
                 lineHeight: 'var(--lh-heading)',
                 color: 'var(--black)',
+                marginBottom: 12,
               }}
             >
               {step.en}
@@ -794,46 +778,41 @@ function Process() {
                 color: 'var(--gray-text)',
                 letterSpacing: '0.01em',
                 lineHeight: 'var(--lh-body)',
+                margin: 0,
               }}
             >
               {step.ko}
             </p>
+            {i < processSteps.length - 1 && (
+              <div style={{ padding: '24px 0' }}>
+                <span
+                  style={{
+                    color: 'var(--blue)',
+                    fontSize: '20px',
+                    lineHeight: 1,
+                    display: 'block',
+                  }}
+                >
+                  ↓
+                </span>
+              </div>
+            )}
           </div>
-          {i < processSteps.length - 1 && (
-            <div style={{ margin: '80px 0' }}>
-              <span
-                style={{
-                  color: 'var(--blue)',
-                  fontSize: '20px',
-                  lineHeight: 1,
-                  display: 'block',
-                }}
-              >
-                ↓
-              </span>
-            </div>
-          )}
-        </div>
-      ))}
+        ))}
+      </div>
 
-      <div
+      <p
         style={{
-          marginTop: 210,
+          fontWeight: 700,
+          fontSize: 'var(--font-body)',
+          color: 'var(--black)',
+          letterSpacing: '0.01em',
+          lineHeight: 'var(--lh-body)',
+          margin: 0,
         }}
       >
-        <p
-          style={{
-            fontWeight: 700,
-            fontSize: 'var(--font-body)',
-            color: 'var(--black)',
-            letterSpacing: '0.01em',
-            lineHeight: 'var(--lh-body)',
-            marginBottom: 44,
-          }}
-        >
-          기록을 단순히 저장하는 데 그치지 않고, 포착하고 연결하며 새로운 생각으로 확장하는 과정을 제안합니다.
-        </p>
-      </div>
+        기록을 단순히 저장하는 데 그치지 않고, 포착하고 연결하며 새로운 생각으로 확장하는 과정을 제안합니다.
+      </p>
     </section>
   )
 }
@@ -841,8 +820,8 @@ function Process() {
 /* ─── Footer Section ─── */
 function Footer() {
   return (
-    <footer style={{ background: 'var(--blue)', color: 'var(--white)', padding: 'clamp(72px, 18vw, 96px) var(--pad-x) 56px' }}>
-      <div style={{ marginBottom: 32 }}>
+    <footer style={{ background: 'var(--blue)', color: 'var(--white)', padding: 'var(--section-py) var(--pad-x) 48px' }}>
+      <div style={{ marginBottom: 40 }}>
         <p
           style={{
             fontWeight: 800,
@@ -862,6 +841,7 @@ function Footer() {
             color: 'rgba(255,255,255,0.85)',
             letterSpacing: '0.02em',
             lineHeight: 1.3,
+            margin: 0,
           }}
         >
           Capture. Connect. Create.
@@ -883,6 +863,7 @@ function Footer() {
               color: 'rgba(255,255,255,0.75)',
               letterSpacing: '0.02em',
               lineHeight: 'var(--lh-body)',
+              margin: 0,
             }}
           >
             Designed by Suyeon
@@ -896,6 +877,7 @@ function Footer() {
             letterSpacing: '0.04em',
             color: 'rgba(255,255,255,0.65)',
             lineHeight: 'var(--lh-body)',
+            margin: 0,
           }}
         >
           © 2026 CODEN.
