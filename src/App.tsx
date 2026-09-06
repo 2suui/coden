@@ -363,34 +363,42 @@ function Problem() {
         borderTop: '1px solid var(--gray-mid)',
       }}
     >
-      <div style={{ marginBottom: 64 }}>
-        <SectionLabel>01 PROBLEM</SectionLabel>
-      </div>
-
-      <h2
+      <p
         style={{
-          fontWeight: 800,
-          fontSize: 'clamp(20px, 5.5vw, 24px)',
-          letterSpacing: '0.01em',
-          lineHeight: 1.6,
+          fontWeight: 700,
+          fontSize: '10.5px',
+          letterSpacing: '0.14em',
+          color: 'var(--gray-text)',
+          textTransform: 'uppercase',
+          marginBottom: 96,
+        }}
+      >
+        Problem
+      </p>
+
+      {/* Intro Question / Statement */}
+      <p
+        style={{
+          fontWeight: 700,
+          fontSize: 'var(--font-body)',
           color: 'var(--black)',
-          margin: '0 auto 72px',
+          letterSpacing: '0.01em',
+          lineHeight: 2.1,
+          marginBottom: 96,
         }}
       >
         기록은 많아졌지만,
         <br />
         다시 보지는 않습니다.
-      </h2>
+      </p>
 
-      {/* CODEN Dot/Line Graphic Flow */}
+      {/* Vertical Steps with Arrows and Generous Spacing */}
       <div
         style={{
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          position: 'relative',
-          maxWidth: 240,
-          margin: '0 auto',
+          marginBottom: 96,
         }}
       >
         {cycle.map((step, i) => (
@@ -400,90 +408,66 @@ function Problem() {
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              width: '100%',
             }}
           >
-            {/* Step Node */}
-            <div
+            {/* Step Word (No outer circle / container, pure typography) */}
+            <p
               style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                padding: '10px 24px',
-                background: i === cycle.length - 1 ? 'var(--blue)' : 'var(--white)',
-                border: `1.5px solid ${i === cycle.length - 1 ? 'var(--blue)' : 'var(--black)'}`,
-                borderRadius: 24,
-                boxShadow: '0 2px 8px rgba(0,0,0,0.03)',
-                zIndex: 2,
-                width: '100%',
-                maxWidth: 160,
+                fontWeight: 800,
+                fontSize: '17px',
+                letterSpacing: '0.08em',
+                color: i === cycle.length - 1 ? 'var(--blue)' : 'var(--black)',
+                margin: 0,
+                padding: '4px 0',
               }}
             >
-              <span
-                style={{
-                  fontWeight: 700,
-                  fontSize: '15px',
-                  letterSpacing: '0.06em',
-                  color: i === cycle.length - 1 ? 'var(--white)' : 'var(--black)',
-                }}
-              >
-                {step}
-              </span>
-            </div>
+              {step}
+            </p>
 
-            {/* CODEN Dot / Line Graphic Connector */}
+            {/* Downward Arrow with Generous Spacing */}
             {i < cycle.length - 1 && (
               <div
                 style={{
-                  height: 44,
                   display: 'flex',
-                  flexDirection: 'column',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  position: 'relative',
+                  padding: '28px 0',
                 }}
               >
-                {/* Vertical Line */}
-                <div
+                <span
                   style={{
-                    width: 1.5,
-                    height: '100%',
-                    background: 'var(--black)',
-                    opacity: 0.25,
+                    color: 'var(--blue)',
+                    fontSize: '18px',
+                    lineHeight: 1,
+                    display: 'block',
                   }}
-                />
-                {/* CODEN Dot Accent Node */}
-                <div
-                  style={{
-                    position: 'absolute',
-                    width: 6,
-                    height: 6,
-                    borderRadius: '50%',
-                    background: i % 2 === 0 ? 'var(--blue)' : 'var(--yellow)',
-                    border: '1px solid rgba(0,0,0,0.08)',
-                  }}
-                />
+                >
+                  ↓
+                </span>
               </div>
             )}
           </div>
         ))}
       </div>
 
-      {/* Conclusion / Insight */}
       <div
         style={{
-          marginTop: 80,
-          paddingTop: 48,
-          borderTop: '1px solid rgba(0,0,0,0.08)',
+          width: 32,
+          height: 2,
+          background: 'var(--blue)',
+          margin: '0 auto 80px',
         }}
-      >
+      />
+
+      {/* Concluding Insight (Matching About section typography) */}
+      <div>
         <p
           style={{
-            fontWeight: 800,
-            fontSize: 'clamp(17px, 4.8vw, 20px)',
-            lineHeight: 1.7,
+            fontWeight: 700,
+            fontSize: 'var(--font-body)',
+            color: 'var(--black)',
             letterSpacing: '0.01em',
-            color: 'var(--blue)',
+            lineHeight: 2.15,
             margin: 0,
           }}
         >
