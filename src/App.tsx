@@ -1,8 +1,8 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import logoImg from './assets/logo.png'
 
 /* ─── Section IDs & Types ─── */
-const SECTIONS = ['hero', 'problem', 'about', 'process', 'products', 'details'] as const
+const SECTIONS = ['hero', 'problem', 'about', 'process', 'products'] as const
 type SectionId = (typeof SECTIONS)[number]
 
 function scrollTo(id: string) {
@@ -134,8 +134,8 @@ function Menu({
   onClose: () => void
   activeSection: SectionId
 }) {
-  const items = ['HOME', 'PROBLEM', 'ABOUT', 'PROCESS', 'PRODUCTS', 'DETAILS']
-  const ids: SectionId[] = ['hero', 'problem', 'about', 'process', 'products', 'details']
+  const items = ['HOME', 'PROBLEM', 'ABOUT', 'PROCESS', 'PRODUCTS']
+  const ids: SectionId[] = ['hero', 'problem', 'about', 'process', 'products']
 
   return (
     <>
@@ -750,244 +750,8 @@ function About() {
             marginBottom: 44,
           }}
         >
-          기록을 단순히 저장하는 데 그치지 않고, 포착(Capture)하고 연결(Connect)하며 새로운 생각으로 확장(Create)하는 과정을 제안합니다.
+          기록을 단순히 저장하는 데 그치지 않고, 포착하고 연결하며 새로운 생각으로 확장하는 과정을 제안합니다.
         </p>
-      </div>
-    </section>
-  )
-}
-
-/* ─── Product Details Section ─── */
-function ProductDetails() {
-  const [active, setActive] = useState<string>('NOTEBOOK')
-  const touchStartRef = useRef<{ x: number; y: number } | null>(null)
-
-  const products = {
-    NOTEBOOK: {
-      label: 'NOTEBOOK',
-      description: (
-        <>
-          흩어진 생각을 구조로 바꾸는 노트.
-          <br />
-          기록에서 연결과 확장으로 이어지는 CODEN의 핵심 도구입니다.
-        </>
-      ),
-      img: 'https://images.unsplash.com/photo-1531346878377-a5be20888e57?w=700&h=900&fit=crop&auto=format',
-      alt: 'CODEN notebook spread showing inner pages',
-      specs: ['커버 — 하드커버', '내지 — 도트 그리드', '크기 — A5 (148×210mm)', '매수 — 192p'],
-    },
-    PACKAGE: {
-      label: 'PACKAGE',
-      description: (
-        <>
-          기록부터 연결까지, 노트북·펜·북마크로 구성된
-          <br />
-          CODEN의 완전한 기록 시스템입니다.
-        </>
-      ),
-      img: 'https://images.unsplash.com/photo-1587467512961-120760940315?w=700&h=900&fit=crop&auto=format',
-      alt: 'CODEN complete product package',
-      specs: ['구성 — 노트북 + 펜 + 북마크', '패키지 — 박스 포장', '크기 — 160×225mm', '소재 — 재생지'],
-    },
-    BOOKMARK: {
-      label: 'BOOKMARK',
-      description: (
-        <>
-          페이지를 정확하게 표시하고,
-          <br />
-          기록의 위치를 직관적으로 이어줍니다.
-        </>
-      ),
-      img: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=700&h=900&fit=crop&auto=format',
-      alt: 'CODEN magnetic bookmark in use',
-      specs: ['방식 — 자석 클립', '소재 — 황동', '크기 — 20×80mm', '색상 — 블루 / 옐로우'],
-    },
-  }
-
-  const productKeys = Object.keys(products)
-  const currentIndex = productKeys.indexOf(active)
-  const current = products[active as keyof typeof products]
-
-  const handleNext = () => {
-    const nextIdx = (currentIndex + 1) % productKeys.length
-    setActive(productKeys[nextIdx])
-  }
-
-  const handlePrev = () => {
-    const prevIdx = (currentIndex - 1 + productKeys.length) % productKeys.length
-    setActive(productKeys[prevIdx])
-  }
-
-  /* ─── Touch & Mouse Swipe Handlers ─── */
-  const onTouchStart = (e: React.TouchEvent) => {
-    touchStartRef.current = {
-      x: e.touches[0].clientX,
-      y: e.touches[0].clientY,
-    }
-  }
-
-  const onTouchEnd = (e: React.TouchEvent) => {
-    if (!touchStartRef.current) return
-    const dx = e.changedTouches[0].clientX - touchStartRef.current.x
-    const dy = e.changedTouches[0].clientY - touchStartRef.current.y
-    touchStartRef.current = null
-
-    if (Math.abs(dx) > 36 && Math.abs(dx) > Math.abs(dy) * 1.2) {
-      if (dx < 0) {
-        handleNext()
-      } else {
-        handlePrev()
-      }
-    }
-  }
-
-  const onMouseDown = (e: React.MouseEvent) => {
-    touchStartRef.current = { x: e.clientX, y: e.clientY }
-  }
-
-  const onMouseUp = (e: React.MouseEvent) => {
-    if (!touchStartRef.current) return
-    const dx = e.clientX - touchStartRef.current.x
-    const dy = e.clientY - touchStartRef.current.y
-    touchStartRef.current = null
-
-    if (Math.abs(dx) > 36 && Math.abs(dx) > Math.abs(dy) * 1.2) {
-      if (dx < 0) {
-        handleNext()
-      } else {
-        handlePrev()
-      }
-    }
-  }
-
-  return (
-    <section id="details" style={{ background: 'var(--white)', paddingTop: 'var(--section-py)' }}>
-      <div style={{ textAlign: 'center', marginBottom: 64, padding: '0 var(--pad-x)' }}>
-        <SectionLabel>Product Detail</SectionLabel>
-      </div>
-
-      {/* Tab Bar */}
-      <div
-        style={{
-          display: 'flex',
-          padding: '0 var(--pad-x)',
-          overflowX: 'auto',
-          justifyContent: 'center',
-          gap: 16,
-          marginBottom: 24,
-        }}
-      >
-        {productKeys.map((key) => (
-          <button
-            key={key}
-            onClick={() => setActive(key)}
-            style={{
-              padding: '10px 16px',
-              background: active === key ? 'var(--black)' : 'transparent',
-              borderRadius: 20,
-              border: 'none',
-              cursor: 'pointer',
-              fontWeight: 700,
-              fontSize: '12px',
-              letterSpacing: '0.06em',
-              color: active === key ? 'var(--white)' : 'var(--gray-text)',
-              transition: 'all 0.2s',
-              whiteSpace: 'nowrap',
-            }}
-          >
-            {key}
-          </button>
-        ))}
-      </div>
-
-      {/* Swipeable Product Content Area */}
-      <div
-        onTouchStart={onTouchStart}
-        onTouchEnd={onTouchEnd}
-        onMouseDown={onMouseDown}
-        onMouseUp={onMouseUp}
-        style={{
-          touchAction: 'pan-y',
-          cursor: 'grab',
-          userSelect: 'none',
-        }}
-      >
-        {/* Product Image */}
-        <div
-          style={{
-            width: '100%',
-            aspectRatio: '4/3',
-            background: 'var(--gray-light)',
-            overflow: 'hidden',
-          }}
-        >
-          <img
-            src={current.img}
-            alt={current.alt}
-            key={current.img}
-            draggable={false}
-            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-          />
-        </div>
-
-        {/* Product Info */}
-        <div style={{ padding: '44px var(--pad-x) var(--section-py)' }}>
-          <h3
-            style={{
-              fontWeight: 800,
-              fontSize: 'var(--font-title)',
-              letterSpacing: '0.04em',
-              color: 'var(--black)',
-              marginBottom: 20,
-            }}
-          >
-            {current.label}
-          </h3>
-          <p
-            style={{
-              fontSize: 'var(--font-body)',
-              letterSpacing: '0.01em',
-              lineHeight: 2.2,
-              color: '#555',
-              marginBottom: 36,
-            }}
-          >
-            {current.description}
-          </p>
-          <div style={{ paddingTop: 20 }}>
-            {current.specs.map((spec, i) => (
-              <div
-                key={i}
-                style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  padding: '12px 0',
-                }}
-              >
-                <span
-                  style={{
-                    fontSize: '13px',
-                    fontWeight: 700,
-                    color: 'var(--black)',
-                    letterSpacing: '0.02em',
-                  }}
-                >
-                  {spec.split('—')[0].trim()}
-                </span>
-                <span
-                  style={{
-                    fontSize: '13px',
-                    color: 'var(--gray-text)',
-                    letterSpacing: '0.01em',
-                  }}
-                >
-                  {spec.split('—')[1]?.trim()}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   )
@@ -1079,7 +843,6 @@ export default function App() {
         <Problem />
         <About />
         <Products />
-        <ProductDetails />
         <Footer />
       </main>
     </div>
