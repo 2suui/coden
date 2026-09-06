@@ -591,17 +591,18 @@ function About() {
       <p
         style={{
           fontWeight: 800,
-          fontSize: 'clamp(24px, 6vw, 28px)',
+          fontSize: 'clamp(18px, 4.8vw, 22px)',
           letterSpacing: '0.01em',
           color: 'var(--blue)',
           marginBottom: 96,
+          whiteSpace: 'nowrap',
         }}
       >
         <span
           style={{
             background: 'var(--yellow)',
             color: 'var(--blue)',
-            padding: '2px 8px',
+            padding: '2px 7px',
             borderRadius: 2,
             display: 'inline-block',
             letterSpacing: '0.04em',
