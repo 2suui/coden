@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import logoImg from './assets/logo.png'
 
 /* ─── Section IDs & Types ─── */
-const SECTIONS = ['hero', 'background', 'problem', 'about', 'principles', 'process', 'products'] as const
+const SECTIONS = ['hero', 'background', 'about', 'principles', 'process', 'products'] as const
 type SectionId = (typeof SECTIONS)[number]
 
 function scrollTo(id: string) {
@@ -134,8 +134,8 @@ function Menu({
   onClose: () => void
   activeSection: SectionId
 }) {
-  const items = ['HOME', 'BACKGROUND', 'PROBLEM', 'ABOUT', 'PRINCIPLES', 'PROCESS', 'PRODUCTS']
-  const ids: SectionId[] = ['hero', 'background', 'problem', 'about', 'principles', 'process', 'products']
+  const items = ['HOME', 'BACKGROUND', 'ABOUT', 'PRINCIPLES', 'PROCESS', 'PRODUCTS']
+  const ids: SectionId[] = ['hero', 'background', 'about', 'principles', 'process', 'products']
 
   return (
     <>
@@ -407,103 +407,6 @@ function Background() {
         }}
       >
         메모, 캡처, 사진, 링크처럼 기록 방식은 다양해졌지만 기록은 여러 곳에 흩어지고 빠르게 잊힙니다. 다시 읽히지 않은 기록은 생각으로 이어지지 못하고, 결국 같은 내용을 다시 찾거나 반복해 기록하게 됩니다.
-      </p>
-    </section>
-  )
-}
-
-/* ─── Problem Section ─── */
-function Problem() {
-  const cycle = ['기록', '축적', '분산', '망각', '재기록']
-
-  return (
-    <section
-      id="problem"
-      style={{
-        background: 'var(--white)',
-        color: 'var(--black)',
-        paddingTop: 'var(--section-py)',
-        paddingBottom: 'var(--section-py)',
-        paddingLeft: 'var(--pad-x)',
-        paddingRight: 'var(--pad-x)',
-        textAlign: 'center',
-      }}
-    >
-      <SectionLabel>Problem</SectionLabel>
-
-      {/* Vertical Steps with Arrows */}
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          marginBottom: 72,
-        }}
-      >
-        {cycle.map((step, i) => (
-          <div
-            key={step}
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-            }}
-          >
-            {/* Step Word */}
-            <p
-              style={{
-                fontWeight: 800,
-                fontSize: 'var(--font-subheading)',
-                letterSpacing: '0.06em',
-                lineHeight: 'var(--lh-heading)',
-                color: i === cycle.length - 1 ? 'var(--blue)' : 'var(--black)',
-                margin: 0,
-                padding: '4px 0',
-              }}
-            >
-              {step}
-            </p>
-
-            {/* Downward Arrow */}
-            {i < cycle.length - 1 && (
-              <div
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  padding: '28px 0',
-                }}
-              >
-                <span
-                  style={{
-                    color: 'var(--blue)',
-                    fontSize: '20px',
-                    lineHeight: 1,
-                    display: 'block',
-                  }}
-                >
-                  ↓
-                </span>
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
-
-      {/* Concluding Insight */}
-      <p
-        style={{
-          fontWeight: 700,
-          fontSize: 'var(--font-body)',
-          color: 'var(--black)',
-          letterSpacing: '0.01em',
-          lineHeight: 1.75,
-          margin: 0,
-        }}
-      >
-        기록은 남기는 것보다
-        <br />
-        다시 발견하는 것이 중요합니다.
       </p>
     </section>
   )
@@ -956,7 +859,6 @@ export default function App() {
       <main>
         <Hero />
         <Background />
-        <Problem />
         <About />
         <Principles />
         <Process />
