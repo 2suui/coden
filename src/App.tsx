@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import logoImg from './assets/logo.png'
+import heroImg from './assets/hero.jpg'
 
 /* ─── Section IDs & Types ─── */
 const SECTIONS = ['hero', 'background', 'about', 'principles', 'process', 'products'] as const
@@ -288,15 +289,15 @@ function Hero() {
       <div
         style={{
           width: '100%',
-          aspectRatio: '3/4',
+          aspectRatio: '1/1',
           maxHeight: '82vh',
           background: 'var(--gray-light)',
           overflow: 'hidden',
         }}
       >
         <img
-          src="https://images.unsplash.com/photo-1517842645767-c639042777db?w=800&h=900&fit=crop&auto=format"
-          alt="CODEN notebook system flat lay"
+          src={heroImg}
+          alt="CODEN Notebook on yellow background"
           style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
         />
       </div>
