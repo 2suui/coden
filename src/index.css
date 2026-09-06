@@ -85,9 +85,9 @@
   --font-body: 16px;
   --font-caption: 13px;
 
-  /* ─── 행간 규격 (제목 120%, 본문 140~150%) ─── */
-  --lh-heading: 1.2;
-  --lh-body: 1.45;
+  /* ─── 행간 규격 ─── */
+  --lh-heading: 1.3;
+  --lh-body: 1.7;
 }
 
 * {

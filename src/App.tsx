@@ -256,23 +256,21 @@ function Menu({
   )
 }
 
-/* ─── Section Title Component ─── */
-function SectionTitle({ children }: { children: React.ReactNode }) {
+/* ─── Section Label Component ─── */
+function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <div style={{ marginBottom: 64 }}>
-      <h2
-        style={{
-          fontWeight: 800,
-          fontSize: 'var(--font-section-title)',
-          letterSpacing: '0.02em',
-          lineHeight: 'var(--lh-heading)',
-          color: 'var(--black)',
-          margin: 0,
-        }}
-      >
-        {children}
-      </h2>
-    </div>
+    <p
+      style={{
+        fontWeight: 700,
+        fontSize: '12px',
+        letterSpacing: '0.14em',
+        color: 'var(--gray-text)',
+        textTransform: 'uppercase',
+        margin: '0 0 64px 0',
+      }}
+    >
+      {children}
+    </p>
   )
 }
 
@@ -309,7 +307,7 @@ function Hero() {
           padding: '64px var(--pad-x) var(--section-py)',
           display: 'flex',
           flexDirection: 'column',
-          gap: 40,
+          gap: 48,
         }}
       >
         <h1
@@ -317,7 +315,7 @@ function Hero() {
             fontWeight: 800,
             fontSize: 'var(--font-hero)',
             letterSpacing: '0.02em',
-            lineHeight: 'var(--lh-heading)',
+            lineHeight: 1.55,
             color: 'var(--black)',
             margin: 0,
           }}
@@ -328,20 +326,38 @@ function Hero() {
           <br />
           Create.
         </h1>
-        <p
+        <div
           style={{
-            fontWeight: 500,
-            fontSize: 'var(--font-body)',
-            letterSpacing: '0.01em',
-            lineHeight: 'var(--lh-body)',
-            color: 'var(--black)',
-            margin: 0,
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 12,
           }}
         >
-          기록하고. 연결하고. 확장하다.
-          <br />
-          CODEN은 일상의 생각을 의미 있는 아이디어로 바꿉니다.
-        </p>
+          <p
+            style={{
+              fontWeight: 700,
+              fontSize: 'var(--font-body)',
+              letterSpacing: '0.01em',
+              lineHeight: 'var(--lh-body)',
+              color: 'var(--black)',
+              margin: 0,
+            }}
+          >
+            기록하고. 연결하고. 확장하다.
+          </p>
+          <p
+            style={{
+              fontWeight: 500,
+              fontSize: 'var(--font-body)',
+              letterSpacing: '0.01em',
+              lineHeight: 'var(--lh-body)',
+              color: 'var(--gray-text)',
+              margin: 0,
+            }}
+          >
+            CODEN은 일상의 생각을 의미 있는 아이디어로 바꿉니다.
+          </p>
+        </div>
       </div>
     </section>
   )
@@ -364,7 +380,7 @@ function Problem() {
         textAlign: 'center',
       }}
     >
-      <SectionTitle>Problem</SectionTitle>
+      <SectionLabel>Problem</SectionLabel>
 
       {/* Intro Question / Statement */}
       <p
@@ -373,8 +389,8 @@ function Problem() {
           fontSize: 'var(--font-subheading)',
           color: 'var(--black)',
           letterSpacing: '0.01em',
-          lineHeight: 'var(--lh-heading)',
-          marginBottom: 56,
+          lineHeight: 1.6,
+          marginBottom: 64,
         }}
       >
         기록은 많아졌지만,
@@ -388,7 +404,7 @@ function Problem() {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          marginBottom: 64,
+          marginBottom: 72,
         }}
       >
         {cycle.map((step, i) => (
@@ -422,7 +438,7 @@ function Problem() {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  padding: '24px 0',
+                  padding: '28px 0',
                 }}
               >
                 <span
@@ -448,7 +464,7 @@ function Problem() {
           fontSize: 'var(--font-body)',
           color: 'var(--black)',
           letterSpacing: '0.01em',
-          lineHeight: 'var(--lh-body)',
+          lineHeight: 1.75,
           margin: 0,
         }}
       >
@@ -472,7 +488,7 @@ function Products() {
       }}
     >
       <div style={{ padding: '0 var(--pad-x)', textAlign: 'center' }}>
-        <SectionTitle>Product</SectionTitle>
+        <SectionLabel>Product</SectionLabel>
       </div>
 
       {/* Single Integrated Product Photo */}
@@ -516,14 +532,14 @@ function Products() {
           </div>
         </div>
 
-        <div style={{ padding: '40px var(--pad-x) 0', textAlign: 'center' }}>
+        <div style={{ padding: '48px var(--pad-x) 0', textAlign: 'center' }}>
           <p
             style={{
               fontSize: 'var(--font-body)',
               color: 'var(--gray-text)',
               fontWeight: 500,
               letterSpacing: '0.01em',
-              lineHeight: 'var(--lh-body)',
+              lineHeight: 1.75,
               margin: 0,
             }}
           >
@@ -550,7 +566,7 @@ function About() {
         textAlign: 'center',
       }}
     >
-      <SectionTitle>About CODEN</SectionTitle>
+      <SectionLabel>About CODEN</SectionLabel>
 
       <p
         style={{
@@ -559,7 +575,7 @@ function About() {
           letterSpacing: '0.01em',
           lineHeight: 'var(--lh-heading)',
           color: 'var(--blue)',
-          marginBottom: 56,
+          marginBottom: 64,
           whiteSpace: 'nowrap',
         }}
       >
@@ -579,7 +595,7 @@ function About() {
         = CODE + NOTE
       </p>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 56, marginBottom: 64 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 64, marginBottom: 72 }}>
         <div>
           <p
             style={{
@@ -588,7 +604,7 @@ function About() {
               letterSpacing: '0.04em',
               lineHeight: 'var(--lh-heading)',
               color: 'var(--black)',
-              marginBottom: 12,
+              marginBottom: 16,
             }}
           >
             CODE
@@ -598,7 +614,7 @@ function About() {
               fontSize: 'var(--font-body)',
               color: 'var(--gray-text)',
               letterSpacing: '0.01em',
-              lineHeight: 'var(--lh-body)',
+              lineHeight: 1.75,
               margin: 0,
             }}
           >
@@ -614,7 +630,7 @@ function About() {
               letterSpacing: '0.04em',
               lineHeight: 'var(--lh-heading)',
               color: 'var(--black)',
-              marginBottom: 12,
+              marginBottom: 16,
             }}
           >
             NOTE
@@ -624,7 +640,7 @@ function About() {
               fontSize: 'var(--font-body)',
               color: 'var(--gray-text)',
               letterSpacing: '0.01em',
-              lineHeight: 'var(--lh-body)',
+              lineHeight: 1.75,
               margin: 0,
             }}
           >
@@ -639,7 +655,7 @@ function About() {
           fontSize: 'var(--font-body)',
           color: 'var(--black)',
           letterSpacing: '0.01em',
-          lineHeight: 'var(--lh-body)',
+          lineHeight: 1.75,
           margin: 0,
         }}
       >
@@ -687,9 +703,9 @@ function Principles() {
         textAlign: 'center',
       }}
     >
-      <SectionTitle>Principles</SectionTitle>
+      <SectionLabel>Principles</SectionLabel>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 56 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 64 }}>
         {principles.map((item) => (
           <div key={item.num}>
             <p
@@ -699,7 +715,7 @@ function Principles() {
                 letterSpacing: '0.08em',
                 lineHeight: 1.2,
                 color: 'var(--blue)',
-                marginBottom: 8,
+                marginBottom: 10,
               }}
             >
               {item.num}
@@ -711,7 +727,7 @@ function Principles() {
                 letterSpacing: '0.01em',
                 lineHeight: 'var(--lh-heading)',
                 color: 'var(--black)',
-                marginBottom: 12,
+                marginBottom: 16,
               }}
             >
               {item.title}
@@ -721,7 +737,7 @@ function Principles() {
                 fontSize: 'var(--font-body)',
                 color: 'var(--gray-text)',
                 letterSpacing: '0.01em',
-                lineHeight: 'var(--lh-body)',
+                lineHeight: 1.75,
                 margin: 0,
               }}
             >
@@ -755,9 +771,9 @@ function Process() {
         textAlign: 'center',
       }}
     >
-      <SectionTitle>Process</SectionTitle>
+      <SectionLabel>Process</SectionLabel>
 
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: 64 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: 72 }}>
         {processSteps.map((step, i) => (
           <div key={step.en} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <p
@@ -767,7 +783,7 @@ function Process() {
                 letterSpacing: '0.05em',
                 lineHeight: 'var(--lh-heading)',
                 color: 'var(--black)',
-                marginBottom: 12,
+                marginBottom: 14,
               }}
             >
               {step.en}
@@ -777,14 +793,14 @@ function Process() {
                 fontSize: 'var(--font-body)',
                 color: 'var(--gray-text)',
                 letterSpacing: '0.01em',
-                lineHeight: 'var(--lh-body)',
+                lineHeight: 1.75,
                 margin: 0,
               }}
             >
               {step.ko}
             </p>
             {i < processSteps.length - 1 && (
-              <div style={{ padding: '24px 0' }}>
+              <div style={{ padding: '28px 0' }}>
                 <span
                   style={{
                     color: 'var(--blue)',
