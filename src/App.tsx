@@ -760,14 +760,14 @@ function About() {
 /* ─── Footer Section ─── */
 function Footer() {
   return (
-    <footer style={{ background: 'var(--black)', color: 'var(--white)', padding: '48px var(--pad-x) 40px' }}>
+    <footer style={{ background: 'var(--blue)', color: 'var(--white)', padding: '56px var(--pad-x) 44px' }}>
       <div style={{ marginBottom: 32 }}>
         <p
           style={{
             fontWeight: 800,
             fontSize: '16px',
             letterSpacing: '0.06em',
-            color: 'rgba(255,255,255,0.7)',
+            color: 'var(--white)',
             marginBottom: 8,
           }}
         >
@@ -777,7 +777,7 @@ function Footer() {
           style={{
             fontWeight: 300,
             fontSize: '12px',
-            color: 'rgba(255,255,255,0.55)',
+            color: 'rgba(255,255,255,0.85)',
             letterSpacing: '0.02em',
           }}
         >
@@ -797,7 +797,7 @@ function Footer() {
           <p
             style={{
               fontSize: '12px',
-              color: 'rgba(255,255,255,0.4)',
+              color: 'rgba(255,255,255,0.75)',
               letterSpacing: '0.02em',
               lineHeight: 2.0,
             }}
@@ -811,7 +811,7 @@ function Footer() {
           style={{
             fontSize: '12px',
             letterSpacing: '0.04em',
-            color: 'rgba(255,255,255,0.3)',
+            color: 'rgba(255,255,255,0.65)',
           }}
         >
           © 2026 CODEN.
