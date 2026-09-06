@@ -360,7 +360,6 @@ function Problem() {
         paddingLeft: 'var(--pad-x)',
         paddingRight: 'var(--pad-x)',
         textAlign: 'center',
-        borderTop: '1px solid var(--gray-mid)',
       }}
     >
       <p
@@ -454,8 +453,6 @@ function Problem() {
       <div
         style={{
           marginTop: 110,
-          paddingTop: 64,
-          borderTop: '1px solid rgba(0,0,0,0.08)',
         }}
       >
         <p
@@ -740,8 +737,6 @@ function About() {
       <div
         style={{
           marginTop: 120,
-          paddingTop: 96,
-          borderTop: '1px solid rgba(0,0,0,0.08)',
         }}
       >
         <p
@@ -885,10 +880,11 @@ function ProductDetails() {
       <div
         style={{
           display: 'flex',
-          borderTop: '1px solid var(--gray-mid)',
-          borderBottom: '1px solid var(--gray-mid)',
           padding: '0 var(--pad-x)',
           overflowX: 'auto',
+          justifyContent: 'center',
+          gap: 16,
+          marginBottom: 24,
         }}
       >
         {productKeys.map((key) => (
@@ -896,18 +892,16 @@ function ProductDetails() {
             key={key}
             onClick={() => setActive(key)}
             style={{
-              flex: 1,
-              minWidth: 80,
-              padding: '16px 12px',
-              background: 'none',
+              padding: '10px 16px',
+              background: active === key ? 'var(--black)' : 'transparent',
+              borderRadius: 20,
               border: 'none',
-              borderBottom: active === key ? '2px solid var(--blue)' : '2px solid transparent',
               cursor: 'pointer',
               fontWeight: 700,
               fontSize: '12px',
               letterSpacing: '0.06em',
-              color: active === key ? 'var(--blue)' : 'var(--gray-text)',
-              transition: 'color 0.2s, border-color 0.2s',
+              color: active === key ? 'var(--white)' : 'var(--gray-text)',
+              transition: 'all 0.2s',
               whiteSpace: 'nowrap',
             }}
           >
@@ -970,7 +964,7 @@ function ProductDetails() {
           >
             {current.description}
           </p>
-          <div style={{ borderTop: '1px solid var(--gray-mid)', paddingTop: 28 }}>
+          <div style={{ paddingTop: 20 }}>
             {current.specs.map((spec, i) => (
               <div
                 key={i}
@@ -978,8 +972,7 @@ function ProductDetails() {
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'center',
-                  padding: '16px 0',
-                  borderBottom: i < current.specs.length - 1 ? '1px solid var(--gray-mid)' : 'none',
+                  padding: '12px 0',
                 }}
               >
                 <span
@@ -1040,8 +1033,7 @@ function Footer() {
 
       <div
         style={{
-          borderTop: '1px solid rgba(255,255,255,0.1)',
-          paddingTop: 28,
+          paddingTop: 16,
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'flex-end',
