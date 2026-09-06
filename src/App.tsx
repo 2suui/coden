@@ -256,21 +256,20 @@ function Menu({
   )
 }
 
-/* ─── Section Label ─── */
-function SectionLabel({ children }: { children: React.ReactNode }) {
+/* ─── Section Title Component ─── */
+function SectionTitle({ children }: { children: React.ReactNode }) {
   return (
-    <p
+    <h2
       style={{
-        fontWeight: 700,
-        fontSize: '12px',
-        letterSpacing: '0.14em',
-        color: 'var(--gray-text)',
-        textTransform: 'uppercase',
-        marginBottom: 0,
+        fontWeight: 800,
+        fontSize: 'var(--font-section-title)',
+        letterSpacing: '0.02em',
+        color: 'var(--black)',
+        margin: 0,
       }}
     >
       {children}
-    </p>
+    </h2>
   )
 }
 
@@ -315,7 +314,7 @@ function Hero() {
             fontWeight: 800,
             fontSize: 'var(--font-hero)',
             letterSpacing: '0.02em',
-            lineHeight: 1.55,
+            lineHeight: 1.45,
             color: 'var(--black)',
             margin: 0,
           }}
@@ -362,27 +361,18 @@ function Problem() {
         textAlign: 'center',
       }}
     >
-      <p
-        style={{
-          fontWeight: 700,
-          fontSize: '12px',
-          letterSpacing: '0.14em',
-          color: 'var(--gray-text)',
-          textTransform: 'uppercase',
-          marginBottom: 72,
-        }}
-      >
-        Problem
-      </p>
+      <div style={{ marginBottom: 72 }}>
+        <SectionTitle>Problem</SectionTitle>
+      </div>
 
       {/* Intro Question / Statement */}
       <p
         style={{
           fontWeight: 700,
-          fontSize: 'var(--font-body)',
+          fontSize: 'var(--font-subheading)',
           color: 'var(--black)',
           letterSpacing: '0.01em',
-          lineHeight: 2.25,
+          lineHeight: 1.85,
           marginBottom: 84,
         }}
       >
@@ -413,8 +403,8 @@ function Problem() {
             <p
               style={{
                 fontWeight: 800,
-                fontSize: '17px',
-                letterSpacing: '0.08em',
+                fontSize: 'var(--font-subheading)',
+                letterSpacing: '0.06em',
                 color: i === cycle.length - 1 ? 'var(--blue)' : 'var(--black)',
                 margin: 0,
                 padding: '12px 0',
@@ -436,7 +426,7 @@ function Problem() {
                 <span
                   style={{
                     color: 'var(--blue)',
-                    fontSize: '18px',
+                    fontSize: '20px',
                     lineHeight: 1,
                     display: 'block',
                   }}
@@ -486,7 +476,7 @@ function Products() {
       }}
     >
       <div style={{ padding: '0 var(--pad-x)', marginBottom: 96, textAlign: 'center' }}>
-        <SectionLabel>Product</SectionLabel>
+        <SectionTitle>Product</SectionTitle>
       </div>
 
       {/* Single Integrated Product Photo */}
@@ -519,7 +509,7 @@ function Products() {
                 background: 'var(--blue)',
                 color: 'var(--white)',
                 fontWeight: 700,
-                fontSize: '12.5px',
+                fontSize: 'var(--font-caption)',
                 letterSpacing: '0.08em',
                 padding: '6px 14px',
               }}
@@ -562,23 +552,14 @@ function About() {
         textAlign: 'center',
       }}
     >
-      <p
-        style={{
-          fontWeight: 700,
-          fontSize: '12px',
-          letterSpacing: '0.14em',
-          color: 'var(--gray-text)',
-          textTransform: 'uppercase',
-          marginBottom: 72,
-        }}
-      >
-        About CODEN
-      </p>
+      <div style={{ marginBottom: 72 }}>
+        <SectionTitle>About CODEN</SectionTitle>
+      </div>
 
       <p
         style={{
           fontWeight: 800,
-          fontSize: 'clamp(18px, 4.8vw, 22px)',
+          fontSize: 'var(--font-subheading)',
           letterSpacing: '0.01em',
           color: 'var(--blue)',
           marginBottom: 72,
@@ -606,8 +587,8 @@ function About() {
           <p
             style={{
               fontWeight: 800,
-              fontSize: '16px',
-              letterSpacing: '0.05em',
+              fontSize: 'var(--font-subheading)',
+              letterSpacing: '0.04em',
               color: 'var(--black)',
               marginBottom: 16,
             }}
@@ -630,8 +611,8 @@ function About() {
           <p
             style={{
               fontWeight: 800,
-              fontSize: '16px',
-              letterSpacing: '0.05em',
+              fontSize: 'var(--font-subheading)',
+              letterSpacing: '0.04em',
               color: 'var(--black)',
               marginBottom: 16,
             }}
@@ -705,18 +686,9 @@ function Principles() {
         textAlign: 'center',
       }}
     >
-      <p
-        style={{
-          fontWeight: 700,
-          fontSize: '12px',
-          letterSpacing: '0.14em',
-          color: 'var(--gray-text)',
-          textTransform: 'uppercase',
-          marginBottom: 100,
-        }}
-      >
-        Principles
-      </p>
+      <div style={{ marginBottom: 100 }}>
+        <SectionTitle>Principles</SectionTitle>
+      </div>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: 84 }}>
         {principles.map((item) => (
@@ -724,7 +696,7 @@ function Principles() {
             <p
               style={{
                 fontWeight: 800,
-                fontSize: '13px',
+                fontSize: 'var(--font-caption)',
                 letterSpacing: '0.08em',
                 color: 'var(--blue)',
                 marginBottom: 10,
@@ -735,7 +707,7 @@ function Principles() {
             <h3
               style={{
                 fontWeight: 800,
-                fontSize: '17px',
+                fontSize: 'var(--font-subheading)',
                 letterSpacing: '0.01em',
                 color: 'var(--black)',
                 marginBottom: 14,
@@ -782,18 +754,9 @@ function Process() {
         textAlign: 'center',
       }}
     >
-      <p
-        style={{
-          fontWeight: 700,
-          fontSize: '12px',
-          letterSpacing: '0.14em',
-          color: 'var(--gray-text)',
-          textTransform: 'uppercase',
-          marginBottom: 160,
-        }}
-      >
-        Process
-      </p>
+      <div style={{ marginBottom: 160 }}>
+        <SectionTitle>Process</SectionTitle>
+      </div>
       {processSteps.map((step, i) => (
         <div key={step.en}>
           <div
@@ -809,7 +772,7 @@ function Process() {
             <p
               style={{
                 fontWeight: 800,
-                fontSize: '16px',
+                fontSize: 'var(--font-subheading)',
                 letterSpacing: '0.05em',
                 color: 'var(--black)',
               }}
@@ -832,7 +795,7 @@ function Process() {
               <span
                 style={{
                   color: 'var(--blue)',
-                  fontSize: '18px',
+                  fontSize: '20px',
                   lineHeight: 1,
                   display: 'block',
                 }}
@@ -874,7 +837,7 @@ function Footer() {
         <p
           style={{
             fontWeight: 800,
-            fontSize: '16px',
+            fontSize: 'var(--font-subheading)',
             letterSpacing: '0.06em',
             color: 'var(--white)',
             marginBottom: 8,
@@ -885,7 +848,7 @@ function Footer() {
         <p
           style={{
             fontWeight: 300,
-            fontSize: '12px',
+            fontSize: 'var(--font-caption)',
             color: 'rgba(255,255,255,0.85)',
             letterSpacing: '0.02em',
           }}
@@ -905,7 +868,7 @@ function Footer() {
         <div>
           <p
             style={{
-              fontSize: '12px',
+              fontSize: 'var(--font-caption)',
               color: 'rgba(255,255,255,0.75)',
               letterSpacing: '0.02em',
               lineHeight: 2.0,
