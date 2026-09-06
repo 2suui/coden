@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import logoImg from './assets/logo.png'
 
 /* ─── Section IDs & Types ─── */
-const SECTIONS = ['hero', 'problem', 'about', 'products', 'process', 'details'] as const
+const SECTIONS = ['hero', 'problem', 'about', 'products', 'details'] as const
 type SectionId = (typeof SECTIONS)[number]
 
 function scrollTo(id: string) {
@@ -134,8 +134,8 @@ function Menu({
   onClose: () => void
   activeSection: SectionId
 }) {
-  const items = ['HOME', 'PROBLEM', 'ABOUT', 'PRODUCTS', 'HOW TO USE', 'DETAILS']
-  const ids: SectionId[] = ['hero', 'problem', 'about', 'products', 'process', 'details']
+  const items = ['HOME', 'PROBLEM', 'ABOUT', 'PRODUCTS', 'DETAILS']
+  const ids: SectionId[] = ['hero', 'problem', 'about', 'products', 'details']
 
   return (
     <>
@@ -784,160 +784,6 @@ function About() {
   )
 }
 
-/* ─── How to Use Section ─── */
-function Process() {
-  const steps: { num: string; title: string; en: string; desc: React.ReactNode }[] = [
-    {
-      num: '01',
-      title: '기록',
-      en: 'Capture',
-      desc: (
-        <>
-          먼저, 적습니다.
-          <br />
-          떠오른 생각을 판단하지 않고 자유롭게 기록합니다.
-        </>
-      ),
-    },
-    {
-      num: '02',
-      title: '선별',
-      en: 'Select',
-      desc: (
-        <>
-          남길 생각을 골라냅니다.
-          <br />
-          쌓인 기록 속에서 지금 의미 있는 생각을 찾아냅니다.
-        </>
-      ),
-    },
-    {
-      num: '03',
-      title: '연결',
-      en: 'Connect',
-      desc: (
-        <>
-          생각과 생각을 이어봅니다.
-          <br />
-          서로 다른 기록 사이의 관계를 발견하고
-          <br />
-          새로운 맥락을 만듭니다.
-        </>
-      ),
-    },
-    {
-      num: '04',
-      title: '재발견',
-      en: 'Rediscover',
-      desc: (
-        <>
-          기록을 다시 꺼내 바라봅니다.
-          <br />
-          지나간 생각을 현재의 시선으로 다시 읽으며
-          <br />
-          새로운 의미를 발견합니다.
-        </>
-      ),
-    },
-    {
-      num: '05',
-      title: '확장',
-      en: 'Expand',
-      desc: (
-        <>
-          발견한 생각을 다음으로 확장합니다.
-          <br />
-          하나의 기록은 새로운 아이디어가 되고,
-          <br />
-          또 다른 생각의 시작점으로 이어집니다.
-        </>
-      ),
-    },
-  ]
-
-  return (
-    <section
-      id="process"
-      style={{
-        background: 'var(--white)',
-        paddingTop: 'var(--section-py)',
-        paddingBottom: 'var(--section-py)',
-      }}
-    >
-      <div style={{ textAlign: 'center', marginBottom: 48, padding: '0 var(--pad-x)' }}>
-        <SectionLabel>How to Use</SectionLabel>
-      </div>
-
-      <div>
-        {steps.map((step, i) => (
-          <div
-            key={step.num}
-            style={{
-              padding: '28px var(--pad-x)',
-              borderTop: i === 0 ? '1px solid var(--gray-mid)' : 'none',
-              borderBottom: '1px solid var(--gray-mid)',
-            }}
-          >
-            <div style={{ display: 'flex', alignItems: 'flex-start', gap: 14 }}>
-              <span
-                style={{
-                  fontWeight: 700,
-                  fontSize: 'var(--font-badge-num)',
-                  letterSpacing: '0.06em',
-                  color: 'var(--yellow)',
-                  background: 'var(--black)',
-                  padding: '2px 7px',
-                  lineHeight: 1.5,
-                  flexShrink: 0,
-                  marginTop: 4,
-                }}
-              >
-                {step.num}
-              </span>
-              <div style={{ flex: 1 }}>
-                <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginBottom: 8 }}>
-                  <span
-                    style={{
-                      fontWeight: 700,
-                      fontSize: 'var(--font-how-title)',
-                      letterSpacing: '0.04em',
-                      color: 'var(--black)',
-                    }}
-                  >
-                    {step.title}
-                  </span>
-                  <span
-                    style={{
-                      fontWeight: 400,
-                      fontSize: '11.5px',
-                      letterSpacing: '0.06em',
-                      color: 'var(--gray-text)',
-                      textTransform: 'uppercase',
-                    }}
-                  >
-                    {step.en}
-                  </span>
-                </div>
-                <p
-                  style={{
-                    fontSize: 'var(--font-body)',
-                    letterSpacing: '0.01em',
-                    lineHeight: 2.05,
-                    color: '#444',
-                    margin: 0,
-                  }}
-                >
-                  {step.desc}
-                </p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
-  )
-}
-
 /* ─── Product Details Section ─── */
 function ProductDetails() {
   const [active, setActive] = useState<string>('NOTEBOOK')
@@ -1263,7 +1109,6 @@ export default function App() {
         <Problem />
         <About />
         <Products />
-        <Process />
         <ProductDetails />
         <Footer />
       </main>
