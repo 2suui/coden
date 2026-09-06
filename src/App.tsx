@@ -108,7 +108,7 @@ function Nav({ onMenuOpen }: { onMenuOpen: () => void }) {
     >
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        style={{ background: 'none', border: 'none', padding: '8px 8px 8px 0', cursor: 'pointer' }}
+        style={{ background: 'none', border: 'none', padding: '8px 8px 8px 0', marginLeft: -4, cursor: 'pointer', display: 'flex', alignItems: 'center' }}
         aria-label="CODEN Home"
       >
         <Logo />
