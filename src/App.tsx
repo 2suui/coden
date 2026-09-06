@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import logoImg from './assets/logo.png'
 
 /* ─── Section IDs & Types ─── */
-const SECTIONS = ['hero', 'about', 'products', 'process', 'details'] as const
+const SECTIONS = ['hero', 'problem', 'about', 'products', 'process', 'details'] as const
 type SectionId = (typeof SECTIONS)[number]
 
 function scrollTo(id: string) {
@@ -134,8 +134,8 @@ function Menu({
   onClose: () => void
   activeSection: SectionId
 }) {
-  const items = ['HOME', 'ABOUT', 'PRODUCTS', 'HOW TO USE', 'DETAILS']
-  const ids: SectionId[] = ['hero', 'about', 'products', 'process', 'details']
+  const items = ['HOME', 'PROBLEM', 'ABOUT', 'PRODUCTS', 'HOW TO USE', 'DETAILS']
+  const ids: SectionId[] = ['hero', 'problem', 'about', 'products', 'process', 'details']
 
   return (
     <>
@@ -339,6 +339,157 @@ function Hero() {
           기록하고. 연결하고. 확장하다.
           <br />
           CODEN은 일상의 생각을 의미 있는 아이디어로 바꿉니다.
+        </p>
+      </div>
+    </section>
+  )
+}
+
+/* ─── Problem Section ─── */
+function Problem() {
+  const cycle = ['기록', '축적', '분산', '망각', '재기록']
+
+  return (
+    <section
+      id="problem"
+      style={{
+        background: 'var(--white)',
+        color: 'var(--black)',
+        paddingTop: 'var(--section-py)',
+        paddingBottom: 'var(--section-py)',
+        paddingLeft: 'var(--pad-x)',
+        paddingRight: 'var(--pad-x)',
+        textAlign: 'center',
+        borderTop: '1px solid var(--gray-mid)',
+      }}
+    >
+      <div style={{ marginBottom: 64 }}>
+        <SectionLabel>01 PROBLEM</SectionLabel>
+      </div>
+
+      <h2
+        style={{
+          fontWeight: 800,
+          fontSize: 'clamp(20px, 5.5vw, 24px)',
+          letterSpacing: '0.01em',
+          lineHeight: 1.6,
+          color: 'var(--black)',
+          margin: '0 auto 72px',
+        }}
+      >
+        기록은 많아졌지만,
+        <br />
+        다시 보지는 않습니다.
+      </h2>
+
+      {/* CODEN Dot/Line Graphic Flow */}
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          position: 'relative',
+          maxWidth: 240,
+          margin: '0 auto',
+        }}
+      >
+        {cycle.map((step, i) => (
+          <div
+            key={step}
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              width: '100%',
+            }}
+          >
+            {/* Step Node */}
+            <div
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: '10px 24px',
+                background: i === cycle.length - 1 ? 'var(--blue)' : 'var(--white)',
+                border: `1.5px solid ${i === cycle.length - 1 ? 'var(--blue)' : 'var(--black)'}`,
+                borderRadius: 24,
+                boxShadow: '0 2px 8px rgba(0,0,0,0.03)',
+                zIndex: 2,
+                width: '100%',
+                maxWidth: 160,
+              }}
+            >
+              <span
+                style={{
+                  fontWeight: 700,
+                  fontSize: '15px',
+                  letterSpacing: '0.06em',
+                  color: i === cycle.length - 1 ? 'var(--white)' : 'var(--black)',
+                }}
+              >
+                {step}
+              </span>
+            </div>
+
+            {/* CODEN Dot / Line Graphic Connector */}
+            {i < cycle.length - 1 && (
+              <div
+                style={{
+                  height: 44,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  position: 'relative',
+                }}
+              >
+                {/* Vertical Line */}
+                <div
+                  style={{
+                    width: 1.5,
+                    height: '100%',
+                    background: 'var(--black)',
+                    opacity: 0.25,
+                  }}
+                />
+                {/* CODEN Dot Accent Node */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    width: 6,
+                    height: 6,
+                    borderRadius: '50%',
+                    background: i % 2 === 0 ? 'var(--blue)' : 'var(--yellow)',
+                    border: '1px solid rgba(0,0,0,0.08)',
+                  }}
+                />
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+
+      {/* Conclusion / Insight */}
+      <div
+        style={{
+          marginTop: 80,
+          paddingTop: 48,
+          borderTop: '1px solid rgba(0,0,0,0.08)',
+        }}
+      >
+        <p
+          style={{
+            fontWeight: 800,
+            fontSize: 'clamp(17px, 4.8vw, 20px)',
+            lineHeight: 1.7,
+            letterSpacing: '0.01em',
+            color: 'var(--blue)',
+            margin: 0,
+          }}
+        >
+          기록은 남기는 것보다
+          <br />
+          다시 발견하는 것이 중요합니다.
         </p>
       </div>
     </section>
@@ -1125,6 +1276,7 @@ export default function App() {
 
       <main>
         <Hero />
+        <Problem />
         <About />
         <Products />
         <Process />
