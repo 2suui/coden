@@ -403,6 +403,7 @@ function Background() {
           color: 'var(--gray-text)',
           letterSpacing: '0.01em',
           lineHeight: 1.8,
+          textAlign: 'left',
           margin: 0,
         }}
       >
