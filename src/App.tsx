@@ -550,10 +550,9 @@ function Products() {
 /* ─── About Section ─── */
 function About() {
   const processSteps = [
-    { en: 'COLLECT', ko: '정보를 수집하고' },
+    { en: 'CAPTURE', ko: '생각과 정보를 기록하고' },
     { en: 'CONNECT', ko: '서로 연결하고' },
-    { en: 'DISTILL', ko: '핵심을 추리고' },
-    { en: 'REFLECT', ko: '자신의 생각으로 정리합니다.' },
+    { en: 'CREATE', ko: '새로운 생각으로 확장합니다.' },
   ]
 
   return (
@@ -749,18 +748,7 @@ function About() {
             marginBottom: 44,
           }}
         >
-          또한 Collect와 Connect의 공통된 시작인 CO에는 생각과 정보를 모으고, 서로 연결해 새로운 의미를 발견한다는 CODEN의 핵심 과정이 담겨 있습니다.
-        </p>
-        <p
-          style={{
-            fontWeight: 700,
-            fontSize: 'var(--font-body)',
-            color: 'var(--black)',
-            letterSpacing: '0.01em',
-            lineHeight: 2.35,
-          }}
-        >
-          기록을 단순히 저장하는 데 그치지 않고, 수집하고 연결하며 핵심을 추려 자신의 생각으로 다시 정리하고 확장하는 과정을 제안합니다.
+          기록을 단순히 저장하는 데 그치지 않고, 포착(Capture)하고 연결(Connect)하며 새로운 생각으로 확장(Create)하는 과정을 제안합니다.
         </p>
       </div>
     </section>
