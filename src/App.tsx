@@ -304,10 +304,10 @@ function Hero() {
       {/* Hero Copy */}
       <div
         style={{
-          padding: 'clamp(56px, 14vw, 84px) var(--pad-x) clamp(96px, 20vw, 140px)',
+          padding: 'clamp(72px, 16vw, 100px) var(--pad-x) clamp(130px, 28vw, 190px)',
           display: 'flex',
           flexDirection: 'column',
-          gap: 84,
+          gap: 110,
         }}
       >
         <h1
@@ -331,7 +331,7 @@ function Hero() {
             fontWeight: 500,
             fontSize: 'var(--font-body)',
             letterSpacing: '0.01em',
-            lineHeight: 2.2,
+            lineHeight: 2.35,
             color: 'var(--black)',
             margin: 0,
           }}
@@ -370,7 +370,7 @@ function Problem() {
           letterSpacing: '0.14em',
           color: 'var(--gray-text)',
           textTransform: 'uppercase',
-          marginBottom: 96,
+          marginBottom: 120,
         }}
       >
         Problem
@@ -383,8 +383,8 @@ function Problem() {
           fontSize: 'var(--font-body)',
           color: 'var(--black)',
           letterSpacing: '0.01em',
-          lineHeight: 2.1,
-          marginBottom: 96,
+          lineHeight: 2.25,
+          marginBottom: 120,
         }}
       >
         기록은 많아졌지만,
@@ -398,7 +398,7 @@ function Problem() {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          marginBottom: 110,
+          marginBottom: 130,
         }}
       >
         {cycle.map((step, i) => (
@@ -418,7 +418,7 @@ function Problem() {
                 letterSpacing: '0.08em',
                 color: i === cycle.length - 1 ? 'var(--blue)' : 'var(--black)',
                 margin: 0,
-                padding: '10px 0',
+                padding: '12px 0',
               }}
             >
               {step}
@@ -431,7 +431,7 @@ function Problem() {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  padding: '48px 0',
+                  padding: '56px 0',
                 }}
               >
                 <span
@@ -450,24 +450,21 @@ function Problem() {
         ))}
       </div>
 
+      {/* Concluding Insight (Matching About section typography) */}
       <div
         style={{
-          width: 32,
-          height: 2,
-          background: 'var(--blue)',
-          margin: '0 auto 80px',
+          marginTop: 110,
+          paddingTop: 64,
+          borderTop: '1px solid rgba(0,0,0,0.08)',
         }}
-      />
-
-      {/* Concluding Insight (Matching About section typography) */}
-      <div>
+      >
         <p
           style={{
             fontWeight: 700,
             fontSize: 'var(--font-body)',
             color: 'var(--black)',
             letterSpacing: '0.01em',
-            lineHeight: 2.15,
+            lineHeight: 2.3,
             margin: 0,
           }}
         >
@@ -491,7 +488,7 @@ function Products() {
         background: '#f0f0ee',
       }}
     >
-      <div style={{ padding: '0 var(--pad-x)', marginBottom: 48, textAlign: 'center' }}>
+      <div style={{ padding: '0 var(--pad-x)', marginBottom: 64, textAlign: 'center' }}>
         <SectionLabel>Product</SectionLabel>
       </div>
 
@@ -535,14 +532,14 @@ function Products() {
           </div>
         </div>
 
-        <div style={{ padding: '24px var(--pad-x) 0', textAlign: 'center' }}>
+        <div style={{ padding: '36px var(--pad-x) 0', textAlign: 'center' }}>
           <p
             style={{
               fontSize: 'var(--font-body)',
               color: 'var(--gray-text)',
               fontWeight: 500,
               letterSpacing: '0.01em',
-              lineHeight: 1.8,
+              lineHeight: 2.1,
             }}
           >
             노트북과 북마크로 완성되는 CODEN 기록 시스템
@@ -582,7 +579,7 @@ function About() {
           letterSpacing: '0.14em',
           color: 'var(--gray-text)',
           textTransform: 'uppercase',
-          marginBottom: 110,
+          marginBottom: 130,
         }}
       >
         About CODEN
@@ -594,7 +591,7 @@ function About() {
           fontSize: 'clamp(18px, 4.8vw, 22px)',
           letterSpacing: '0.01em',
           color: 'var(--blue)',
-          marginBottom: 96,
+          marginBottom: 120,
           whiteSpace: 'nowrap',
         }}
       >
@@ -614,15 +611,15 @@ function About() {
         = CODE + NOTE
       </p>
 
-      <div style={{ marginBottom: 72 }}>
-        <div style={{ marginBottom: 72 }}>
+      <div style={{ marginBottom: 96 }}>
+        <div style={{ marginBottom: 96 }}>
           <p
             style={{
               fontWeight: 800,
               fontSize: '16px',
               letterSpacing: '0.05em',
               color: 'var(--black)',
-              marginBottom: 14,
+              marginBottom: 20,
             }}
           >
             CODE
@@ -632,21 +629,21 @@ function About() {
               fontSize: 'var(--font-body)',
               color: 'var(--gray-text)',
               letterSpacing: '0.01em',
-              lineHeight: 2.1,
+              lineHeight: 2.2,
             }}
           >
             생각과 기록을 일정한 방식으로 구조화하는 방법
           </p>
         </div>
 
-        <div style={{ marginBottom: 64 }}>
+        <div style={{ marginBottom: 88 }}>
           <p
             style={{
               fontWeight: 800,
               fontSize: '16px',
               letterSpacing: '0.05em',
               color: 'var(--black)',
-              marginBottom: 14,
+              marginBottom: 20,
             }}
           >
             NOTE
@@ -656,7 +653,7 @@ function About() {
               fontSize: 'var(--font-body)',
               color: 'var(--gray-text)',
               letterSpacing: '0.01em',
-              lineHeight: 2.1,
+              lineHeight: 2.2,
             }}
           >
             생각과 정보를 기록하는 행위
@@ -669,21 +666,12 @@ function About() {
             fontSize: 'var(--font-body)',
             color: 'var(--black)',
             letterSpacing: '0.01em',
-            lineHeight: 2.1,
+            lineHeight: 2.3,
           }}
         >
           CODEN은 기록을 구조화하는 CODE와 생각을 남기는 NOTE를 결합한 아날로그 메모 시스템입니다.
         </p>
       </div>
-
-      <div
-        style={{
-          width: 32,
-          height: 2,
-          background: 'var(--blue)',
-          margin: '0 auto 80px',
-        }}
-      />
 
       <div id="process" style={{ scrollMarginTop: 'var(--nav-height)' }}>
         <p
@@ -693,7 +681,7 @@ function About() {
             letterSpacing: '0.14em',
             color: 'var(--gray-text)',
             textTransform: 'uppercase',
-            marginBottom: 72,
+            marginBottom: 96,
           }}
         >
           Process
@@ -706,8 +694,8 @@ function About() {
                 flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'center',
-                gap: 10,
-                paddingBottom: 36,
+                gap: 12,
+                paddingBottom: 48,
               }}
             >
               <p
@@ -725,21 +713,20 @@ function About() {
                   fontSize: 'var(--font-body)',
                   color: 'var(--gray-text)',
                   letterSpacing: '0.01em',
-                  lineHeight: 1.9,
+                  lineHeight: 2.0,
                 }}
               >
                 {step.ko}
               </p>
             </div>
             {i < processSteps.length - 1 && (
-              <div style={{ marginBottom: 12 }}>
+              <div style={{ margin: '48px 0' }}>
                 <span
                   style={{
                     color: 'var(--blue)',
                     fontSize: '18px',
                     lineHeight: 1,
                     display: 'block',
-                    marginBottom: 36,
                   }}
                 >
                   ↓
@@ -752,8 +739,8 @@ function About() {
 
       <div
         style={{
-          marginTop: 80,
-          paddingTop: 80,
+          marginTop: 120,
+          paddingTop: 96,
           borderTop: '1px solid rgba(0,0,0,0.08)',
         }}
       >
@@ -763,8 +750,8 @@ function About() {
             fontSize: 'var(--font-body)',
             color: 'var(--black)',
             letterSpacing: '0.01em',
-            lineHeight: 2.25,
-            marginBottom: 32,
+            lineHeight: 2.35,
+            marginBottom: 44,
           }}
         >
           또한 Collect와 Connect의 공통된 시작인 CO에는 생각과 정보를 모으고, 서로 연결해 새로운 의미를 발견한다는 CODEN의 핵심 과정이 담겨 있습니다.
@@ -775,7 +762,7 @@ function About() {
             fontSize: 'var(--font-body)',
             color: 'var(--black)',
             letterSpacing: '0.01em',
-            lineHeight: 2.25,
+            lineHeight: 2.35,
           }}
         >
           기록을 단순히 저장하는 데 그치지 않고, 수집하고 연결하며 핵심을 추려 자신의 생각으로 다시 정리하고 확장하는 과정을 제안합니다.
@@ -890,7 +877,7 @@ function ProductDetails() {
 
   return (
     <section id="details" style={{ background: 'var(--white)', paddingTop: 'var(--section-py)' }}>
-      <div style={{ textAlign: 'center', marginBottom: 48, padding: '0 var(--pad-x)' }}>
+      <div style={{ textAlign: 'center', marginBottom: 64, padding: '0 var(--pad-x)' }}>
         <SectionLabel>Product Detail</SectionLabel>
       </div>
 
@@ -911,7 +898,7 @@ function ProductDetails() {
             style={{
               flex: 1,
               minWidth: 80,
-              padding: '14px 12px',
+              padding: '16px 12px',
               background: 'none',
               border: 'none',
               borderBottom: active === key ? '2px solid var(--blue)' : '2px solid transparent',
@@ -960,14 +947,14 @@ function ProductDetails() {
         </div>
 
         {/* Product Info */}
-        <div style={{ padding: '32px var(--pad-x) var(--section-py)' }}>
+        <div style={{ padding: '44px var(--pad-x) var(--section-py)' }}>
           <h3
             style={{
               fontWeight: 800,
               fontSize: 'var(--font-title)',
               letterSpacing: '0.04em',
               color: 'var(--black)',
-              marginBottom: 12,
+              marginBottom: 20,
             }}
           >
             {current.label}
@@ -976,14 +963,14 @@ function ProductDetails() {
             style={{
               fontSize: 'var(--font-body)',
               letterSpacing: '0.01em',
-              lineHeight: 2.05,
+              lineHeight: 2.2,
               color: '#555',
-              marginBottom: 28,
+              marginBottom: 36,
             }}
           >
             {current.description}
           </p>
-          <div style={{ borderTop: '1px solid var(--gray-mid)', paddingTop: 20 }}>
+          <div style={{ borderTop: '1px solid var(--gray-mid)', paddingTop: 28 }}>
             {current.specs.map((spec, i) => (
               <div
                 key={i}
@@ -991,7 +978,7 @@ function ProductDetails() {
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'center',
-                  padding: '12px 0',
+                  padding: '16px 0',
                   borderBottom: i < current.specs.length - 1 ? '1px solid var(--gray-mid)' : 'none',
                 }}
               >
@@ -1026,15 +1013,15 @@ function ProductDetails() {
 /* ─── Footer Section ─── */
 function Footer() {
   return (
-    <footer style={{ background: 'var(--black)', color: 'var(--white)', padding: '36px var(--pad-x) 32px' }}>
-      <div style={{ marginBottom: 24 }}>
+    <footer style={{ background: 'var(--black)', color: 'var(--white)', padding: '48px var(--pad-x) 40px' }}>
+      <div style={{ marginBottom: 32 }}>
         <p
           style={{
             fontWeight: 800,
             fontSize: '16px',
             letterSpacing: '0.06em',
             color: 'rgba(255,255,255,0.7)',
-            marginBottom: 6,
+            marginBottom: 8,
           }}
         >
           CODEN
