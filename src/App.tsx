@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import logoImg from './assets/logo.png'
 
 /* ─── Section IDs & Types ─── */
-const SECTIONS = ['hero', 'problem', 'about', 'principles', 'process', 'products'] as const
+const SECTIONS = ['hero', 'background', 'problem', 'about', 'principles', 'process', 'products'] as const
 type SectionId = (typeof SECTIONS)[number]
 
 function scrollTo(id: string) {
@@ -134,8 +134,8 @@ function Menu({
   onClose: () => void
   activeSection: SectionId
 }) {
-  const items = ['HOME', 'PROBLEM', 'ABOUT', 'PRINCIPLES', 'PROCESS', 'PRODUCTS']
-  const ids: SectionId[] = ['hero', 'problem', 'about', 'principles', 'process', 'products']
+  const items = ['HOME', 'BACKGROUND', 'PROBLEM', 'ABOUT', 'PRINCIPLES', 'PROCESS', 'PRODUCTS']
+  const ids: SectionId[] = ['hero', 'background', 'problem', 'about', 'principles', 'process', 'products']
 
   return (
     <>
@@ -363,6 +363,55 @@ function Hero() {
   )
 }
 
+/* ─── Background Section ─── */
+function Background() {
+  return (
+    <section
+      id="background"
+      style={{
+        background: 'var(--white)',
+        color: 'var(--black)',
+        paddingTop: 'var(--section-py)',
+        paddingBottom: 'var(--section-py)',
+        paddingLeft: 'var(--pad-x)',
+        paddingRight: 'var(--pad-x)',
+        textAlign: 'center',
+      }}
+    >
+      <SectionLabel>Background</SectionLabel>
+
+      {/* Main Statement */}
+      <p
+        style={{
+          fontWeight: 700,
+          fontSize: '17px',
+          color: 'var(--black)',
+          letterSpacing: '0.01em',
+          lineHeight: 1.6,
+          marginBottom: 48,
+        }}
+      >
+        기록은 많아졌지만,
+        <br />
+        다시 보지는 않습니다.
+      </p>
+
+      {/* Detailed Description */}
+      <p
+        style={{
+          fontSize: 'var(--font-body)',
+          color: 'var(--gray-text)',
+          letterSpacing: '0.01em',
+          lineHeight: 1.8,
+          margin: 0,
+        }}
+      >
+        메모, 캡처, 사진, 링크처럼 기록 방식은 다양해졌지만 기록은 여러 곳에 흩어지고 빠르게 잊힙니다. 다시 읽히지 않은 기록은 생각으로 이어지지 못하고, 결국 같은 내용을 다시 찾거나 반복해 기록하게 됩니다.
+      </p>
+    </section>
+  )
+}
+
 /* ─── Problem Section ─── */
 function Problem() {
   const cycle = ['기록', '축적', '분산', '망각', '재기록']
@@ -381,22 +430,6 @@ function Problem() {
       }}
     >
       <SectionLabel>Problem</SectionLabel>
-
-      {/* Intro Question / Statement */}
-      <p
-        style={{
-          fontWeight: 700,
-          fontSize: '17px',
-          color: 'var(--black)',
-          letterSpacing: '0.01em',
-          lineHeight: 1.6,
-          marginBottom: 64,
-        }}
-      >
-        기록은 많아졌지만,
-        <br />
-        다시 보지는 않습니다.
-      </p>
 
       {/* Vertical Steps with Arrows */}
       <div
@@ -922,6 +955,7 @@ export default function App() {
 
       <main>
         <Hero />
+        <Background />
         <Problem />
         <About />
         <Principles />
