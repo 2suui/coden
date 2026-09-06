@@ -262,7 +262,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
     <p
       style={{
         fontWeight: 700,
-        fontSize: '10.5px',
+        fontSize: '12px',
         letterSpacing: '0.14em',
         color: 'var(--gray-text)',
         textTransform: 'uppercase',
@@ -366,7 +366,7 @@ function Problem() {
       <p
         style={{
           fontWeight: 700,
-          fontSize: '10.5px',
+          fontSize: '12px',
           letterSpacing: '0.14em',
           color: 'var(--gray-text)',
           textTransform: 'uppercase',
@@ -578,7 +578,7 @@ function About() {
       <p
         style={{
           fontWeight: 700,
-          fontSize: '10.5px',
+          fontSize: '12px',
           letterSpacing: '0.14em',
           color: 'var(--gray-text)',
           textTransform: 'uppercase',
@@ -591,7 +591,7 @@ function About() {
       <p
         style={{
           fontWeight: 800,
-          fontSize: 'clamp(18px, 5vw, 22px)',
+          fontSize: 'clamp(24px, 6vw, 28px)',
           letterSpacing: '0.01em',
           color: 'var(--blue)',
           marginBottom: 96,
@@ -601,7 +601,7 @@ function About() {
           style={{
             background: 'var(--yellow)',
             color: 'var(--blue)',
-            padding: '1px 6px',
+            padding: '2px 8px',
             borderRadius: 2,
             display: 'inline-block',
             letterSpacing: '0.04em',
@@ -618,7 +618,7 @@ function About() {
           <p
             style={{
               fontWeight: 800,
-              fontSize: '16.5px',
+              fontSize: '16px',
               letterSpacing: '0.05em',
               color: 'var(--black)',
               marginBottom: 14,
@@ -642,7 +642,7 @@ function About() {
           <p
             style={{
               fontWeight: 800,
-              fontSize: '16.5px',
+              fontSize: '16px',
               letterSpacing: '0.05em',
               color: 'var(--black)',
               marginBottom: 14,
@@ -688,7 +688,7 @@ function About() {
         <p
           style={{
             fontWeight: 700,
-            fontSize: '10.5px',
+            fontSize: '12px',
             letterSpacing: '0.14em',
             color: 'var(--gray-text)',
             textTransform: 'uppercase',
@@ -712,7 +712,7 @@ function About() {
               <p
                 style={{
                   fontWeight: 800,
-                  fontSize: '15.5px',
+                  fontSize: '16px',
                   letterSpacing: '0.05em',
                   color: 'var(--black)',
                 }}
@@ -1030,7 +1030,7 @@ function Footer() {
         <p
           style={{
             fontWeight: 800,
-            fontSize: '15.5px',
+            fontSize: '16px',
             letterSpacing: '0.06em',
             color: 'rgba(255,255,255,0.7)',
             marginBottom: 6,
