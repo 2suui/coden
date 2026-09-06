@@ -264,6 +264,7 @@ function SectionTitle({ children }: { children: React.ReactNode }) {
         fontWeight: 800,
         fontSize: 'var(--font-section-title)',
         letterSpacing: '0.02em',
+        lineHeight: 'var(--lh-heading)',
         color: 'var(--black)',
         margin: 0,
       }}
@@ -314,7 +315,7 @@ function Hero() {
             fontWeight: 800,
             fontSize: 'var(--font-hero)',
             letterSpacing: '0.02em',
-            lineHeight: 1.45,
+            lineHeight: 'var(--lh-heading)',
             color: 'var(--black)',
             margin: 0,
           }}
@@ -330,7 +331,7 @@ function Hero() {
             fontWeight: 500,
             fontSize: 'var(--font-body)',
             letterSpacing: '0.01em',
-            lineHeight: 2.35,
+            lineHeight: 'var(--lh-body)',
             color: 'var(--black)',
             margin: 0,
           }}
@@ -372,7 +373,7 @@ function Problem() {
           fontSize: 'var(--font-subheading)',
           color: 'var(--black)',
           letterSpacing: '0.01em',
-          lineHeight: 1.85,
+          lineHeight: 'var(--lh-heading)',
           marginBottom: 84,
         }}
       >
@@ -405,6 +406,7 @@ function Problem() {
                 fontWeight: 800,
                 fontSize: 'var(--font-subheading)',
                 letterSpacing: '0.06em',
+                lineHeight: 'var(--lh-heading)',
                 color: i === cycle.length - 1 ? 'var(--blue)' : 'var(--black)',
                 margin: 0,
                 padding: '12px 0',
@@ -451,7 +453,7 @@ function Problem() {
             fontSize: 'var(--font-body)',
             color: 'var(--black)',
             letterSpacing: '0.01em',
-            lineHeight: 2.3,
+            lineHeight: 'var(--lh-body)',
             margin: 0,
           }}
         >
@@ -511,6 +513,7 @@ function Products() {
                 fontWeight: 700,
                 fontSize: 'var(--font-caption)',
                 letterSpacing: '0.08em',
+                lineHeight: 1.2,
                 padding: '6px 14px',
               }}
             >
@@ -526,7 +529,7 @@ function Products() {
               color: 'var(--gray-text)',
               fontWeight: 500,
               letterSpacing: '0.01em',
-              lineHeight: 2.1,
+              lineHeight: 'var(--lh-body)',
             }}
           >
             노트북과 북마크로 완성되는 CODEN 기록 시스템
@@ -561,6 +564,7 @@ function About() {
           fontWeight: 800,
           fontSize: 'var(--font-subheading)',
           letterSpacing: '0.01em',
+          lineHeight: 'var(--lh-heading)',
           color: 'var(--blue)',
           marginBottom: 72,
           whiteSpace: 'nowrap',
@@ -589,6 +593,7 @@ function About() {
               fontWeight: 800,
               fontSize: 'var(--font-subheading)',
               letterSpacing: '0.04em',
+              lineHeight: 'var(--lh-heading)',
               color: 'var(--black)',
               marginBottom: 16,
             }}
@@ -600,7 +605,7 @@ function About() {
               fontSize: 'var(--font-body)',
               color: 'var(--gray-text)',
               letterSpacing: '0.01em',
-              lineHeight: 2.2,
+              lineHeight: 'var(--lh-body)',
             }}
           >
             생각과 기록을 일정한 방식으로 구조화하는 방법
@@ -613,6 +618,7 @@ function About() {
               fontWeight: 800,
               fontSize: 'var(--font-subheading)',
               letterSpacing: '0.04em',
+              lineHeight: 'var(--lh-heading)',
               color: 'var(--black)',
               marginBottom: 16,
             }}
@@ -624,7 +630,7 @@ function About() {
               fontSize: 'var(--font-body)',
               color: 'var(--gray-text)',
               letterSpacing: '0.01em',
-              lineHeight: 2.2,
+              lineHeight: 'var(--lh-body)',
             }}
           >
             생각과 정보를 기록하는 행위
@@ -637,7 +643,7 @@ function About() {
             fontSize: 'var(--font-body)',
             color: 'var(--black)',
             letterSpacing: '0.01em',
-            lineHeight: 2.3,
+            lineHeight: 'var(--lh-body)',
             margin: 0,
           }}
         >
@@ -698,6 +704,7 @@ function Principles() {
                 fontWeight: 800,
                 fontSize: 'var(--font-caption)',
                 letterSpacing: '0.08em',
+                lineHeight: 1.2,
                 color: 'var(--blue)',
                 marginBottom: 10,
               }}
@@ -709,6 +716,7 @@ function Principles() {
                 fontWeight: 800,
                 fontSize: 'var(--font-subheading)',
                 letterSpacing: '0.01em',
+                lineHeight: 'var(--lh-heading)',
                 color: 'var(--black)',
                 marginBottom: 14,
               }}
@@ -720,7 +728,7 @@ function Principles() {
                 fontSize: 'var(--font-body)',
                 color: 'var(--gray-text)',
                 letterSpacing: '0.01em',
-                lineHeight: 2.2,
+                lineHeight: 'var(--lh-body)',
                 margin: 0,
               }}
             >
@@ -774,6 +782,7 @@ function Process() {
                 fontWeight: 800,
                 fontSize: 'var(--font-subheading)',
                 letterSpacing: '0.05em',
+                lineHeight: 'var(--lh-heading)',
                 color: 'var(--black)',
               }}
             >
@@ -784,7 +793,7 @@ function Process() {
                 fontSize: 'var(--font-body)',
                 color: 'var(--gray-text)',
                 letterSpacing: '0.01em',
-                lineHeight: 2.0,
+                lineHeight: 'var(--lh-body)',
               }}
             >
               {step.ko}
@@ -818,7 +827,7 @@ function Process() {
             fontSize: 'var(--font-body)',
             color: 'var(--black)',
             letterSpacing: '0.01em',
-            lineHeight: 2.35,
+            lineHeight: 'var(--lh-body)',
             marginBottom: 44,
           }}
         >
@@ -839,6 +848,7 @@ function Footer() {
             fontWeight: 800,
             fontSize: 'var(--font-subheading)',
             letterSpacing: '0.06em',
+            lineHeight: 'var(--lh-heading)',
             color: 'var(--white)',
             marginBottom: 8,
           }}
@@ -851,6 +861,7 @@ function Footer() {
             fontSize: 'var(--font-caption)',
             color: 'rgba(255,255,255,0.85)',
             letterSpacing: '0.02em',
+            lineHeight: 1.3,
           }}
         >
           Capture. Connect. Create.
@@ -871,7 +882,7 @@ function Footer() {
               fontSize: 'var(--font-caption)',
               color: 'rgba(255,255,255,0.75)',
               letterSpacing: '0.02em',
-              lineHeight: 2.0,
+              lineHeight: 'var(--lh-body)',
             }}
           >
             Designed by Suyeon
@@ -884,6 +895,7 @@ function Footer() {
             fontSize: '12px',
             letterSpacing: '0.04em',
             color: 'rgba(255,255,255,0.65)',
+            lineHeight: 'var(--lh-body)',
           }}
         >
           © 2026 CODEN.
