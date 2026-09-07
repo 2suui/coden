@@ -546,73 +546,101 @@ function About() {
     >
       <SectionLabel>About CODEN</SectionLabel>
 
-      <p
-        style={{
-          fontWeight: 800,
-          fontSize: '18px',
-          letterSpacing: '0.01em',
-          lineHeight: 'var(--lh-heading)',
-          color: 'var(--blue)',
-          marginBottom: 108,
-          whiteSpace: 'nowrap',
-        }}
-      >
-        <span
-          style={{
-            background: 'var(--yellow)',
-            color: 'var(--blue)',
-            padding: '2px 7px',
-            borderRadius: 2,
-            display: 'inline-block',
-            letterSpacing: '0.04em',
-            lineHeight: 1.2,
-          }}
-        >
-          CODEN
-        </span>{' '}
-        = CODE + NOTE
-      </p>
-
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 112, marginBottom: 128 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 104, textAlign: 'left' }}>
+        {/* CO */}
         <div>
-          <p
+          <h3
             style={{
               fontWeight: 800,
-              fontSize: 'var(--font-subheading)',
-              letterSpacing: '0.04em',
+              fontSize: '17px',
+              letterSpacing: '0.02em',
               lineHeight: 'var(--lh-heading)',
               color: 'var(--black)',
-              marginBottom: 20,
+              marginBottom: 18,
             }}
           >
-            CODE
-          </p>
-          <p
-            style={{
-              fontSize: 'var(--font-body)',
-              color: 'var(--gray-text)',
-              letterSpacing: '0.01em',
-              lineHeight: 1.85,
-              margin: 0,
-            }}
-          >
-            생각과 기록을 일정한 방식으로 구조화하는 방법
-          </p>
+            <span style={{ color: 'var(--blue)' }}>CO</span> — Collect + Connect
+          </h3>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+            <p
+              style={{
+                fontSize: 'var(--font-body)',
+                color: 'var(--gray-text)',
+                letterSpacing: '0.01em',
+                lineHeight: 1.85,
+                margin: 0,
+              }}
+            >
+              흩어진 기록을 다시 모으고, 서로 다른 생각을 연결하는 과정을 의미합니다.
+            </p>
+            <p
+              style={{
+                fontSize: 'var(--font-body)',
+                color: 'var(--gray-text)',
+                letterSpacing: '0.01em',
+                lineHeight: 1.85,
+                margin: 0,
+              }}
+            >
+              한 번 쓰고 끝나는 기록이 아니라, 다시 발견하고 새로운 맥락으로 이어가는 기록 방식을 담았습니다.
+            </p>
+          </div>
         </div>
 
+        {/* DEN */}
         <div>
-          <p
+          <h3
             style={{
               fontWeight: 800,
-              fontSize: 'var(--font-subheading)',
-              letterSpacing: '0.04em',
+              fontSize: '17px',
+              letterSpacing: '0.02em',
               lineHeight: 'var(--lh-heading)',
               color: 'var(--black)',
-              marginBottom: 20,
+              marginBottom: 18,
             }}
           >
-            NOTE
-          </p>
+            <span style={{ color: 'var(--blue)' }}>DEN</span> — A space for thoughts
+          </h3>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+            <p
+              style={{
+                fontSize: 'var(--font-body)',
+                color: 'var(--gray-text)',
+                letterSpacing: '0.01em',
+                lineHeight: 1.85,
+                margin: 0,
+              }}
+            >
+              기록과 생각이 잠시 머물고, 필요할 때 다시 꺼내어 이어갈 수 있는 공간을 의미합니다.
+            </p>
+            <p
+              style={{
+                fontSize: 'var(--font-body)',
+                color: 'var(--gray-text)',
+                letterSpacing: '0.01em',
+                lineHeight: 1.85,
+                margin: 0,
+              }}
+            >
+              모인 기록은 이곳에서 다시 발견되고, 다른 생각과 연결되며 새로운 아이디어로 확장됩니다.
+            </p>
+          </div>
+        </div>
+
+        {/* Open Loop */}
+        <div>
+          <h3
+            style={{
+              fontWeight: 800,
+              fontSize: '17px',
+              letterSpacing: '0.02em',
+              lineHeight: 'var(--lh-heading)',
+              color: 'var(--blue)',
+              marginBottom: 18,
+            }}
+          >
+            Open Loop
+          </h3>
           <p
             style={{
               fontSize: 'var(--font-body)',
@@ -622,23 +650,11 @@ function About() {
               margin: 0,
             }}
           >
-            생각과 정보를 기록하는 행위
+            CODEN의 열린 O는 완전히 닫히지 않은 형태로, 기록이 하나의 끝에 머무르지 않고 다음 생각으로 계속 이어지는{' '}
+            <strong style={{ color: 'var(--black)', fontWeight: 700 }}>Open Loop</strong>를 상징합니다.
           </p>
         </div>
       </div>
-
-      <p
-        style={{
-          fontWeight: 700,
-          fontSize: 'var(--font-body)',
-          color: 'var(--black)',
-          letterSpacing: '0.01em',
-          lineHeight: 1.85,
-          margin: 0,
-        }}
-      >
-        CODEN은 기록을 구조화하는 CODE와 생각을 남기는 NOTE를 결합한 아날로그 메모 시스템입니다.
-      </p>
     </section>
   )
 }
