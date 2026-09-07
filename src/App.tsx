@@ -289,8 +289,8 @@ function Hero() {
       <div
         style={{
           width: '100%',
-          aspectRatio: '1/1',
-          maxHeight: '82vh',
+          aspectRatio: '1024/1450',
+          maxHeight: '85vh',
           background: 'var(--gray-light)',
           overflow: 'hidden',
         }}
