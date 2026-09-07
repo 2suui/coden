@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react'
 import logoImg from './assets/logo.png'
 import heroImg from './assets/hero.jpg'
 import product1Img from './assets/product-1.jpg'
+import product2Img from './assets/product-2.jpg'
+import product3Img from './assets/product-3.jpg'
+import product4Img from './assets/product-4.jpg'
 
 /* ─── Section IDs & Types ─── */
 const SECTIONS = ['hero', 'background', 'about', 'principles', 'process', 'products'] as const
@@ -430,6 +433,13 @@ function Background() {
 
 /* ─── Products Section ─── */
 function Products() {
+  const productImages = [
+    { src: product1Img, alt: 'CODEN Desk Notebook & Bookmark Cards' },
+    { src: product2Img, alt: 'CODEN Notebook Open & Closed Flat Lay' },
+    { src: product3Img, alt: 'CODEN Notebook Open Page Vertical View' },
+    { src: product4Img, alt: 'CODEN Notebook Dot Grid and Bookmark Close-Up' },
+  ]
+
   return (
     <section
       id="products"
@@ -443,39 +453,40 @@ function Products() {
         <SectionLabel>Product</SectionLabel>
       </div>
 
-      {/* Single Integrated Product Photo */}
-      <div style={{ width: '100%' }}>
-        <div
-          style={{
-            width: '100%',
-            aspectRatio: '859/1024',
-            maxHeight: '82vh',
-            background: 'var(--gray-mid)',
-            overflow: 'hidden',
-            position: 'relative',
-          }}
-        >
-          <img
-            src={product1Img}
-            alt="CODEN Desk Notebook & Cards"
-            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-          />
-        </div>
-
-        <div style={{ padding: '88px var(--pad-x) 0', textAlign: 'center' }}>
-          <p
+      {/* Sequential Product Photos */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 40, width: '100%' }}>
+        {productImages.map((img, i) => (
+          <div
+            key={i}
             style={{
-              fontSize: 'var(--font-body)',
-              color: 'var(--gray-text)',
-              fontWeight: 500,
-              letterSpacing: '0.01em',
-              lineHeight: 'var(--lh-body)',
-              margin: 0,
+              width: '100%',
+              background: 'var(--gray-mid)',
+              overflow: 'hidden',
+              position: 'relative',
             }}
           >
-            노트북과 북마크로 완성되는 CODEN 기록 시스템
-          </p>
-        </div>
+            <img
+              src={img.src}
+              alt={img.alt}
+              style={{ width: '100%', height: 'auto', display: 'block' }}
+            />
+          </div>
+        ))}
+      </div>
+
+      <div style={{ padding: '88px var(--pad-x) 0', textAlign: 'center' }}>
+        <p
+          style={{
+            fontSize: 'var(--font-body)',
+            color: 'var(--gray-text)',
+            fontWeight: 500,
+            letterSpacing: '0.01em',
+            lineHeight: 'var(--lh-body)',
+            margin: 0,
+          }}
+        >
+          노트북과 북마크로 완성되는 CODEN 기록 시스템
+        </p>
       </div>
     </section>
   )
