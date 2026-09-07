@@ -559,7 +559,7 @@ function About() {
               marginBottom: 18,
             }}
           >
-            <span style={{ fontWeight: 800, color: 'var(--black)' }}>CO</span>
+            <span style={{ fontWeight: 800, color: 'var(--blue)' }}>CO</span>
             <span style={{ fontWeight: 400, color: 'var(--blue)' }}> — Collect + Connect</span>
           </h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
@@ -598,7 +598,7 @@ function About() {
               marginBottom: 18,
             }}
           >
-            <span style={{ fontWeight: 800, color: 'var(--black)' }}>DEN</span>
+            <span style={{ fontWeight: 800, color: 'var(--blue)' }}>DEN</span>
             <span style={{ fontWeight: 400, color: 'var(--blue)' }}> — A space for thoughts</span>
           </h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
@@ -650,8 +650,7 @@ function About() {
               margin: 0,
             }}
           >
-            CODEN의 열린 O는 완전히 닫히지 않은 형태로, 기록이 하나의 끝에 머무르지 않고 다음 생각으로 계속 이어지는{' '}
-            <strong style={{ color: 'var(--black)', fontWeight: 700 }}>Open Loop</strong>를 상징합니다.
+            CODEN의 열린 O는 완전히 닫히지 않은 형태로, 기록이 하나의 끝에 머무르지 않고 다음 생각으로 계속 이어지는 Open Loop를 상징합니다.
           </p>
         </div>
       </div>
