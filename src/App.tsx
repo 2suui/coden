@@ -293,6 +293,7 @@ function Hero() {
           maxHeight: '85vh',
           background: 'var(--gray-light)',
           overflow: 'hidden',
+          position: 'relative',
         }}
       >
         <img
@@ -300,6 +301,32 @@ function Hero() {
           alt="CODEN Notebook on yellow background"
           style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
         />
+
+        {/* Large CODEN Brand Logo Overlaid at Bottom of Photo */}
+        <div
+          style={{
+            position: 'absolute',
+            bottom: 24,
+            left: 'var(--pad-x)',
+            right: 'var(--pad-x)',
+            display: 'flex',
+            alignItems: 'center',
+            pointerEvents: 'none',
+          }}
+        >
+          <img
+            src={logoImg}
+            alt="CODEN"
+            style={{
+              width: '85%',
+              maxWidth: 330,
+              minWidth: 220,
+              height: 'auto',
+              display: 'block',
+              objectFit: 'contain',
+            }}
+          />
+        </div>
       </div>
 
       {/* Hero Copy */}
@@ -311,22 +338,6 @@ function Hero() {
           gap: 56,
         }}
       >
-        {/* Large CODEN Brand Logo */}
-        <div>
-          <img
-            src={logoImg}
-            alt="CODEN"
-            style={{
-              width: '54%',
-              maxWidth: 220,
-              minWidth: 160,
-              height: 'auto',
-              display: 'block',
-              objectFit: 'contain',
-            }}
-          />
-        </div>
-
         <h1
           style={{
             fontWeight: 800,
