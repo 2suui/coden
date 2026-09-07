@@ -546,6 +546,35 @@ function About() {
     >
       <SectionLabel>About CODEN</SectionLabel>
 
+      {/* Main Formula Headline */}
+      <p
+        style={{
+          fontWeight: 800,
+          fontSize: '18px',
+          letterSpacing: '0.01em',
+          lineHeight: 'var(--lh-heading)',
+          color: 'var(--blue)',
+          marginBottom: 88,
+          whiteSpace: 'nowrap',
+          textAlign: 'center',
+        }}
+      >
+        <span
+          style={{
+            background: 'var(--yellow)',
+            color: 'var(--blue)',
+            padding: '2px 7px',
+            borderRadius: 2,
+            display: 'inline-block',
+            letterSpacing: '0.04em',
+            lineHeight: 1.2,
+          }}
+        >
+          CODEN
+        </span>{' '}
+        = CO + DEN
+      </p>
+
       <div style={{ display: 'flex', flexDirection: 'column', gap: 104, textAlign: 'left' }}>
         {/* CO */}
         <div>
