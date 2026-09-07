@@ -267,7 +267,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
         letterSpacing: '0.14em',
         color: 'var(--gray-text)',
         textTransform: 'uppercase',
-        margin: '0 0 64px 0',
+        margin: '0 0 96px 0',
       }}
     >
       {children}
@@ -305,10 +305,10 @@ function Hero() {
       {/* Hero Copy */}
       <div
         style={{
-          padding: '56px var(--pad-x) var(--section-py)',
+          padding: '72px var(--pad-x) var(--section-py)',
           display: 'flex',
           flexDirection: 'column',
-          gap: 44,
+          gap: 56,
         }}
       >
         {/* Large CODEN Brand Logo */}
@@ -347,7 +347,7 @@ function Hero() {
           style={{
             display: 'flex',
             flexDirection: 'column',
-            gap: 12,
+            gap: 16,
           }}
         >
           <p
@@ -405,7 +405,7 @@ function Background() {
           color: 'var(--black)',
           letterSpacing: '0.01em',
           lineHeight: 1.6,
-          marginBottom: 48,
+          marginBottom: 64,
         }}
       >
         기록은 많아졌지만,
@@ -414,7 +414,7 @@ function Background() {
       </p>
 
       {/* Detailed Description */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 24, textAlign: 'left' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 32, textAlign: 'left' }}>
         <p
           style={{
             fontSize: 'var(--font-body)',
@@ -498,7 +498,7 @@ function Products() {
           </div>
         </div>
 
-        <div style={{ padding: '48px var(--pad-x) 0', textAlign: 'center' }}>
+        <div style={{ padding: '64px var(--pad-x) 0', textAlign: 'center' }}>
           <p
             style={{
               fontSize: 'var(--font-body)',
@@ -541,7 +541,7 @@ function About() {
           letterSpacing: '0.01em',
           lineHeight: 'var(--lh-heading)',
           color: 'var(--blue)',
-          marginBottom: 64,
+          marginBottom: 88,
           whiteSpace: 'nowrap',
         }}
       >
@@ -561,7 +561,7 @@ function About() {
         = CODE + NOTE
       </p>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 64, marginBottom: 72 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 88, marginBottom: 96 }}>
         <div>
           <p
             style={{
@@ -671,7 +671,7 @@ function Principles() {
     >
       <SectionLabel>Principles</SectionLabel>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 64 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 88 }}>
         {principles.map((item) => (
           <div key={item.num}>
             <p
@@ -681,7 +681,7 @@ function Principles() {
                 letterSpacing: '0.08em',
                 lineHeight: 1.2,
                 color: 'var(--blue)',
-                marginBottom: 10,
+                marginBottom: 12,
               }}
             >
               {item.num}
@@ -739,7 +739,7 @@ function Process() {
     >
       <SectionLabel>Process</SectionLabel>
 
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: 72 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: 96 }}>
         {processSteps.map((step, i) => (
           <div key={step.en} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <p
@@ -749,7 +749,7 @@ function Process() {
                 letterSpacing: '0.05em',
                 lineHeight: 'var(--lh-heading)',
                 color: 'var(--black)',
-                marginBottom: 14,
+                marginBottom: 16,
               }}
             >
               {step.en}
@@ -766,7 +766,7 @@ function Process() {
               {step.ko}
             </p>
             {i < processSteps.length - 1 && (
-              <div style={{ padding: '28px 0' }}>
+              <div style={{ padding: '36px 0' }}>
                 <span
                   style={{
                     color: 'var(--blue)',
