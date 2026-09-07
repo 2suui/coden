@@ -268,7 +268,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
         letterSpacing: '0.14em',
         color: 'var(--gray-text)',
         textTransform: 'uppercase',
-        margin: '0 0 clamp(140px, 32vw, 180px) 0',
+        margin: '0 0 clamp(90px, 22vw, 120px) 0',
       }}
     >
       {children}
@@ -333,10 +333,10 @@ function Hero() {
       {/* Hero Copy */}
       <div
         style={{
-          padding: '80px var(--pad-x) var(--section-py)',
+          padding: '64px var(--pad-x) var(--section-py)',
           display: 'flex',
           flexDirection: 'column',
-          gap: 64,
+          gap: 72,
         }}
       >
         <h1
@@ -359,7 +359,7 @@ function Hero() {
           style={{
             display: 'flex',
             flexDirection: 'column',
-            gap: 18,
+            gap: 22,
           }}
         >
           <p
@@ -416,8 +416,8 @@ function Background() {
           fontSize: '17px',
           color: 'var(--black)',
           letterSpacing: '0.01em',
-          lineHeight: 1.6,
-          marginBottom: 80,
+          lineHeight: 1.65,
+          marginBottom: 88,
         }}
       >
         기록은 많아졌지만,
@@ -426,13 +426,13 @@ function Background() {
       </p>
 
       {/* Detailed Description */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 40, textAlign: 'left' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 48, textAlign: 'left' }}>
         <p
           style={{
             fontSize: 'var(--font-body)',
             color: 'var(--gray-text)',
             letterSpacing: '0.01em',
-            lineHeight: 1.85,
+            lineHeight: 1.95,
             margin: 0,
           }}
         >
@@ -443,7 +443,7 @@ function Background() {
             fontSize: 'var(--font-body)',
             color: 'var(--gray-text)',
             letterSpacing: '0.01em',
-            lineHeight: 1.85,
+            lineHeight: 1.95,
             margin: 0,
           }}
         >
@@ -510,14 +510,14 @@ function Products() {
           </div>
         </div>
 
-        <div style={{ padding: '80px var(--pad-x) 0', textAlign: 'center' }}>
+        <div style={{ padding: '88px var(--pad-x) 0', textAlign: 'center' }}>
           <p
             style={{
               fontSize: 'var(--font-body)',
               color: 'var(--gray-text)',
               fontWeight: 500,
               letterSpacing: '0.01em',
-              lineHeight: 1.75,
+              lineHeight: 1.85,
               margin: 0,
             }}
           >
@@ -553,7 +553,7 @@ function About() {
           letterSpacing: '0.01em',
           lineHeight: 'var(--lh-heading)',
           color: 'var(--blue)',
-          marginBottom: 104,
+          marginBottom: 108,
           whiteSpace: 'nowrap',
         }}
       >
@@ -573,7 +573,7 @@ function About() {
         = CODE + NOTE
       </p>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 104, marginBottom: 120 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 112, marginBottom: 128 }}>
         <div>
           <p
             style={{
@@ -582,7 +582,7 @@ function About() {
               letterSpacing: '0.04em',
               lineHeight: 'var(--lh-heading)',
               color: 'var(--black)',
-              marginBottom: 18,
+              marginBottom: 20,
             }}
           >
             CODE
@@ -592,7 +592,7 @@ function About() {
               fontSize: 'var(--font-body)',
               color: 'var(--gray-text)',
               letterSpacing: '0.01em',
-              lineHeight: 1.8,
+              lineHeight: 1.85,
               margin: 0,
             }}
           >
@@ -608,7 +608,7 @@ function About() {
               letterSpacing: '0.04em',
               lineHeight: 'var(--lh-heading)',
               color: 'var(--black)',
-              marginBottom: 18,
+              marginBottom: 20,
             }}
           >
             NOTE
@@ -618,7 +618,7 @@ function About() {
               fontSize: 'var(--font-body)',
               color: 'var(--gray-text)',
               letterSpacing: '0.01em',
-              lineHeight: 1.8,
+              lineHeight: 1.85,
               margin: 0,
             }}
           >
@@ -633,7 +633,7 @@ function About() {
           fontSize: 'var(--font-body)',
           color: 'var(--black)',
           letterSpacing: '0.01em',
-          lineHeight: 1.8,
+          lineHeight: 1.85,
           margin: 0,
         }}
       >
@@ -683,7 +683,7 @@ function Principles() {
     >
       <SectionLabel>Principles</SectionLabel>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 104 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 112 }}>
         {principles.map((item) => (
           <div key={item.num}>
             <p
@@ -693,7 +693,7 @@ function Principles() {
                 letterSpacing: '0.08em',
                 lineHeight: 1.2,
                 color: 'var(--blue)',
-                marginBottom: 14,
+                marginBottom: 16,
               }}
             >
               {item.num}
@@ -705,7 +705,7 @@ function Principles() {
                 letterSpacing: '0.01em',
                 lineHeight: 'var(--lh-heading)',
                 color: 'var(--black)',
-                marginBottom: 18,
+                marginBottom: 20,
               }}
             >
               {item.title}
@@ -715,7 +715,7 @@ function Principles() {
                 fontSize: 'var(--font-body)',
                 color: 'var(--gray-text)',
                 letterSpacing: '0.01em',
-                lineHeight: 1.8,
+                lineHeight: 1.85,
                 margin: 0,
               }}
             >
@@ -751,7 +751,7 @@ function Process() {
     >
       <SectionLabel>Process</SectionLabel>
 
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: 120 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: 128 }}>
         {processSteps.map((step, i) => (
           <div key={step.en} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <p
@@ -761,7 +761,7 @@ function Process() {
                 letterSpacing: '0.05em',
                 lineHeight: 'var(--lh-heading)',
                 color: 'var(--black)',
-                marginBottom: 18,
+                marginBottom: 20,
               }}
             >
               {step.en}
@@ -771,14 +771,14 @@ function Process() {
                 fontSize: 'var(--font-body)',
                 color: 'var(--gray-text)',
                 letterSpacing: '0.01em',
-                lineHeight: 1.8,
+                lineHeight: 1.85,
                 margin: 0,
               }}
             >
               {step.ko}
             </p>
             {i < processSteps.length - 1 && (
-              <div style={{ padding: '36px 0' }}>
+              <div style={{ padding: '40px 0' }}>
                 <span
                   style={{
                     color: 'var(--blue)',
