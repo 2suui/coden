@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import logoImg from './assets/logo.png'
-import logoBlueImg from './assets/logo-blue.png'
 import heroImg from './assets/hero.jpg'
 
 /* ─── Section IDs & Types ─── */
@@ -302,38 +301,12 @@ function Hero() {
           alt="CODEN Notebook on yellow background"
           style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
         />
-
-        {/* Large CODEN Brand Blue Logo Overlaid at Bottom of Photo */}
-        <div
-          style={{
-            position: 'absolute',
-            bottom: 28,
-            left: 'var(--pad-x)',
-            right: 'var(--pad-x)',
-            display: 'flex',
-            alignItems: 'center',
-            pointerEvents: 'none',
-          }}
-        >
-          <img
-            src={logoBlueImg}
-            alt="CODEN"
-            style={{
-              width: '88%',
-              maxWidth: 340,
-              minWidth: 240,
-              height: 'auto',
-              display: 'block',
-              objectFit: 'contain',
-            }}
-          />
-        </div>
       </div>
 
       {/* Hero Copy */}
       <div
         style={{
-          padding: '64px var(--pad-x) var(--section-py)',
+          padding: '28px var(--pad-x) var(--section-py)',
           display: 'flex',
           flexDirection: 'column',
           gap: 72,
