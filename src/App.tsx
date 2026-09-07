@@ -389,7 +389,7 @@ function Background() {
           fontSize: '17px',
           color: 'var(--black)',
           letterSpacing: '0.01em',
-          lineHeight: 1.65,
+          lineHeight: 1.75,
           marginBottom: 88,
         }}
       >
@@ -405,7 +405,7 @@ function Background() {
             fontSize: 'var(--font-body)',
             color: 'var(--gray-text)',
             letterSpacing: '0.01em',
-            lineHeight: 1.95,
+            lineHeight: 'var(--lh-body)',
             margin: 0,
           }}
         >
@@ -416,7 +416,7 @@ function Background() {
             fontSize: 'var(--font-body)',
             color: 'var(--gray-text)',
             letterSpacing: '0.01em',
-            lineHeight: 1.95,
+            lineHeight: 'var(--lh-body)',
             margin: 0,
           }}
         >
@@ -490,7 +490,7 @@ function Products() {
               color: 'var(--gray-text)',
               fontWeight: 500,
               letterSpacing: '0.01em',
-              lineHeight: 1.85,
+              lineHeight: 'var(--lh-body)',
               margin: 0,
             }}
           >
@@ -568,7 +568,7 @@ function About() {
                 fontSize: 'var(--font-body)',
                 color: 'var(--gray-text)',
                 letterSpacing: '0.01em',
-                lineHeight: 1.85,
+                lineHeight: 'var(--lh-body)',
                 margin: 0,
               }}
             >
@@ -579,7 +579,7 @@ function About() {
                 fontSize: 'var(--font-body)',
                 color: 'var(--gray-text)',
                 letterSpacing: '0.01em',
-                lineHeight: 1.85,
+                lineHeight: 'var(--lh-body)',
                 margin: 0,
               }}
             >
@@ -607,7 +607,7 @@ function About() {
                 fontSize: 'var(--font-body)',
                 color: 'var(--gray-text)',
                 letterSpacing: '0.01em',
-                lineHeight: 1.85,
+                lineHeight: 'var(--lh-body)',
                 margin: 0,
               }}
             >
@@ -618,7 +618,7 @@ function About() {
                 fontSize: 'var(--font-body)',
                 color: 'var(--gray-text)',
                 letterSpacing: '0.01em',
-                lineHeight: 1.85,
+                lineHeight: 'var(--lh-body)',
                 margin: 0,
               }}
             >
@@ -646,7 +646,7 @@ function About() {
               fontSize: 'var(--font-body)',
               color: 'var(--gray-text)',
               letterSpacing: '0.01em',
-              lineHeight: 1.85,
+              lineHeight: 'var(--lh-body)',
               margin: 0,
             }}
           >
@@ -731,7 +731,7 @@ function Principles() {
                 fontSize: 'var(--font-body)',
                 color: 'var(--gray-text)',
                 letterSpacing: '0.01em',
-                lineHeight: 1.85,
+                lineHeight: 'var(--lh-body)',
                 margin: 0,
               }}
             >
@@ -787,7 +787,7 @@ function Process() {
                 fontSize: 'var(--font-body)',
                 color: 'var(--gray-text)',
                 letterSpacing: '0.01em',
-                lineHeight: 1.85,
+                lineHeight: 'var(--lh-body)',
                 margin: 0,
               }}
             >
