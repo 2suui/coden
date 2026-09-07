@@ -433,13 +433,6 @@ function Background() {
 
 /* ─── Products Section ─── */
 function Products() {
-  const productImages = [
-    { src: product1Img, alt: 'CODEN Desk Notebook & Bookmark Cards' },
-    { src: product2Img, alt: 'CODEN Notebook Open & Closed Flat Lay' },
-    { src: product3Img, alt: 'CODEN Notebook Open Page Vertical View' },
-    { src: product4Img, alt: 'CODEN Notebook Dot Grid and Bookmark Close-Up' },
-  ]
-
   return (
     <section
       id="products"
@@ -453,25 +446,48 @@ function Products() {
         <SectionLabel>Product</SectionLabel>
       </div>
 
-      {/* Sequential Product Photos */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 40, width: '100%' }}>
-        {productImages.map((img, i) => (
-          <div
-            key={i}
-            style={{
-              width: '100%',
-              background: 'var(--gray-mid)',
-              overflow: 'hidden',
-              position: 'relative',
-            }}
-          >
-            <img
-              src={img.src}
-              alt={img.alt}
-              style={{ width: '100%', height: 'auto', display: 'block' }}
-            />
-          </div>
-        ))}
+      {/* Product Photos */}
+      <div style={{ width: '100%' }}>
+        {/* First Standalone Photo */}
+        <div
+          style={{
+            width: '100%',
+            background: 'var(--gray-mid)',
+            overflow: 'hidden',
+            marginBottom: 48,
+          }}
+        >
+          <img
+            src={product1Img}
+            alt="CODEN Desk Notebook & Bookmark Cards"
+            style={{ width: '100%', height: 'auto', display: 'block' }}
+          />
+        </div>
+
+        {/* 3 Attached Photos with 0 Gap */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 0, width: '100%' }}>
+          {[
+            { src: product2Img, alt: 'CODEN Notebook Open & Closed Flat Lay' },
+            { src: product3Img, alt: 'CODEN Notebook Open Page Vertical View' },
+            { src: product4Img, alt: 'CODEN Notebook Dot Grid and Bookmark Close-Up' },
+          ].map((img, i) => (
+            <div
+              key={i}
+              style={{
+                width: '100%',
+                background: 'var(--gray-mid)',
+                overflow: 'hidden',
+                lineHeight: 0,
+              }}
+            >
+              <img
+                src={img.src}
+                alt={img.alt}
+                style={{ width: '100%', height: 'auto', display: 'block' }}
+              />
+            </div>
+          ))}
+        </div>
       </div>
 
       <div style={{ padding: '88px var(--pad-x) 0', textAlign: 'center' }}>
