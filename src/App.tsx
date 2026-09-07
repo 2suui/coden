@@ -305,12 +305,28 @@ function Hero() {
       {/* Hero Copy */}
       <div
         style={{
-          padding: '64px var(--pad-x) var(--section-py)',
+          padding: '56px var(--pad-x) var(--section-py)',
           display: 'flex',
           flexDirection: 'column',
-          gap: 48,
+          gap: 44,
         }}
       >
+        {/* Large CODEN Brand Logo */}
+        <div>
+          <img
+            src={logoImg}
+            alt="CODEN"
+            style={{
+              width: '54%',
+              maxWidth: 220,
+              minWidth: 160,
+              height: 'auto',
+              display: 'block',
+              objectFit: 'contain',
+            }}
+          />
+        </div>
+
         <h1
           style={{
             fontWeight: 800,
