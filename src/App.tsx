@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import logoImg from './assets/logo.png'
+import logoBlueImg from './assets/logo-blue.png'
 import heroImg from './assets/hero.jpg'
 
 /* ─── Section IDs & Types ─── */
@@ -302,11 +303,11 @@ function Hero() {
           style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
         />
 
-        {/* Large CODEN Brand Logo Overlaid at Bottom of Photo */}
+        {/* Large CODEN Brand Blue Logo Overlaid at Bottom of Photo */}
         <div
           style={{
             position: 'absolute',
-            bottom: 24,
+            bottom: 28,
             left: 'var(--pad-x)',
             right: 'var(--pad-x)',
             display: 'flex',
@@ -315,12 +316,12 @@ function Hero() {
           }}
         >
           <img
-            src={logoImg}
+            src={logoBlueImg}
             alt="CODEN"
             style={{
-              width: '85%',
-              maxWidth: 330,
-              minWidth: 220,
+              width: '88%',
+              maxWidth: 340,
+              minWidth: 240,
               height: 'auto',
               display: 'block',
               objectFit: 'contain',
