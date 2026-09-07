@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import logoImg from './assets/logo.png'
 import heroImg from './assets/hero.jpg'
+import product1Img from './assets/product-1.jpg'
 
 /* ─── Section IDs & Types ─── */
 const SECTIONS = ['hero', 'background', 'about', 'principles', 'process', 'products'] as const
@@ -447,7 +448,7 @@ function Products() {
         <div
           style={{
             width: '100%',
-            aspectRatio: '3/4',
+            aspectRatio: '859/1024',
             maxHeight: '82vh',
             background: 'var(--gray-mid)',
             overflow: 'hidden',
@@ -455,32 +456,10 @@ function Products() {
           }}
         >
           <img
-            src="https://images.unsplash.com/photo-1587467512961-120760940315?w=900&h=675&fit=crop&auto=format"
-            alt="CODEN Notebook & Bookmark System"
+            src={product1Img}
+            alt="CODEN Desk Notebook & Cards"
             style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
           />
-          <div
-            style={{
-              position: 'absolute',
-              bottom: 20,
-              left: 'var(--pad-x)',
-            }}
-          >
-            <span
-              style={{
-                display: 'inline-block',
-                background: 'var(--blue)',
-                color: 'var(--white)',
-                fontWeight: 700,
-                fontSize: 'var(--font-caption)',
-                letterSpacing: '0.08em',
-                lineHeight: 1.2,
-                padding: '6px 14px',
-              }}
-            >
-              CODEN SYSTEM
-            </span>
-          </div>
         </div>
 
         <div style={{ padding: '88px var(--pad-x) 0', textAlign: 'center' }}>
