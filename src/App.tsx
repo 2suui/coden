@@ -553,15 +553,14 @@ function About() {
         <div>
           <h3
             style={{
-              fontWeight: 800,
               fontSize: '17px',
               letterSpacing: '0.02em',
               lineHeight: 'var(--lh-heading)',
-              color: 'var(--black)',
               marginBottom: 18,
             }}
           >
-            <span style={{ color: 'var(--blue)' }}>CO</span> — Collect + Connect
+            <span style={{ fontWeight: 800, color: 'var(--black)' }}>CO</span>
+            <span style={{ fontWeight: 400, color: 'var(--blue)' }}> — Collect + Connect</span>
           </h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             <p
@@ -593,15 +592,14 @@ function About() {
         <div>
           <h3
             style={{
-              fontWeight: 800,
               fontSize: '17px',
               letterSpacing: '0.02em',
               lineHeight: 'var(--lh-heading)',
-              color: 'var(--black)',
               marginBottom: 18,
             }}
           >
-            <span style={{ color: 'var(--blue)' }}>DEN</span> — A space for thoughts
+            <span style={{ fontWeight: 800, color: 'var(--black)' }}>DEN</span>
+            <span style={{ fontWeight: 400, color: 'var(--blue)' }}> — A space for thoughts</span>
           </h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             <p
