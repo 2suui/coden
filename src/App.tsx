@@ -918,8 +918,8 @@ function Products() {
 /* ─── 8. Footer Section ─── */
 function Footer() {
   return (
-    <footer style={{ background: 'var(--blue)', color: 'var(--white)', padding: 'var(--section-py) var(--pad-x) 48px' }}>
-      <div style={{ marginBottom: 40 }}>
+    <footer style={{ background: 'var(--blue)', color: 'var(--white)', padding: '72px var(--pad-x) 48px' }}>
+      <div style={{ paddingBottom: 28, marginBottom: 28, borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
         <p
           style={{
             fontWeight: 700,
@@ -948,7 +948,6 @@ function Footer() {
 
       <div
         style={{
-          paddingTop: 16,
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'flex-end',
