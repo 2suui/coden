@@ -108,6 +108,7 @@ body {
 
 html {
   scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
 }
 
 body {
@@ -117,6 +118,18 @@ body {
   -webkit-font-smoothing: antialiased;
   word-break: keep-all;
   overflow-wrap: break-word;
+}
+
+/* ─── Scroll Snap per Chapter ─── */
+section,
+footer {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  scroll-margin-top: var(--nav-height);
+}
+
+#hero {
+  scroll-margin-top: 0;
 }
 
 button, input, textarea, select {
