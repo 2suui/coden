@@ -271,7 +271,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
         letterSpacing: '0.14em',
         color: 'var(--gray-text)',
         textTransform: 'uppercase',
-        margin: '0 0 clamp(130px, 30vw, 170px) 0',
+        margin: '0 0 clamp(40px, 8vh, 64px) 0',
         textAlign: 'center',
       }}
     >
@@ -286,8 +286,12 @@ function Hero() {
     <section
       id="hero"
       style={{
+        minHeight: '100dvh',
         paddingTop: 'var(--nav-height)',
         background: 'var(--white)',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
       }}
     >
       {/* Hero Image */}
@@ -295,7 +299,7 @@ function Hero() {
         style={{
           width: '100%',
           aspectRatio: '1024/1450',
-          maxHeight: '85vh',
+          maxHeight: '68vh',
           background: 'var(--gray-light)',
           overflow: 'hidden',
           position: 'relative',
@@ -311,10 +315,10 @@ function Hero() {
       {/* Hero Copy */}
       <div
         style={{
-          padding: '28px var(--pad-x) var(--section-py)',
+          padding: '24px var(--pad-x) 48px',
           display: 'flex',
           flexDirection: 'column',
-          gap: 84,
+          gap: 40,
         }}
       >
         <h1
@@ -322,7 +326,7 @@ function Hero() {
             fontWeight: 800,
             fontSize: 'var(--font-hero)',
             letterSpacing: '0.02em',
-            lineHeight: 1.55,
+            lineHeight: 1.4,
             color: 'var(--black)',
             margin: 0,
           }}
@@ -337,7 +341,7 @@ function Hero() {
           style={{
             display: 'flex',
             flexDirection: 'column',
-            gap: 22,
+            gap: 16,
           }}
         >
           <p
@@ -376,12 +380,16 @@ function Background() {
     <section
       id="background"
       style={{
+        minHeight: '100dvh',
         background: 'var(--white)',
         color: 'var(--black)',
-        paddingTop: 'var(--section-py)',
-        paddingBottom: 'var(--section-py)',
+        paddingTop: 'calc(var(--nav-height) + 24px)',
+        paddingBottom: '48px',
         paddingLeft: 'var(--pad-x)',
         paddingRight: 'var(--pad-x)',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
         textAlign: 'center',
       }}
     >
@@ -395,7 +403,7 @@ function Background() {
           color: 'var(--black)',
           letterSpacing: '0.01em',
           lineHeight: 1.75,
-          marginBottom: 104,
+          marginBottom: 64,
           textAlign: 'center',
         }}
       >
@@ -405,7 +413,7 @@ function Background() {
       </p>
 
       {/* Detailed Description */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 48, textAlign: 'left' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 32, textAlign: 'left' }}>
         <p
           style={{
             fontSize: 'var(--font-body)',
@@ -457,18 +465,22 @@ function TargetUser() {
     <section
       id="target"
       style={{
+        minHeight: '100dvh',
         background: 'var(--white)',
         color: 'var(--black)',
-        paddingTop: 'var(--section-py)',
-        paddingBottom: 'var(--section-py)',
+        paddingTop: 'calc(var(--nav-height) + 24px)',
+        paddingBottom: '48px',
         paddingLeft: 'var(--pad-x)',
         paddingRight: 'var(--pad-x)',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
         textAlign: 'center',
       }}
     >
       <SectionLabel>Target User</SectionLabel>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 104, textAlign: 'left' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 44, textAlign: 'left' }}>
         {targets.map((item) => (
           <div key={item.num}>
             <p
@@ -478,7 +490,7 @@ function TargetUser() {
                 letterSpacing: '0.08em',
                 lineHeight: 1.2,
                 color: 'var(--blue)',
-                marginBottom: 16,
+                marginBottom: 10,
               }}
             >
               {item.num}
@@ -490,7 +502,7 @@ function TargetUser() {
                 letterSpacing: '0.01em',
                 lineHeight: 'var(--lh-heading)',
                 color: 'var(--black)',
-                marginBottom: 18,
+                marginBottom: 10,
               }}
             >
               {item.title}
@@ -519,12 +531,16 @@ function About() {
     <section
       id="about"
       style={{
+        minHeight: '100dvh',
         background: 'var(--white)',
         color: 'var(--black)',
-        paddingTop: 'var(--section-py)',
-        paddingBottom: 'var(--section-py)',
+        paddingTop: 'calc(var(--nav-height) + 24px)',
+        paddingBottom: '48px',
         paddingLeft: 'var(--pad-x)',
         paddingRight: 'var(--pad-x)',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
         textAlign: 'center',
       }}
     >
@@ -538,7 +554,7 @@ function About() {
           letterSpacing: '0.01em',
           lineHeight: 'var(--lh-heading)',
           color: 'var(--blue)',
-          marginBottom: 104,
+          marginBottom: 44,
           whiteSpace: 'nowrap',
           textAlign: 'center',
         }}
@@ -559,7 +575,7 @@ function About() {
         = CO + DEN
       </p>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 104, textAlign: 'left' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 36, textAlign: 'left' }}>
         {/* CO */}
         <div>
           <h3
@@ -567,13 +583,13 @@ function About() {
               fontSize: 'var(--font-title)',
               letterSpacing: '0.02em',
               lineHeight: 'var(--lh-heading)',
-              marginBottom: 18,
+              marginBottom: 10,
             }}
           >
             <span style={{ fontWeight: 700, color: 'var(--blue)' }}>CO</span>
             <span style={{ fontWeight: 400, color: 'var(--blue)' }}> — Collect + Connect</span>
           </h3>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             <p
               style={{
                 fontSize: 'var(--font-body)',
@@ -606,13 +622,13 @@ function About() {
               fontSize: 'var(--font-title)',
               letterSpacing: '0.02em',
               lineHeight: 'var(--lh-heading)',
-              marginBottom: 18,
+              marginBottom: 10,
             }}
           >
             <span style={{ fontWeight: 700, color: 'var(--blue)' }}>DEN</span>
             <span style={{ fontWeight: 400, color: 'var(--blue)' }}> — A space for thoughts</span>
           </h3>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             <p
               style={{
                 fontSize: 'var(--font-body)',
@@ -647,7 +663,7 @@ function About() {
               letterSpacing: '0.02em',
               lineHeight: 'var(--lh-heading)',
               color: 'var(--blue)',
-              marginBottom: 18,
+              marginBottom: 10,
             }}
           >
             Open Loop
@@ -698,18 +714,22 @@ function Principles() {
     <section
       id="principles"
       style={{
+        minHeight: '100dvh',
         background: 'var(--white)',
         color: 'var(--black)',
-        paddingTop: 'var(--section-py)',
-        paddingBottom: 'var(--section-py)',
+        paddingTop: 'calc(var(--nav-height) + 24px)',
+        paddingBottom: '48px',
         paddingLeft: 'var(--pad-x)',
         paddingRight: 'var(--pad-x)',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
         textAlign: 'center',
       }}
     >
       <SectionLabel>Principles</SectionLabel>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 104, textAlign: 'left' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 32, textAlign: 'left' }}>
         {principles.map((item) => (
           <div key={item.num}>
             <p
@@ -719,7 +739,7 @@ function Principles() {
                 letterSpacing: '0.08em',
                 lineHeight: 1.2,
                 color: 'var(--blue)',
-                marginBottom: 16,
+                marginBottom: 6,
               }}
             >
               {item.num}
@@ -731,7 +751,7 @@ function Principles() {
                 letterSpacing: '0.01em',
                 lineHeight: 'var(--lh-heading)',
                 color: 'var(--black)',
-                marginBottom: 18,
+                marginBottom: 6,
               }}
             >
               {item.title}
@@ -766,18 +786,22 @@ function Process() {
     <section
       id="process"
       style={{
+        minHeight: '100dvh',
         background: 'var(--white)',
         color: 'var(--black)',
-        paddingTop: 'var(--section-py)',
-        paddingBottom: 'var(--section-py)',
+        paddingTop: 'calc(var(--nav-height) + 24px)',
+        paddingBottom: '48px',
         paddingLeft: 'var(--pad-x)',
         paddingRight: 'var(--pad-x)',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
         textAlign: 'center',
       }}
     >
       <SectionLabel>Process</SectionLabel>
 
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: 104 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: 48 }}>
         {processSteps.map((step, i) => (
           <div key={step.en} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <p
@@ -787,7 +811,7 @@ function Process() {
                 letterSpacing: '0.05em',
                 lineHeight: 'var(--lh-heading)',
                 color: 'var(--black)',
-                marginBottom: 18,
+                marginBottom: 10,
               }}
             >
               {step.en}
@@ -804,11 +828,11 @@ function Process() {
               {step.ko}
             </p>
             {i < processSteps.length - 1 && (
-              <div style={{ padding: '40px 0' }}>
+              <div style={{ padding: '20px 0' }}>
                 <span
                   style={{
                     color: 'var(--blue)',
-                    fontSize: '20px',
+                    fontSize: '18px',
                     lineHeight: 1,
                     display: 'block',
                   }}
@@ -844,9 +868,13 @@ function Products() {
     <section
       id="products"
       style={{
-        paddingTop: 'var(--section-py)',
-        paddingBottom: 'var(--section-py)',
+        minHeight: '100dvh',
+        paddingTop: 'calc(var(--nav-height) + 32px)',
+        paddingBottom: '64px',
         background: '#f0f0ee',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
       }}
     >
       <div style={{ padding: '0 var(--pad-x)', textAlign: 'center' }}>
@@ -861,7 +889,7 @@ function Products() {
             width: '100%',
             background: 'var(--gray-mid)',
             overflow: 'hidden',
-            marginBottom: 48,
+            marginBottom: 32,
           }}
         >
           <img
@@ -897,7 +925,7 @@ function Products() {
         </div>
       </div>
 
-      <div style={{ padding: '104px var(--pad-x) 0', textAlign: 'center' }}>
+      <div style={{ padding: '48px var(--pad-x) 0', textAlign: 'center' }}>
         <p
           style={{
             fontSize: 'var(--font-body)',
@@ -918,7 +946,7 @@ function Products() {
 /* ─── 8. Footer Section ─── */
 function Footer() {
   return (
-    <footer style={{ background: 'var(--blue)', color: 'var(--white)', padding: '72px var(--pad-x) 48px' }}>
+    <footer style={{ background: 'var(--blue)', color: 'var(--white)', padding: '64px var(--pad-x) 48px', minHeight: '50dvh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
       <div style={{ paddingBottom: 28, marginBottom: 28, borderBottom: '1px solid rgba(255, 255, 255, 0.2)' }}>
         <p
           style={{
