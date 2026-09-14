@@ -271,7 +271,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
         letterSpacing: '0.14em',
         color: 'var(--gray-text)',
         textTransform: 'uppercase',
-        margin: '0 0 clamp(90px, 22vw, 120px) 0',
+        margin: '0 0 clamp(130px, 30vw, 170px) 0',
         textAlign: 'center',
       }}
     >
@@ -314,7 +314,7 @@ function Hero() {
           padding: '28px var(--pad-x) var(--section-py)',
           display: 'flex',
           flexDirection: 'column',
-          gap: 72,
+          gap: 84,
         }}
       >
         <h1
@@ -395,7 +395,7 @@ function Background() {
           color: 'var(--black)',
           letterSpacing: '0.01em',
           lineHeight: 1.75,
-          marginBottom: 88,
+          marginBottom: 104,
           textAlign: 'center',
         }}
       >
@@ -538,7 +538,7 @@ function About() {
           letterSpacing: '0.01em',
           lineHeight: 'var(--lh-heading)',
           color: 'var(--blue)',
-          marginBottom: 88,
+          marginBottom: 104,
           whiteSpace: 'nowrap',
           textAlign: 'center',
         }}
@@ -897,7 +897,7 @@ function Products() {
         </div>
       </div>
 
-      <div style={{ padding: '88px var(--pad-x) 0', textAlign: 'center' }}>
+      <div style={{ padding: '104px var(--pad-x) 0', textAlign: 'center' }}>
         <p
           style={{
             fontSize: 'var(--font-body)',
