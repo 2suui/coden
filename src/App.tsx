@@ -471,7 +471,7 @@ function TargetUser() {
           <div key={item.num}>
             <p
               style={{
-                fontWeight: 800,
+                fontWeight: 700,
                 fontSize: 'var(--font-caption)',
                 letterSpacing: '0.08em',
                 lineHeight: 1.2,
@@ -483,8 +483,8 @@ function TargetUser() {
             </p>
             <h3
               style={{
-                fontWeight: 800,
-                fontSize: 'var(--font-subheading)',
+                fontWeight: 700,
+                fontSize: '17px',
                 letterSpacing: '0.01em',
                 lineHeight: 'var(--lh-heading)',
                 color: 'var(--black)',
