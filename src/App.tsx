@@ -10,8 +10,39 @@ import product4Img from './assets/product-4.jpg'
 const SECTIONS = ['hero', 'background', 'target', 'about', 'principles', 'process', 'products'] as const
 type SectionId = (typeof SECTIONS)[number]
 
+function smoothScrollTo(targetY: number, duration: number = 750) {
+  const startY = window.pageYOffset || document.documentElement.scrollTop
+  const diff = targetY - startY
+  if (Math.abs(diff) < 2) return
+
+  const startTime = performance.now()
+
+  function easeInOutCubic(t: number): number {
+    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2
+  }
+
+  function step(currentTime: number) {
+    const elapsed = currentTime - startTime
+    const progress = Math.min(elapsed / duration, 1)
+    const ease = easeInOutCubic(progress)
+    window.scrollTo(0, startY + diff * ease)
+
+    if (progress < 1) {
+      requestAnimationFrame(step)
+    }
+  }
+
+  requestAnimationFrame(step)
+}
+
 function scrollTo(id: string) {
-  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+  const el = document.getElementById(id)
+  if (!el) return
+  const navHeight = 56
+  const targetY = id === 'hero' 
+    ? 0 
+    : el.getBoundingClientRect().top + window.pageYOffset - navHeight
+  smoothScrollTo(targetY, 750)
 }
 
 /* ─── Active Section Spy Hook ─── */
@@ -211,11 +242,7 @@ function Menu({
                 key={item}
                 onClick={() => {
                   onClose()
-                  if (ids[i] === 'hero') {
-                    setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 340)
-                  } else {
-                    setTimeout(() => scrollTo(ids[i]), 340)
-                  }
+                  setTimeout(() => scrollTo(ids[i]), 300)
                 }}
                 style={{
                   display: 'flex',
