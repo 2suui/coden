@@ -7,7 +7,7 @@ import product3Img from './assets/product-3.jpg'
 import product4Img from './assets/product-4.jpg'
 
 /* ─── Section IDs & Types ─── */
-const SECTIONS = ['hero', 'background', 'about', 'principles', 'process', 'products'] as const
+const SECTIONS = ['hero', 'background', 'target', 'about', 'principles', 'process', 'products'] as const
 type SectionId = (typeof SECTIONS)[number]
 
 function scrollTo(id: string) {
@@ -139,8 +139,8 @@ function Menu({
   onClose: () => void
   activeSection: SectionId
 }) {
-  const items = ['HOME', 'BACKGROUND', 'ABOUT', 'PRINCIPLES', 'PROCESS', 'PRODUCTS']
-  const ids: SectionId[] = ['hero', 'background', 'about', 'principles', 'process', 'products']
+  const items = ['HOME', 'BACKGROUND', 'TARGET USER', 'ABOUT', 'PRINCIPLES', 'PROCESS', 'PRODUCTS']
+  const ids: SectionId[] = ['hero', 'background', 'target', 'about', 'principles', 'process', 'products']
 
   return (
     <>
@@ -426,6 +426,86 @@ function Background() {
         >
           CODEN은 이러한 반복에서 벗어나, 기록을 다시 발견하고 활용할 수 있는 방법에 대한 고민에서 시작되었습니다.
         </p>
+      </div>
+    </section>
+  )
+}
+
+/* ─── Target User Section ─── */
+function TargetUser() {
+  const targets = [
+    {
+      num: '01',
+      title: '기록은 많지만 다시 찾지 못하는 사람',
+      desc: '메모 앱, 노트, 메시지 등 여러 곳에 기록하지만 필요한 순간 다시 꺼내 활용하기 어려운 사람.',
+    },
+    {
+      num: '02',
+      title: '과제·프로젝트·아이디어를 자주 기록하는 사람',
+      desc: '대학생이나 사회초년생처럼 일상적으로 생각과 정보를 기록하고 정리해야 하는 사람.',
+    },
+    {
+      num: '03',
+      title: '기록을 새로운 생각으로 발전시키고 싶은 사람',
+      desc: '단순히 저장하는 데서 끝나지 않고, 기록을 다시 읽고 연결해 아이디어나 행동으로 이어가고 싶은 사람.',
+    },
+  ]
+
+  return (
+    <section
+      id="target"
+      style={{
+        background: 'var(--white)',
+        color: 'var(--black)',
+        paddingTop: 'var(--section-py)',
+        paddingBottom: 'var(--section-py)',
+        paddingLeft: 'var(--pad-x)',
+        paddingRight: 'var(--pad-x)',
+        textAlign: 'center',
+      }}
+    >
+      <SectionLabel>Target User</SectionLabel>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 104, textAlign: 'left' }}>
+        {targets.map((item) => (
+          <div key={item.num}>
+            <p
+              style={{
+                fontWeight: 800,
+                fontSize: 'var(--font-caption)',
+                letterSpacing: '0.08em',
+                lineHeight: 1.2,
+                color: 'var(--blue)',
+                marginBottom: 16,
+              }}
+            >
+              {item.num}
+            </p>
+            <h3
+              style={{
+                fontWeight: 800,
+                fontSize: 'var(--font-subheading)',
+                letterSpacing: '0.01em',
+                lineHeight: 'var(--lh-heading)',
+                color: 'var(--black)',
+                marginBottom: 18,
+              }}
+            >
+              {item.title}
+            </h3>
+            <p
+              style={{
+                fontSize: 'var(--font-body)',
+                color: 'var(--gray-text)',
+                letterSpacing: '0.01em',
+                lineHeight: 'var(--lh-body)',
+                margin: 0,
+              }}
+            >
+              {item.desc}
+            </p>
+          </div>
+        ))}
       </div>
     </section>
   )
@@ -922,6 +1002,7 @@ export default function App() {
       <main>
         <Hero />
         <Background />
+        <TargetUser />
         <About />
         <Principles />
         <Process />
