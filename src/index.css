@@ -80,9 +80,16 @@
   --pad-x: 24px;
   --section-py: clamp(100px, 24vw, 140px);
   --font-hero: clamp(38px, 10vw, 46px);
-  --font-subheading: 16px;
+  --font-title: 17px;
   --font-body: clamp(14px, 3.8vw, 15px);
   --font-caption: 12px;
+
+  /* ─── 폰트 두께 규격 ─── */
+  --fw-hero: 800;
+  --fw-bold: 700;
+  --fw-medium: 500;
+  --fw-regular: 400;
+  --fw-light: 300;
 
   /* ─── 행간 규격 ─── */
   --lh-heading: 1.35;

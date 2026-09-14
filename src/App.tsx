@@ -261,17 +261,18 @@ function Menu({
   )
 }
 
-/* ─── Section Label Component ─── */
+/* ─── Unified Section Label ─── */
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
     <p
       style={{
         fontWeight: 700,
-        fontSize: '12px',
+        fontSize: 'var(--font-caption)',
         letterSpacing: '0.14em',
         color: 'var(--gray-text)',
         textTransform: 'uppercase',
         margin: '0 0 clamp(90px, 22vw, 120px) 0',
+        textAlign: 'center',
       }}
     >
       {children}
@@ -279,7 +280,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
   )
 }
 
-/* ─── Hero Section ─── */
+/* ─── 1. Hero Section ─── */
 function Hero() {
   return (
     <section
@@ -353,7 +354,7 @@ function Hero() {
           </p>
           <p
             style={{
-              fontWeight: 500,
+              fontWeight: 400,
               fontSize: 'var(--font-body)',
               letterSpacing: '0.01em',
               lineHeight: 'var(--lh-body)',
@@ -369,7 +370,7 @@ function Hero() {
   )
 }
 
-/* ─── Background Section ─── */
+/* ─── 2. Background Section ─── */
 function Background() {
   return (
     <section
@@ -390,11 +391,12 @@ function Background() {
       <p
         style={{
           fontWeight: 700,
-          fontSize: '17px',
+          fontSize: 'var(--font-title)',
           color: 'var(--black)',
           letterSpacing: '0.01em',
           lineHeight: 1.75,
           marginBottom: 88,
+          textAlign: 'center',
         }}
       >
         기록은 많아졌지만,
@@ -431,7 +433,7 @@ function Background() {
   )
 }
 
-/* ─── Target User Section ─── */
+/* ─── 3. Target User Section ─── */
 function TargetUser() {
   const targets = [
     {
@@ -484,7 +486,7 @@ function TargetUser() {
             <h3
               style={{
                 fontWeight: 700,
-                fontSize: '17px',
+                fontSize: 'var(--font-title)',
                 letterSpacing: '0.01em',
                 lineHeight: 'var(--lh-heading)',
                 color: 'var(--black)',
@@ -511,7 +513,332 @@ function TargetUser() {
   )
 }
 
-/* ─── Products Section ─── */
+/* ─── 4. About Section ─── */
+function About() {
+  return (
+    <section
+      id="about"
+      style={{
+        background: 'var(--white)',
+        color: 'var(--black)',
+        paddingTop: 'var(--section-py)',
+        paddingBottom: 'var(--section-py)',
+        paddingLeft: 'var(--pad-x)',
+        paddingRight: 'var(--pad-x)',
+        textAlign: 'center',
+      }}
+    >
+      <SectionLabel>About CODEN</SectionLabel>
+
+      {/* Main Formula Headline */}
+      <p
+        style={{
+          fontWeight: 700,
+          fontSize: 'var(--font-title)',
+          letterSpacing: '0.01em',
+          lineHeight: 'var(--lh-heading)',
+          color: 'var(--blue)',
+          marginBottom: 88,
+          whiteSpace: 'nowrap',
+          textAlign: 'center',
+        }}
+      >
+        <span
+          style={{
+            background: 'var(--yellow)',
+            color: 'var(--blue)',
+            padding: '2px 7px',
+            borderRadius: 2,
+            display: 'inline-block',
+            letterSpacing: '0.04em',
+            lineHeight: 1.2,
+          }}
+        >
+          CODEN
+        </span>{' '}
+        = CO + DEN
+      </p>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 104, textAlign: 'left' }}>
+        {/* CO */}
+        <div>
+          <h3
+            style={{
+              fontSize: 'var(--font-title)',
+              letterSpacing: '0.02em',
+              lineHeight: 'var(--lh-heading)',
+              marginBottom: 18,
+            }}
+          >
+            <span style={{ fontWeight: 700, color: 'var(--blue)' }}>CO</span>
+            <span style={{ fontWeight: 400, color: 'var(--blue)' }}> — Collect + Connect</span>
+          </h3>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+            <p
+              style={{
+                fontSize: 'var(--font-body)',
+                color: 'var(--gray-text)',
+                letterSpacing: '0.01em',
+                lineHeight: 'var(--lh-body)',
+                margin: 0,
+              }}
+            >
+              흩어진 기록을 다시 모으고, 서로 다른 생각을 연결하는 과정을 의미합니다.
+            </p>
+            <p
+              style={{
+                fontSize: 'var(--font-body)',
+                color: 'var(--gray-text)',
+                letterSpacing: '0.01em',
+                lineHeight: 'var(--lh-body)',
+                margin: 0,
+              }}
+            >
+              한 번 쓰고 끝나는 기록이 아니라, 다시 발견하고 새로운 맥락으로 이어가는 기록 방식을 담았습니다.
+            </p>
+          </div>
+        </div>
+
+        {/* DEN */}
+        <div>
+          <h3
+            style={{
+              fontSize: 'var(--font-title)',
+              letterSpacing: '0.02em',
+              lineHeight: 'var(--lh-heading)',
+              marginBottom: 18,
+            }}
+          >
+            <span style={{ fontWeight: 700, color: 'var(--blue)' }}>DEN</span>
+            <span style={{ fontWeight: 400, color: 'var(--blue)' }}> — A space for thoughts</span>
+          </h3>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+            <p
+              style={{
+                fontSize: 'var(--font-body)',
+                color: 'var(--gray-text)',
+                letterSpacing: '0.01em',
+                lineHeight: 'var(--lh-body)',
+                margin: 0,
+              }}
+            >
+              기록과 생각이 잠시 머물고, 필요할 때 다시 꺼내어 이어갈 수 있는 공간을 의미합니다.
+            </p>
+            <p
+              style={{
+                fontSize: 'var(--font-body)',
+                color: 'var(--gray-text)',
+                letterSpacing: '0.01em',
+                lineHeight: 'var(--lh-body)',
+                margin: 0,
+              }}
+            >
+              모인 기록은 이곳에서 다시 발견되고, 다른 생각과 연결되며 새로운 아이디어로 확장됩니다.
+            </p>
+          </div>
+        </div>
+
+        {/* Open Loop */}
+        <div>
+          <h3
+            style={{
+              fontWeight: 700,
+              fontSize: 'var(--font-title)',
+              letterSpacing: '0.02em',
+              lineHeight: 'var(--lh-heading)',
+              color: 'var(--blue)',
+              marginBottom: 18,
+            }}
+          >
+            Open Loop
+          </h3>
+          <p
+            style={{
+              fontSize: 'var(--font-body)',
+              color: 'var(--gray-text)',
+              letterSpacing: '0.01em',
+              lineHeight: 'var(--lh-body)',
+              margin: 0,
+            }}
+          >
+            CODEN의 열린 O는 완전히 닫히지 않은 형태로, 기록이 하나의 끝에 머무르지 않고 다음 생각으로 계속 이어지는 Open Loop를 상징합니다.
+          </p>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+/* ─── 5. Principles Section ─── */
+function Principles() {
+  const principles = [
+    {
+      num: '01',
+      title: '하나의 생각, 하나의 메모',
+      desc: '한 메모에는 하나의 생각만 남깁니다.',
+    },
+    {
+      num: '02',
+      title: '처음부터 정리하지 않습니다',
+      desc: '떠오른 생각은 먼저 붙잡고, 정리는 나중에 합니다.',
+    },
+    {
+      num: '03',
+      title: '다시 보는 것을 전제로 기록합니다',
+      desc: '기록은 쌓는 것이 아니라 다시 발견하기 위한 것입니다.',
+    },
+    {
+      num: '04',
+      title: '기록은 다음 행동으로 이어집니다',
+      desc: '남겨진 생각을 연결해 새로운 생각과 행동으로 발전시킵니다.',
+    },
+  ]
+
+  return (
+    <section
+      id="principles"
+      style={{
+        background: 'var(--white)',
+        color: 'var(--black)',
+        paddingTop: 'var(--section-py)',
+        paddingBottom: 'var(--section-py)',
+        paddingLeft: 'var(--pad-x)',
+        paddingRight: 'var(--pad-x)',
+        textAlign: 'center',
+      }}
+    >
+      <SectionLabel>Principles</SectionLabel>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 104, textAlign: 'left' }}>
+        {principles.map((item) => (
+          <div key={item.num}>
+            <p
+              style={{
+                fontWeight: 700,
+                fontSize: 'var(--font-caption)',
+                letterSpacing: '0.08em',
+                lineHeight: 1.2,
+                color: 'var(--blue)',
+                marginBottom: 16,
+              }}
+            >
+              {item.num}
+            </p>
+            <h3
+              style={{
+                fontWeight: 700,
+                fontSize: 'var(--font-title)',
+                letterSpacing: '0.01em',
+                lineHeight: 'var(--lh-heading)',
+                color: 'var(--black)',
+                marginBottom: 18,
+              }}
+            >
+              {item.title}
+            </h3>
+            <p
+              style={{
+                fontSize: 'var(--font-body)',
+                color: 'var(--gray-text)',
+                letterSpacing: '0.01em',
+                lineHeight: 'var(--lh-body)',
+                margin: 0,
+              }}
+            >
+              {item.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+/* ─── 6. Process Section ─── */
+function Process() {
+  const processSteps = [
+    { en: 'CAPTURE', ko: '생각과 정보를 기록하고' },
+    { en: 'CONNECT', ko: '서로 연결하고' },
+    { en: 'CREATE', ko: '새로운 생각으로 확장합니다.' },
+  ]
+
+  return (
+    <section
+      id="process"
+      style={{
+        background: 'var(--white)',
+        color: 'var(--black)',
+        paddingTop: 'var(--section-py)',
+        paddingBottom: 'var(--section-py)',
+        paddingLeft: 'var(--pad-x)',
+        paddingRight: 'var(--pad-x)',
+        textAlign: 'center',
+      }}
+    >
+      <SectionLabel>Process</SectionLabel>
+
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: 104 }}>
+        {processSteps.map((step, i) => (
+          <div key={step.en} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <p
+              style={{
+                fontWeight: 700,
+                fontSize: 'var(--font-title)',
+                letterSpacing: '0.05em',
+                lineHeight: 'var(--lh-heading)',
+                color: 'var(--black)',
+                marginBottom: 18,
+              }}
+            >
+              {step.en}
+            </p>
+            <p
+              style={{
+                fontSize: 'var(--font-body)',
+                color: 'var(--gray-text)',
+                letterSpacing: '0.01em',
+                lineHeight: 'var(--lh-body)',
+                margin: 0,
+              }}
+            >
+              {step.ko}
+            </p>
+            {i < processSteps.length - 1 && (
+              <div style={{ padding: '40px 0' }}>
+                <span
+                  style={{
+                    color: 'var(--blue)',
+                    fontSize: '20px',
+                    lineHeight: 1,
+                    display: 'block',
+                  }}
+                >
+                  ↓
+                </span>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+
+      <p
+        style={{
+          fontWeight: 700,
+          fontSize: 'var(--font-body)',
+          color: 'var(--black)',
+          letterSpacing: '0.01em',
+          lineHeight: 'var(--lh-body)',
+          margin: 0,
+          textAlign: 'center',
+        }}
+      >
+        기록을 단순히 저장하는 데 그치지 않고, 포착하고 연결하며 새로운 생각으로 확장하는 과정을 제안합니다.
+      </p>
+    </section>
+  )
+}
+
+/* ─── 7. Products Section ─── */
 function Products() {
   return (
     <section
@@ -575,7 +902,7 @@ function Products() {
           style={{
             fontSize: 'var(--font-body)',
             color: 'var(--gray-text)',
-            fontWeight: 500,
+            fontWeight: 400,
             letterSpacing: '0.01em',
             lineHeight: 'var(--lh-body)',
             margin: 0,
@@ -588,339 +915,15 @@ function Products() {
   )
 }
 
-/* ─── About Section ─── */
-function About() {
-  return (
-    <section
-      id="about"
-      style={{
-        background: 'var(--white)',
-        color: 'var(--black)',
-        paddingTop: 'var(--section-py)',
-        paddingBottom: 'var(--section-py)',
-        paddingLeft: 'var(--pad-x)',
-        paddingRight: 'var(--pad-x)',
-        textAlign: 'center',
-      }}
-    >
-      <SectionLabel>About CODEN</SectionLabel>
-
-      {/* Main Formula Headline */}
-      <p
-        style={{
-          fontWeight: 800,
-          fontSize: '18px',
-          letterSpacing: '0.01em',
-          lineHeight: 'var(--lh-heading)',
-          color: 'var(--blue)',
-          marginBottom: 88,
-          whiteSpace: 'nowrap',
-          textAlign: 'center',
-        }}
-      >
-        <span
-          style={{
-            background: 'var(--yellow)',
-            color: 'var(--blue)',
-            padding: '2px 7px',
-            borderRadius: 2,
-            display: 'inline-block',
-            letterSpacing: '0.04em',
-            lineHeight: 1.2,
-          }}
-        >
-          CODEN
-        </span>{' '}
-        = CO + DEN
-      </p>
-
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 104, textAlign: 'left' }}>
-        {/* CO */}
-        <div>
-          <h3
-            style={{
-              fontSize: '17px',
-              letterSpacing: '0.02em',
-              lineHeight: 'var(--lh-heading)',
-              marginBottom: 18,
-            }}
-          >
-            <span style={{ fontWeight: 800, color: 'var(--blue)' }}>CO</span>
-            <span style={{ fontWeight: 400, color: 'var(--blue)' }}> — Collect + Connect</span>
-          </h3>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-            <p
-              style={{
-                fontSize: 'var(--font-body)',
-                color: 'var(--gray-text)',
-                letterSpacing: '0.01em',
-                lineHeight: 'var(--lh-body)',
-                margin: 0,
-              }}
-            >
-              흩어진 기록을 다시 모으고, 서로 다른 생각을 연결하는 과정을 의미합니다.
-            </p>
-            <p
-              style={{
-                fontSize: 'var(--font-body)',
-                color: 'var(--gray-text)',
-                letterSpacing: '0.01em',
-                lineHeight: 'var(--lh-body)',
-                margin: 0,
-              }}
-            >
-              한 번 쓰고 끝나는 기록이 아니라, 다시 발견하고 새로운 맥락으로 이어가는 기록 방식을 담았습니다.
-            </p>
-          </div>
-        </div>
-
-        {/* DEN */}
-        <div>
-          <h3
-            style={{
-              fontSize: '17px',
-              letterSpacing: '0.02em',
-              lineHeight: 'var(--lh-heading)',
-              marginBottom: 18,
-            }}
-          >
-            <span style={{ fontWeight: 800, color: 'var(--blue)' }}>DEN</span>
-            <span style={{ fontWeight: 400, color: 'var(--blue)' }}> — A space for thoughts</span>
-          </h3>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-            <p
-              style={{
-                fontSize: 'var(--font-body)',
-                color: 'var(--gray-text)',
-                letterSpacing: '0.01em',
-                lineHeight: 'var(--lh-body)',
-                margin: 0,
-              }}
-            >
-              기록과 생각이 잠시 머물고, 필요할 때 다시 꺼내어 이어갈 수 있는 공간을 의미합니다.
-            </p>
-            <p
-              style={{
-                fontSize: 'var(--font-body)',
-                color: 'var(--gray-text)',
-                letterSpacing: '0.01em',
-                lineHeight: 'var(--lh-body)',
-                margin: 0,
-              }}
-            >
-              모인 기록은 이곳에서 다시 발견되고, 다른 생각과 연결되며 새로운 아이디어로 확장됩니다.
-            </p>
-          </div>
-        </div>
-
-        {/* Open Loop */}
-        <div>
-          <h3
-            style={{
-              fontWeight: 800,
-              fontSize: '17px',
-              letterSpacing: '0.02em',
-              lineHeight: 'var(--lh-heading)',
-              color: 'var(--blue)',
-              marginBottom: 18,
-            }}
-          >
-            Open Loop
-          </h3>
-          <p
-            style={{
-              fontSize: 'var(--font-body)',
-              color: 'var(--gray-text)',
-              letterSpacing: '0.01em',
-              lineHeight: 'var(--lh-body)',
-              margin: 0,
-            }}
-          >
-            CODEN의 열린 O는 완전히 닫히지 않은 형태로, 기록이 하나의 끝에 머무르지 않고 다음 생각으로 계속 이어지는 Open Loop를 상징합니다.
-          </p>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-/* ─── Principles Section ─── */
-function Principles() {
-  const principles = [
-    {
-      num: '01',
-      title: '하나의 생각, 하나의 메모',
-      desc: '한 메모에는 하나의 생각만 남깁니다.',
-    },
-    {
-      num: '02',
-      title: '처음부터 정리하지 않습니다',
-      desc: '떠오른 생각은 먼저 붙잡고, 정리는 나중에 합니다.',
-    },
-    {
-      num: '03',
-      title: '다시 보는 것을 전제로 기록합니다',
-      desc: '기록은 쌓는 것이 아니라 다시 발견하기 위한 것입니다.',
-    },
-    {
-      num: '04',
-      title: '기록은 다음 행동으로 이어집니다',
-      desc: '남겨진 생각을 연결해 새로운 생각과 행동으로 발전시킵니다.',
-    },
-  ]
-
-  return (
-    <section
-      id="principles"
-      style={{
-        background: 'var(--white)',
-        color: 'var(--black)',
-        paddingTop: 'var(--section-py)',
-        paddingBottom: 'var(--section-py)',
-        paddingLeft: 'var(--pad-x)',
-        paddingRight: 'var(--pad-x)',
-        textAlign: 'center',
-      }}
-    >
-      <SectionLabel>Principles</SectionLabel>
-
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 112 }}>
-        {principles.map((item) => (
-          <div key={item.num}>
-            <p
-              style={{
-                fontWeight: 800,
-                fontSize: 'var(--font-caption)',
-                letterSpacing: '0.08em',
-                lineHeight: 1.2,
-                color: 'var(--blue)',
-                marginBottom: 16,
-              }}
-            >
-              {item.num}
-            </p>
-            <h3
-              style={{
-                fontWeight: 800,
-                fontSize: 'var(--font-subheading)',
-                letterSpacing: '0.01em',
-                lineHeight: 'var(--lh-heading)',
-                color: 'var(--black)',
-                marginBottom: 20,
-              }}
-            >
-              {item.title}
-            </h3>
-            <p
-              style={{
-                fontSize: 'var(--font-body)',
-                color: 'var(--gray-text)',
-                letterSpacing: '0.01em',
-                lineHeight: 'var(--lh-body)',
-                margin: 0,
-              }}
-            >
-              {item.desc}
-            </p>
-          </div>
-        ))}
-      </div>
-    </section>
-  )
-}
-
-/* ─── Process Section ─── */
-function Process() {
-  const processSteps = [
-    { en: 'CAPTURE', ko: '생각과 정보를 기록하고' },
-    { en: 'CONNECT', ko: '서로 연결하고' },
-    { en: 'CREATE', ko: '새로운 생각으로 확장합니다.' },
-  ]
-
-  return (
-    <section
-      id="process"
-      style={{
-        background: 'var(--white)',
-        color: 'var(--black)',
-        paddingTop: 'var(--section-py)',
-        paddingBottom: 'var(--section-py)',
-        paddingLeft: 'var(--pad-x)',
-        paddingRight: 'var(--pad-x)',
-        textAlign: 'center',
-      }}
-    >
-      <SectionLabel>Process</SectionLabel>
-
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: 128 }}>
-        {processSteps.map((step, i) => (
-          <div key={step.en} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <p
-              style={{
-                fontWeight: 800,
-                fontSize: 'var(--font-subheading)',
-                letterSpacing: '0.05em',
-                lineHeight: 'var(--lh-heading)',
-                color: 'var(--black)',
-                marginBottom: 20,
-              }}
-            >
-              {step.en}
-            </p>
-            <p
-              style={{
-                fontSize: 'var(--font-body)',
-                color: 'var(--gray-text)',
-                letterSpacing: '0.01em',
-                lineHeight: 'var(--lh-body)',
-                margin: 0,
-              }}
-            >
-              {step.ko}
-            </p>
-            {i < processSteps.length - 1 && (
-              <div style={{ padding: '40px 0' }}>
-                <span
-                  style={{
-                    color: 'var(--blue)',
-                    fontSize: '20px',
-                    lineHeight: 1,
-                    display: 'block',
-                  }}
-                >
-                  ↓
-                </span>
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
-
-      <p
-        style={{
-          fontWeight: 700,
-          fontSize: 'var(--font-body)',
-          color: 'var(--black)',
-          letterSpacing: '0.01em',
-          lineHeight: 'var(--lh-body)',
-          margin: 0,
-        }}
-      >
-        기록을 단순히 저장하는 데 그치지 않고, 포착하고 연결하며 새로운 생각으로 확장하는 과정을 제안합니다.
-      </p>
-    </section>
-  )
-}
-
-/* ─── Footer Section ─── */
+/* ─── 8. Footer Section ─── */
 function Footer() {
   return (
     <footer style={{ background: 'var(--blue)', color: 'var(--white)', padding: 'var(--section-py) var(--pad-x) 48px' }}>
       <div style={{ marginBottom: 40 }}>
         <p
           style={{
-            fontWeight: 800,
-            fontSize: 'var(--font-subheading)',
+            fontWeight: 700,
+            fontSize: 'var(--font-title)',
             letterSpacing: '0.06em',
             lineHeight: 'var(--lh-heading)',
             color: 'var(--white)',
