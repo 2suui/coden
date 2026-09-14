@@ -96,22 +96,18 @@
   --lh-body: 2.1;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  width: 100%;
-  overflow-x: hidden;
-}
-
 html {
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
+  -webkit-scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 body {
+  width: 100%;
+  min-height: 100%;
   font-family: 'A2z', sans-serif;
   color: var(--black);
   background: var(--white);
