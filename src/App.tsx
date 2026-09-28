@@ -298,7 +298,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
         letterSpacing: '0.14em',
         color: 'var(--blue)',
         textTransform: 'uppercase',
-        margin: '0 0 clamp(56px, 11vh, 90px) 0',
+        margin: '0 0 clamp(72px, 15vh, 120px) 0',
         textAlign: 'center',
       }}
     >
@@ -412,8 +412,8 @@ function Background() {
         minHeight: '100dvh',
         background: 'var(--white)',
         color: 'var(--black)',
-        paddingTop: 'calc(var(--nav-height) + 24px)',
-        paddingBottom: '48px',
+        paddingTop: 'calc(var(--nav-height) + 36px)',
+        paddingBottom: 'clamp(48px, 10vh, 72px)',
         paddingLeft: 'var(--pad-x)',
         paddingRight: 'var(--pad-x)',
         display: 'flex',
@@ -432,7 +432,7 @@ function Background() {
           color: 'var(--black)',
           letterSpacing: '0.01em',
           lineHeight: 1.75,
-          marginBottom: 64,
+          marginBottom: 'clamp(60px, 11vh, 88px)',
           textAlign: 'center',
         }}
       >
@@ -442,7 +442,7 @@ function Background() {
       </p>
 
       {/* Detailed Description */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 32, textAlign: 'left' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 40, textAlign: 'left' }}>
         <p
           style={{
             fontSize: 'var(--font-body)',
@@ -494,8 +494,8 @@ function TargetUser() {
         minHeight: '100dvh',
         background: 'var(--white)',
         color: 'var(--black)',
-        paddingTop: 'calc(var(--nav-height) + 24px)',
-        paddingBottom: '48px',
+        paddingTop: 'calc(var(--nav-height) + 36px)',
+        paddingBottom: 'clamp(48px, 10vh, 72px)',
         paddingLeft: 'var(--pad-x)',
         paddingRight: 'var(--pad-x)',
         display: 'flex',
@@ -506,7 +506,7 @@ function TargetUser() {
     >
       <SectionLabel>Target User</SectionLabel>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(58px, 14vw, 76px)', textAlign: 'left' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(64px, 15vw, 88px)', textAlign: 'left' }}>
         {targets.map((item) => (
           <div key={item.num}>
             <p
@@ -516,7 +516,7 @@ function TargetUser() {
                 letterSpacing: '0.08em',
                 lineHeight: 1.2,
                 color: 'var(--blue)',
-                marginBottom: 8,
+                marginBottom: 10,
               }}
             >
               {item.num}
@@ -549,8 +549,8 @@ function About() {
         minHeight: '100dvh',
         background: 'var(--white)',
         color: 'var(--black)',
-        paddingTop: 'calc(var(--nav-height) + 24px)',
-        paddingBottom: '48px',
+        paddingTop: 'calc(var(--nav-height) + 36px)',
+        paddingBottom: 'clamp(48px, 10vh, 72px)',
         paddingLeft: 'var(--pad-x)',
         paddingRight: 'var(--pad-x)',
         display: 'flex',
@@ -569,7 +569,7 @@ function About() {
           letterSpacing: '0.01em',
           lineHeight: 'var(--lh-heading)',
           color: 'var(--blue)',
-          marginBottom: 44,
+          marginBottom: 'clamp(52px, 9vh, 72px)',
           whiteSpace: 'nowrap',
           textAlign: 'center',
         }}
@@ -590,7 +590,7 @@ function About() {
         = CO + DEN
       </p>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 46, textAlign: 'left' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(44px, 8vh, 58px)', textAlign: 'left' }}>
         {/* CO */}
         <div>
           <h3
@@ -598,13 +598,13 @@ function About() {
               fontSize: 'var(--font-title)',
               letterSpacing: '0.02em',
               lineHeight: 'var(--lh-heading)',
-              marginBottom: 14,
+              marginBottom: 16,
             }}
           >
             <span style={{ fontWeight: 700, color: 'var(--blue)' }}>CO</span>
             <span style={{ fontWeight: 400, color: 'var(--blue)' }}> — Collect + Connect</span>
           </h3>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
             <p
               style={{
                 fontSize: 'var(--font-body)',
@@ -637,13 +637,13 @@ function About() {
               fontSize: 'var(--font-title)',
               letterSpacing: '0.02em',
               lineHeight: 'var(--lh-heading)',
-              marginBottom: 14,
+              marginBottom: 16,
             }}
           >
             <span style={{ fontWeight: 700, color: 'var(--blue)' }}>DEN</span>
             <span style={{ fontWeight: 400, color: 'var(--blue)' }}> — A space for thoughts</span>
           </h3>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
             <p
               style={{
                 fontSize: 'var(--font-body)',
@@ -678,7 +678,7 @@ function About() {
               letterSpacing: '0.02em',
               lineHeight: 'var(--lh-heading)',
               color: 'var(--blue)',
-              marginBottom: 14,
+              marginBottom: 16,
             }}
           >
             Open Loop
@@ -732,8 +732,8 @@ function Principles() {
         minHeight: '100dvh',
         background: 'var(--white)',
         color: 'var(--black)',
-        paddingTop: 'calc(var(--nav-height) + 24px)',
-        paddingBottom: '48px',
+        paddingTop: 'calc(var(--nav-height) + 36px)',
+        paddingBottom: 'clamp(48px, 10vh, 72px)',
         paddingLeft: 'var(--pad-x)',
         paddingRight: 'var(--pad-x)',
         display: 'flex',
@@ -744,7 +744,7 @@ function Principles() {
     >
       <SectionLabel>Principles</SectionLabel>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 40, textAlign: 'left' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(38px, 7vh, 50px)', textAlign: 'left' }}>
         {principles.map((item) => (
           <div key={item.num}>
             <p
@@ -766,7 +766,7 @@ function Principles() {
                 letterSpacing: '0.01em',
                 lineHeight: 'var(--lh-heading)',
                 color: 'var(--black)',
-                marginBottom: 10,
+                marginBottom: 12,
               }}
             >
               {item.title}
@@ -804,8 +804,8 @@ function Process() {
         minHeight: '100dvh',
         background: 'var(--white)',
         color: 'var(--black)',
-        paddingTop: 'calc(var(--nav-height) + 24px)',
-        paddingBottom: '48px',
+        paddingTop: 'calc(var(--nav-height) + 36px)',
+        paddingBottom: 'clamp(48px, 10vh, 72px)',
         paddingLeft: 'var(--pad-x)',
         paddingRight: 'var(--pad-x)',
         display: 'flex',
@@ -816,7 +816,7 @@ function Process() {
     >
       <SectionLabel>Process</SectionLabel>
 
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: 56 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: 'clamp(56px, 10vh, 72px)' }}>
         {processSteps.map((step, i) => (
           <div key={step.en} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <span
@@ -830,7 +830,7 @@ function Process() {
                 background: 'var(--yellow)',
                 padding: '6px 18px',
                 borderRadius: 4,
-                marginBottom: 14,
+                marginBottom: 16,
               }}
             >
               {step.en}
@@ -847,7 +847,7 @@ function Process() {
               {step.ko}
             </p>
             {i < processSteps.length - 1 && (
-              <div style={{ padding: '26px 0' }}>
+              <div style={{ padding: '32px 0' }}>
                 <span
                   style={{
                     color: 'var(--blue)',
