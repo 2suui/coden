@@ -298,7 +298,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
         letterSpacing: '0.14em',
         color: 'var(--blue)',
         textTransform: 'uppercase',
-        margin: '0 0 clamp(72px, 15vh, 120px) 0',
+        margin: '0 0 clamp(96px, 20vh, 150px) 0',
         textAlign: 'center',
       }}
     >
@@ -342,10 +342,10 @@ function Hero() {
       {/* Hero Copy */}
       <div
         style={{
-          padding: 'clamp(36px, 6vh, 52px) var(--pad-x) clamp(60px, 10vh, 80px)',
+          padding: 'clamp(40px, 7vh, 60px) var(--pad-x) clamp(64px, 12vh, 96px)',
           display: 'flex',
           flexDirection: 'column',
-          gap: 'clamp(40px, 8vh, 56px)',
+          gap: 'clamp(52px, 11vh, 76px)',
         }}
       >
         <h1
@@ -353,7 +353,7 @@ function Hero() {
             fontWeight: 800,
             fontSize: 'var(--font-hero)',
             letterSpacing: '0.02em',
-            lineHeight: 1.4,
+            lineHeight: 1.65,
             color: 'var(--black)',
             margin: 0,
           }}
@@ -368,7 +368,7 @@ function Hero() {
           style={{
             display: 'flex',
             flexDirection: 'column',
-            gap: 26,
+            gap: 36,
           }}
         >
           <p
