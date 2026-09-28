@@ -887,7 +887,7 @@ function Products() {
       id="products"
       style={{
         paddingTop: 'clamp(90px, 16vh, 140px)',
-        paddingBottom: 'clamp(180px, 32vh, 280px)',
+        paddingBottom: 'clamp(260px, 45vh, 420px)',
         background: '#f0f0ee',
         display: 'flex',
         flexDirection: 'column',
