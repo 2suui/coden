@@ -423,15 +423,16 @@ function Background() {
     >
       <SectionLabel>Background</SectionLabel>
 
-      {/* Main Statement */}
+      {/* Main Statement (Moved slightly higher up, with generous gap below towards body) */}
       <p
         style={{
           fontWeight: 700,
           fontSize: 'var(--font-title)',
           color: 'var(--black)',
           letterSpacing: '0.01em',
-          lineHeight: 1.75,
-          marginBottom: 'clamp(64px, 12vh, 96px)',
+          lineHeight: 'var(--lh-heading)',
+          marginTop: '-12px',
+          marginBottom: 'clamp(90px, 18vh, 136px)',
           textAlign: 'center',
         }}
       >
@@ -558,12 +559,12 @@ function About() {
     >
       <SectionLabel>About CODEN</SectionLabel>
 
-      {/* Main Formula Headline */}
+      {/* Main Formula Headline - Bolder & Larger */}
       <p
         style={{
-          fontWeight: 700,
-          fontSize: 'var(--font-title)',
-          letterSpacing: '0.01em',
+          fontWeight: 800,
+          fontSize: 'clamp(19px, 4.8vw, 22px)',
+          letterSpacing: '0.02em',
           lineHeight: 'var(--lh-heading)',
           color: 'var(--blue)',
           marginBottom: 'clamp(56px, 10vh, 80px)',
@@ -575,10 +576,11 @@ function About() {
           style={{
             background: 'var(--yellow)',
             color: 'var(--blue)',
-            padding: '2px 7px',
-            borderRadius: 2,
+            fontWeight: 800,
+            padding: '3px 9px',
+            borderRadius: 3,
             display: 'inline-block',
-            letterSpacing: '0.04em',
+            letterSpacing: '0.05em',
             lineHeight: 1.2,
           }}
         >
@@ -598,8 +600,8 @@ function About() {
               marginBottom: 18,
             }}
           >
-            <span style={{ fontWeight: 700, color: 'var(--blue)' }}>CO</span>
-            <span style={{ fontWeight: 400, color: 'var(--blue)' }}> — Collect + Connect</span>
+            <span style={{ fontWeight: 800, color: 'var(--blue)' }}>CO</span>
+            <span style={{ fontWeight: 600, color: 'var(--blue)' }}> — Collect + Connect</span>
           </h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
             <p
@@ -637,8 +639,8 @@ function About() {
               marginBottom: 18,
             }}
           >
-            <span style={{ fontWeight: 700, color: 'var(--blue)' }}>DEN</span>
-            <span style={{ fontWeight: 400, color: 'var(--blue)' }}> — A space for thoughts</span>
+            <span style={{ fontWeight: 800, color: 'var(--blue)' }}>DEN</span>
+            <span style={{ fontWeight: 600, color: 'var(--blue)' }}> — A space for thoughts</span>
           </h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
             <p
@@ -670,7 +672,7 @@ function About() {
         <div>
           <h3
             style={{
-              fontWeight: 700,
+              fontWeight: 800,
               fontSize: 'var(--font-title)',
               letterSpacing: '0.02em',
               lineHeight: 'var(--lh-heading)',
