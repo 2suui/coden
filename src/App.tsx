@@ -289,7 +289,7 @@ function Menu({
 }
 
 /* ─── Unified Section Label ─── */
-function SectionLabel({ children }: { children: React.ReactNode }) {
+function SectionLabel({ children, style }: { children: React.ReactNode; style?: React.CSSProperties }) {
   return (
     <p
       style={{
@@ -300,6 +300,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
         textTransform: 'uppercase',
         margin: '0 0 clamp(96px, 20vh, 150px) 0',
         textAlign: 'center',
+        ...style,
       }}
     >
       {children}
@@ -884,16 +885,16 @@ function Products() {
     <section
       id="products"
       style={{
-        paddingTop: 'clamp(140px, 24vh, 220px)',
-        paddingBottom: 'clamp(120px, 22vh, 190px)',
+        paddingTop: 'clamp(90px, 16vh, 140px)',
+        paddingBottom: 'clamp(110px, 20vh, 180px)',
         background: '#f0f0ee',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
       }}
     >
-      <div style={{ padding: '0 var(--pad-x)', textAlign: 'center', marginBottom: 'clamp(80px, 14vh, 120px)' }}>
-        <SectionLabel>Product</SectionLabel>
+      <div style={{ padding: '0 var(--pad-x)', textAlign: 'center' }}>
+        <SectionLabel style={{ margin: '0 0 clamp(54px, 10vh, 76px) 0' }}>Product</SectionLabel>
       </div>
 
       {/* Product Photos */}
