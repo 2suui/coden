@@ -474,17 +474,14 @@ function TargetUser() {
     {
       num: '01',
       title: '기록은 많지만 다시 찾지 못하는 사람',
-      desc: '메모 앱, 노트, 메시지 등 여러 곳에 기록하지만 필요한 순간 다시 꺼내 활용하기 어려운 사람.',
     },
     {
       num: '02',
       title: '과제·프로젝트·아이디어를 자주 기록하는 사람',
-      desc: '대학생이나 사회초년생처럼 일상적으로 생각과 정보를 기록하고 정리해야 하는 사람.',
     },
     {
       num: '03',
       title: '기록을 새로운 생각으로 발전시키고 싶은 사람',
-      desc: '단순히 저장하는 데서 끝나지 않고, 기록을 다시 읽고 연결해 아이디어나 행동으로 이어가고 싶은 사람.',
     },
   ]
 
@@ -507,7 +504,7 @@ function TargetUser() {
     >
       <SectionLabel>Target User</SectionLabel>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 44, textAlign: 'left' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 48, textAlign: 'left' }}>
         {targets.map((item) => (
           <div key={item.num}>
             <p
@@ -517,7 +514,7 @@ function TargetUser() {
                 letterSpacing: '0.08em',
                 lineHeight: 1.2,
                 color: 'var(--blue)',
-                marginBottom: 10,
+                marginBottom: 8,
               }}
             >
               {item.num}
@@ -529,22 +526,11 @@ function TargetUser() {
                 letterSpacing: '0.01em',
                 lineHeight: 'var(--lh-heading)',
                 color: 'var(--black)',
-                marginBottom: 10,
+                margin: 0,
               }}
             >
               {item.title}
             </h3>
-            <p
-              style={{
-                fontSize: 'var(--font-body)',
-                color: 'var(--gray-text)',
-                letterSpacing: '0.01em',
-                lineHeight: 'var(--lh-body)',
-                margin: 0,
-              }}
-            >
-              {item.desc}
-            </p>
           </div>
         ))}
       </div>
