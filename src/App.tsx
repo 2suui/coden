@@ -811,7 +811,7 @@ function Process() {
     >
       <SectionLabel>Process</SectionLabel>
 
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: 'clamp(64px, 12vh, 88px)' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: 'clamp(90px, 18vh, 130px)' }}>
         {processSteps.map((step, i) => (
           <div key={step.en} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <span
@@ -823,9 +823,9 @@ function Process() {
                 lineHeight: 1.2,
                 color: 'var(--blue)',
                 background: 'var(--yellow)',
-                padding: '6px 18px',
+                padding: '4px 12px',
                 borderRadius: 4,
-                marginBottom: 18,
+                marginBottom: 16,
               }}
             >
               {step.en}
@@ -865,7 +865,7 @@ function Process() {
           fontSize: 'var(--font-body)',
           color: 'var(--black)',
           letterSpacing: '0.01em',
-          lineHeight: 'var(--lh-body)',
+          lineHeight: 'var(--lh-heading)',
           margin: 0,
           textAlign: 'center',
         }}
@@ -882,8 +882,8 @@ function Products() {
     <section
       id="products"
       style={{
-        paddingTop: 'clamp(90px, 16vh, 140px)',
-        paddingBottom: 'clamp(90px, 16vh, 140px)',
+        paddingTop: 'clamp(126px, 22vh, 196px)',
+        paddingBottom: 'clamp(100px, 18vh, 160px)',
         background: '#f0f0ee',
         display: 'flex',
         flexDirection: 'column',
@@ -902,7 +902,7 @@ function Products() {
             width: '100%',
             background: 'var(--gray-mid)',
             overflow: 'hidden',
-            marginBottom: 32,
+            marginBottom: 36,
           }}
         >
           <img
@@ -938,7 +938,7 @@ function Products() {
         </div>
       </div>
 
-      <div style={{ padding: '48px var(--pad-x) 0', textAlign: 'center' }}>
+      <div style={{ padding: '56px var(--pad-x) 0', textAlign: 'center' }}>
         <p
           style={{
             fontSize: 'var(--font-body)',
