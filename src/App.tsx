@@ -590,7 +590,7 @@ function About() {
         = CO + DEN
       </p>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(52px, 10vh, 72px)', textAlign: 'left' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(84px, 16vh, 120px)', textAlign: 'left' }}>
         {/* CO */}
         <div>
           <h3
