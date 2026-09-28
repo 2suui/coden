@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import logoImg from './assets/logo.png'
-import heroImg from './assets/hero.jpg'
+import heroImg from './assets/hero.png'
 import product1Img from './assets/product-1.jpg'
 import product2Img from './assets/product-2.jpg'
 import product3Img from './assets/product-3.jpg'
