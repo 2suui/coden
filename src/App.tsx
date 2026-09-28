@@ -887,7 +887,7 @@ function Products() {
       id="products"
       style={{
         paddingTop: 'clamp(90px, 16vh, 140px)',
-        paddingBottom: 'clamp(110px, 20vh, 180px)',
+        paddingBottom: 'clamp(180px, 32vh, 280px)',
         background: '#f0f0ee',
         display: 'flex',
         flexDirection: 'column',
@@ -898,49 +898,31 @@ function Products() {
         <SectionLabel style={{ margin: '0 0 clamp(54px, 10vh, 76px) 0' }}>Product</SectionLabel>
       </div>
 
-      {/* Product Photos */}
-      <div style={{ width: '100%' }}>
-        {/* First Standalone Photo */}
-        <div
-          style={{
-            width: '100%',
-            background: 'var(--gray-mid)',
-            overflow: 'hidden',
-            marginBottom: 36,
-          }}
-        >
-          <img
-            src={product1Img}
-            alt="CODEN Desk Notebook & Bookmark Cards"
-            style={{ width: '100%', height: 'auto', display: 'block' }}
-          />
-        </div>
-
-        {/* 3 Attached Photos with 0 Gap */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 0, width: '100%' }}>
-          {[
-            { src: product2Img, alt: 'CODEN Notebook Open & Closed Flat Lay' },
-            { src: productKitImg, alt: 'CODEN Kit Box Package' },
-            { src: product3Img, alt: 'CODEN Notebook Open Page Vertical View' },
-            { src: product4Img, alt: 'CODEN Notebook Dot Grid and Bookmark Close-Up' },
-          ].map((img, i) => (
-            <div
-              key={i}
-              style={{
-                width: '100%',
-                background: 'var(--gray-mid)',
-                overflow: 'hidden',
-                lineHeight: 0,
-              }}
-            >
-              <img
-                src={img.src}
-                alt={img.alt}
-                style={{ width: '100%', height: 'auto', display: 'block' }}
-              />
-            </div>
-          ))}
-        </div>
+      {/* Product Photos - All with equal spacing */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(28px, 5vh, 48px)', width: '100%' }}>
+        {[
+          { src: product1Img, alt: 'CODEN Desk Notebook & Bookmark Cards' },
+          { src: product2Img, alt: 'CODEN Notebook Open & Closed Flat Lay' },
+          { src: productKitImg, alt: 'CODEN Kit Box Package' },
+          { src: product3Img, alt: 'CODEN Notebook Open Page Vertical View' },
+          { src: product4Img, alt: 'CODEN Notebook Dot Grid and Bookmark Close-Up' },
+        ].map((img, i) => (
+          <div
+            key={i}
+            style={{
+              width: '100%',
+              background: 'var(--gray-mid)',
+              overflow: 'hidden',
+              lineHeight: 0,
+            }}
+          >
+            <img
+              src={img.src}
+              alt={img.alt}
+              style={{ width: '100%', height: 'auto', display: 'block' }}
+            />
+          </div>
+        ))}
       </div>
 
     </section>
