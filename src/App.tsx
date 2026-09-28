@@ -296,7 +296,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
         fontWeight: 700,
         fontSize: 'var(--font-caption)',
         letterSpacing: '0.14em',
-        color: 'var(--gray-text)',
+        color: 'var(--yellow)',
         textTransform: 'uppercase',
         margin: '0 0 clamp(40px, 8vh, 64px) 0',
         textAlign: 'center',
@@ -504,7 +504,7 @@ function TargetUser() {
     >
       <SectionLabel>Target User</SectionLabel>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 48, textAlign: 'left' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(58px, 14vw, 76px)', textAlign: 'left' }}>
         {targets.map((item) => (
           <div key={item.num}>
             <p

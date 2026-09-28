@@ -66,9 +66,9 @@
 @import 'tailwindcss';
 
 :root {
-  --blue: #1E6CB5;
-  --blue-dark: #155a9e;
-  --yellow: #F3D420;
+  --blue: #004ea2;
+  --blue-dark: #003b7b;
+  --yellow: #fdd000;
   --black: #111111;
   --white: #FFFFFF;
   --gray-light: #f5f5f3;
