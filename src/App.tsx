@@ -296,7 +296,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
         fontWeight: 700,
         fontSize: 'var(--font-caption)',
         letterSpacing: '0.14em',
-        color: 'var(--yellow)',
+        color: 'var(--blue)',
         textTransform: 'uppercase',
         margin: '0 0 clamp(40px, 8vh, 64px) 0',
         textAlign: 'center',
@@ -342,10 +342,10 @@ function Hero() {
       {/* Hero Copy */}
       <div
         style={{
-          padding: '24px var(--pad-x) 48px',
+          padding: 'clamp(28px, 5vh, 44px) var(--pad-x) clamp(48px, 8vh, 64px)',
           display: 'flex',
           flexDirection: 'column',
-          gap: 40,
+          gap: 'clamp(36px, 7vh, 48px)',
         }}
       >
         <h1
@@ -368,7 +368,7 @@ function Hero() {
           style={{
             display: 'flex',
             flexDirection: 'column',
-            gap: 16,
+            gap: 22,
           }}
         >
           <p
@@ -393,7 +393,9 @@ function Hero() {
               margin: 0,
             }}
           >
-            CODEN은 일상의 생각을 의미 있는 아이디어로 바꿉니다.
+            CODEN은 일상의 생각을
+            <br />
+            의미 있는 아이디어로 바꿉니다.
           </p>
         </div>
       </div>
