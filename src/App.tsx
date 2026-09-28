@@ -3,6 +3,7 @@ import logoImg from './assets/logo.png'
 import heroImg from './assets/hero.png'
 import product1Img from './assets/product-1.jpg'
 import product2Img from './assets/product-2.jpg'
+import productKitImg from './assets/product-kit.jpg'
 import product3Img from './assets/product-3.jpg'
 import product4Img from './assets/product-4.jpg'
 
@@ -919,6 +920,7 @@ function Products() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: 0, width: '100%' }}>
           {[
             { src: product2Img, alt: 'CODEN Notebook Open & Closed Flat Lay' },
+            { src: productKitImg, alt: 'CODEN Kit Box Package' },
             { src: product3Img, alt: 'CODEN Notebook Open Page Vertical View' },
             { src: product4Img, alt: 'CODEN Notebook Dot Grid and Bookmark Close-Up' },
           ].map((img, i) => (
