@@ -941,20 +941,6 @@ function Products() {
         </div>
       </div>
 
-      <div style={{ padding: '56px var(--pad-x) 0', textAlign: 'center' }}>
-        <p
-          style={{
-            fontSize: 'var(--font-body)',
-            color: 'var(--gray-text)',
-            fontWeight: 400,
-            letterSpacing: '0.01em',
-            lineHeight: 'var(--lh-body)',
-            margin: 0,
-          }}
-        >
-          노트북과 북마크로 완성되는 CODEN 기록 시스템
-        </p>
-      </div>
     </section>
   )
 }
