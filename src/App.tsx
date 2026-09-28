@@ -567,7 +567,7 @@ function About() {
           letterSpacing: '0.02em',
           lineHeight: 'var(--lh-heading)',
           color: 'var(--blue)',
-          marginBottom: 'clamp(56px, 10vh, 80px)',
+          marginBottom: 'clamp(96px, 18vh, 140px)',
           whiteSpace: 'nowrap',
           textAlign: 'center',
         }}
@@ -802,7 +802,7 @@ function Process() {
         background: 'var(--white)',
         color: 'var(--black)',
         paddingTop: 'clamp(90px, 16vh, 140px)',
-        paddingBottom: 'clamp(90px, 16vh, 140px)',
+        paddingBottom: 'clamp(200px, 36vh, 320px)',
         paddingLeft: 'var(--pad-x)',
         paddingRight: 'var(--pad-x)',
         display: 'flex',
@@ -825,9 +825,9 @@ function Process() {
                 lineHeight: 1.2,
                 color: 'var(--blue)',
                 background: 'var(--yellow)',
-                padding: '3px 8px',
-                borderRadius: 4,
-                marginBottom: 16,
+                padding: '2px 4px',
+                borderRadius: 2,
+                marginBottom: 26,
               }}
             >
               {step.en}
@@ -884,8 +884,8 @@ function Products() {
     <section
       id="products"
       style={{
-        paddingTop: 'clamp(226px, 40vh, 350px)',
-        paddingBottom: 'clamp(110px, 20vh, 180px)',
+        paddingTop: 'clamp(140px, 24vh, 220px)',
+        paddingBottom: 'clamp(120px, 22vh, 190px)',
         background: '#f0f0ee',
         display: 'flex',
         flexDirection: 'column',
