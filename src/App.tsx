@@ -345,7 +345,7 @@ function Hero() {
           padding: 'clamp(40px, 7vh, 60px) var(--pad-x) clamp(64px, 12vh, 96px)',
           display: 'flex',
           flexDirection: 'column',
-          gap: 'clamp(52px, 11vh, 76px)',
+          gap: 'clamp(48px, 10vh, 68px)',
         }}
       >
         <h1
@@ -353,7 +353,7 @@ function Hero() {
             fontWeight: 800,
             fontSize: 'var(--font-hero)',
             letterSpacing: '0.02em',
-            lineHeight: 1.65,
+            lineHeight: 1.38,
             color: 'var(--black)',
             margin: 0,
           }}
@@ -368,7 +368,7 @@ function Hero() {
           style={{
             display: 'flex',
             flexDirection: 'column',
-            gap: 36,
+            gap: 56,
           }}
         >
           <p
@@ -742,7 +742,7 @@ function Principles() {
     >
       <SectionLabel>Principles</SectionLabel>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(44px, 8vh, 60px)', textAlign: 'left' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(84px, 16vh, 120px)', textAlign: 'left' }}>
         {principles.map((item) => (
           <div key={item.num}>
             <p
@@ -813,7 +813,7 @@ function Process() {
     >
       <SectionLabel>Process</SectionLabel>
 
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: 'clamp(90px, 18vh, 130px)' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: 'clamp(100px, 20vh, 150px)' }}>
         {processSteps.map((step, i) => (
           <div key={step.en} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <span
@@ -825,7 +825,7 @@ function Process() {
                 lineHeight: 1.2,
                 color: 'var(--blue)',
                 background: 'var(--yellow)',
-                padding: '4px 12px',
+                padding: '3px 8px',
                 borderRadius: 4,
                 marginBottom: 16,
               }}
@@ -844,7 +844,7 @@ function Process() {
               {step.ko}
             </p>
             {i < processSteps.length - 1 && (
-              <div style={{ padding: '36px 0' }}>
+              <div style={{ padding: '64px 0' }}>
                 <span
                   style={{
                     color: 'var(--blue)',
@@ -884,15 +884,15 @@ function Products() {
     <section
       id="products"
       style={{
-        paddingTop: 'clamp(126px, 22vh, 196px)',
-        paddingBottom: 'clamp(100px, 18vh, 160px)',
+        paddingTop: 'clamp(226px, 40vh, 350px)',
+        paddingBottom: 'clamp(110px, 20vh, 180px)',
         background: '#f0f0ee',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
       }}
     >
-      <div style={{ padding: '0 var(--pad-x)', textAlign: 'center' }}>
+      <div style={{ padding: '0 var(--pad-x)', textAlign: 'center', marginBottom: 'clamp(80px, 14vh, 120px)' }}>
         <SectionLabel>Product</SectionLabel>
       </div>
 
