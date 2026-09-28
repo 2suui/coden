@@ -11,22 +11,22 @@ import product4Img from './assets/product-4.jpg'
 const SECTIONS = ['hero', 'background', 'target', 'about', 'principles', 'process', 'products'] as const
 type SectionId = (typeof SECTIONS)[number]
 
-function smoothScrollTo(targetY: number, duration: number = 320) {
+function smoothScrollTo(targetY: number, duration: number = 180) {
   const startY = window.pageYOffset || document.documentElement.scrollTop
   const diff = targetY - startY
   if (Math.abs(diff) < 2) return
 
   const startTime = performance.now()
 
-  // snappier cubic-bezier / easeOutCubic
-  function easeOutCubic(t: number): number {
-    return 1 - Math.pow(1 - t, 3)
+  // very crisp and swift deceleration
+  function easeOutQuint(t: number): number {
+    return 1 - Math.pow(1 - t, 5)
   }
 
   function step(currentTime: number) {
     const elapsed = currentTime - startTime
     const progress = Math.min(elapsed / duration, 1)
-    const ease = easeOutCubic(progress)
+    const ease = easeOutQuint(progress)
     window.scrollTo(0, startY + diff * ease)
 
     if (progress < 1) {
@@ -44,7 +44,7 @@ function scrollTo(id: string) {
   const targetY = id === 'hero' 
     ? 0 
     : el.getBoundingClientRect().top + window.pageYOffset - navHeight
-  smoothScrollTo(targetY, 320)
+  smoothScrollTo(targetY, 180)
 }
 
 /* ─── Active Section Spy Hook ─── */
